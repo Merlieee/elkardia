@@ -35,8 +35,35 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
   const doctor = getDoctorBySlug(slug)
   if (!doctor) notFound()
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    name: doctor.name,
+    description: doctor.bio,
+    medicalSpecialty: doctor.tags,
+    url: `https://elkardia.pl/lekarze/${slug}`,
+    worksFor: {
+      "@type": "MedicalOrganization",
+      "@id": "https://elkardia.pl/#organization",
+      name: "Elkardia | Lubelskie Centrum Kardiologii",
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "ul. Rotmistrza Witolda Pileckiego 23/20",
+      addressLocality: "Lublin",
+      postalCode: "20-091",
+      addressCountry: "PL",
+    },
+    telephone: "+48815657075",
+    ...(doctor.hours ? { availableService: { "@type": "MedicalTherapy", description: doctor.hours } } : {}),
+  }
+
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* ── HEADER ── */}
       <section className="border-b border-slate-100 bg-slate-50 py-12">
