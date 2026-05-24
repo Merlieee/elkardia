@@ -1,8 +1,19 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, ArrowRight, Phone, Heart } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Stomatologia z obserwacją kardiologiczną",
+  description: "Jedyne miejsce w Lublinie, gdzie stomatologia odbywa się pod opieką kardiologa. Leczenie zachowawcze, protetyka, ekstrakcje — bezpieczne dla pacjentów z chorobami serca.",
+  openGraph: {
+    title: "Stomatologia z obserwacją kardiologiczną — Elkardia Lublin",
+    description: "Kompleksowa stomatologia dla dorosłych i dzieci z obserwacją kardiologiczną — jedyne takie miejsce w Lublinie.",
+    url: "https://elkardia.pl/stomatologia",
+  },
+}
 
 const gallery = [
   { img: "/images/stomatologia-2.jpg", label: "Gabinet stomatologiczny" },

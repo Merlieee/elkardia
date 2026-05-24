@@ -1,8 +1,19 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, XCircle, Phone, ArrowRight } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Ablacja serca — kwalifikacja i opieka",
+  description: "Elektrofizjolodzy Elkardia diagnozują zaburzenia rytmu serca i kwalifikują pacjentów do ablacji RF i PFA. Badanie elektrofizjologiczne, Holter, rejestratory arytmii — Lublin.",
+  openGraph: {
+    title: "Ablacja serca — kwalifikacja i opieka | Elkardia Lublin",
+    description: "Diagnoza zaburzeń rytmu serca, kwalifikacja do ablacji RF i PFA, opieka przed i po zabiegu. Elektrofizjolodzy w Lublinie.",
+    url: "https://elkardia.pl/ablacja-serca",
+  },
+}
 
 const arrhythmias = [
   { img: "/images/ablacja-AFL.webp", label: "Trzepotanie przedsionków", short: "AFL" },

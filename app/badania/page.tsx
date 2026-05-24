@@ -1,9 +1,20 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CheckCircle, ArrowRight, Phone, Home } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Badania diagnostyczne",
+  description: "Pełna diagnostyka kardiologiczna w Elkardia Lublin — EKG, echo serca, Holter EKG i RR, tilt-test, USG Doppler, badanie elektrofizjologiczne. Holter wysyłany kurierem do domu.",
+  openGraph: {
+    title: "Badania diagnostyczne — Elkardia Lublin",
+    description: "EKG, echo serca, Holter EKG i ciśnieniowy, tilt-test, USG Doppler. Wyniki tego samego dnia. Holter dostępny kurierem.",
+    url: "https://elkardia.pl/badania",
+  },
+}
 
 const cardiac = [
   "EKG spoczynkowe", "EKG wysiłkowe", "Próba wysiłkowa z saturacją",

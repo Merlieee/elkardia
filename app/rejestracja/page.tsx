@@ -1,7 +1,18 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Clock, ArrowRight, Globe } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Rejestracja — umów wizytę online 24h",
+  description: "Zarejestruj się do lekarza specjalisty w Elkardia Lublin — online 24h lub telefonicznie pon–pt 8:00–20:00. Tel. (81) 565 70 75, ul. Pileckiego 23/20.",
+  openGraph: {
+    title: "Rejestracja — Elkardia Lublin",
+    description: "Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00. Szybki dostęp do kardiologów i specjalistów.",
+    url: "https://elkardia.pl/rejestracja",
+  },
+}
 
 export default function RejestracjaPage() {
   return (

@@ -1,8 +1,19 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Phone, ArrowRight, CheckCircle, ChevronRight } from "lucide-react"
 import { SpecialtiesGrid } from "@/components/specialties-grid"
 import { Button } from "@/components/ui/button"
+
+export const metadata: Metadata = {
+  title: "Elkardia — Lubelskie Centrum Kardiologii w Lublinie",
+  description: "Centrum kardiologii dorosłych i dziecięcej w Lublinie. Ablacja serca, diagnostyka EKG i Holter, stomatologia z obserwacją kardiologiczną — ponad 30 specjalistów pod jednym dachem.",
+  openGraph: {
+    title: "Elkardia — Lubelskie Centrum Kardiologii",
+    description: "Centrum kardiologii dorosłych i dziecięcej w Lublinie. Ablacja serca, diagnostyka, stomatologia — od 2014 roku.",
+    url: "https://elkardia.pl",
+  },
+}
 
 // ─── data ────────────────────────────────────────────────────────────────────
 

@@ -1,8 +1,19 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, ArrowRight, Phone } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Dietetycy kliniczni",
+  description: "Dietetycy kliniczni w Elkardia Lublin — indywidualny plan żywienia, analiza składu ciała (SECA-285), dieta kardiologiczna. Konsultacje stacjonarne i online.",
+  openGraph: {
+    title: "Dietetycy kliniczni — Elkardia Lublin",
+    description: "Indywidualny plan żywienia, analiza składu ciała, dieta przy chorobach serca i cukrzycy. Umów konsultację online 24h.",
+    url: "https://elkardia.pl/dietetycy",
+  },
+}
 
 export default function DietycyPage() {
   return (
