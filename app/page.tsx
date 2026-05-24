@@ -57,11 +57,11 @@ export default function HomePage() {
               Centrum kardiologii dorosłych i dziecięcej — z dostępem do neurologa, stomatologa, dietetyka i wielu innych specjalistów pod jednym dachem. W Lublinie, od 2014 roku.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/rejestracja">
+              <a href="https://elkardia.pl/rejestracja-online-24h/">
                 <Button size="lg" className="group inline-flex h-12 items-center justify-center gap-1 bg-[#EE3920] px-6 text-base font-semibold text-white shadow-none hover:bg-[#d4321c]">
                   Zarejestruj się online<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Button>
-              </Link>
+              </a>
               <a href="tel:+48815657075">
                 <Button size="lg" variant="ghost"
                   className="h-12 gap-2 border border-white/20 px-6 text-base text-white hover:bg-white/10 hover:text-white">
@@ -113,7 +113,7 @@ export default function HomePage() {
               <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
                 Kwalifikacja i opieka przed i po ablacji
               </h2>
-              <p className="mt-4 leading-relaxed text-slate-400">
+              <p className="mt-4 text-lg leading-relaxed text-slate-300">
                 Nasz elektrofizjolog diagnozuje zaburzenia rytmu serca, kwalifikuje pacjentów do ablacji i sprawuje opiekę po zabiegu. Badanie elektrofizjologiczne, Holter, rejestratory arytmii — kompleksowa diagnostyka na miejscu.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
@@ -125,7 +125,7 @@ export default function HomePage() {
                 ].map((s) => (
                   <div key={s.l} className="rounded-xl border border-white/10 p-4">
                     <div className="text-2xl font-bold text-[#EE3920]">{s.v}</div>
-                    <div className="mt-1 text-xs text-slate-500">{s.l}</div>
+                    <div className="mt-1 text-sm text-slate-400">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -277,8 +277,8 @@ export default function HomePage() {
               <p className="mt-3 leading-relaxed text-slate-600 text-sm">
                 Prowadzisz poradnię lub gabinet i chcesz oferować pacjentom badania Holter EKG lub ciśnieniowe? Współpracujemy z klinikami i lekarzami indywidualnymi — oferujemy wynajem sprzętu, odczyt wyników przez kardiologa i wsparcie techniczne.
               </p>
-              <a href="mailto:rejestracja@elkardia.pl" className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#EE3920] hover:underline">
-                Napisz do nas <ArrowRight className="h-3.5 w-3.5" />
+              <a href="mailto:rejestracja@elkardia.pl" className="group mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#EE3920] hover:underline">
+                Napisz do nas <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
           </div>
@@ -310,7 +310,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
-      <section className="bg-[#EE3920] py-20">
+      <section className="bg-[#0C71C3] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <Image src="/images/award.png" alt="Orły Medycyny" width={180} height={54} className="mx-auto mb-8 h-14 w-auto opacity-90 brightness-0 invert" />
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -320,11 +320,11 @@ export default function HomePage() {
             Laureat Orłów Medycyny. Rejestracja telefoniczna pon–pt 8:00–20:00, online 24h/dobę — 7 dni w tygodniu.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/rejestracja">
-              <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#EE3920] hover:bg-slate-100">
-                Rejestracja online 24h <ArrowRight className="h-4 w-4" />
+            <a href="https://elkardia.pl/rejestracja-online-24h/">
+              <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#0C71C3] hover:bg-slate-100">
+                Rejestracja online 24h <ArrowRight className="h-4 w-4 transition-transform group-hover/button:translate-x-0.5" />
               </Button>
-            </Link>
+            </a>
             <a href="tel:+48815657075">
               <Button size="lg" variant="ghost"
                 className="h-12 gap-2 border border-white/30 px-6 text-base text-white hover:bg-white/10 hover:text-white">
