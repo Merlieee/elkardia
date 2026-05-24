@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="border-t bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-4">
+          <div className="flex flex-col gap-6">
             <Link href="/">
               <Image src="/images/logo.png" alt="Elkardia" width={130} height={34} className="h-8 w-auto" />
             </Link>
@@ -74,9 +74,18 @@ export function Footer() {
 
         <Separator className="my-8" />
 
+        <div className="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs leading-relaxed text-muted-foreground">
+          <p>
+            Elkardia Sp. z o.o. z siedzibą w Lublinie, 20-091 Lublin ul. Rotmistrza Witolda Pileckiego 23/20, wpisaną do krajowego rejestru sądowego prowadzonego przez Sąd Rejonowy VI Wydział Krajowego Rejestru Sądowego Lublin – Wschód w Lublinie pod numerem 0000945384, NIP: 7123429164, o kapitale zakładowym 10.000,00 zł.
+          </p>
+          <p className="mt-1">
+            Podmiot leczniczy wpisany do Rejestru Podmiotów Wykonujących Działalność Leczniczą (nr księgi: 000000249308).
+          </p>
+        </div>
+
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-muted-foreground">
-            © 2024 Elkardia Sp. z o.o. Wszelkie prawa zastrzeżone. NIP: 7123429164
+            © 2024 Elkardia Sp. z o.o. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-4">
             <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Regulamin</Link>

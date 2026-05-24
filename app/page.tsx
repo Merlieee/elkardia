@@ -228,9 +228,9 @@ export default function HomePage() {
               "Poradnia Żywieniowa (Dietetyczna)",
               "Poradnia Stomatologiczna",
             ].map((p) => (
-              <div key={p} className="flex items-start gap-2.5 rounded-xl bg-white p-4 text-sm text-slate-700">
-                <div className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#EE3920]" />
+              <div key={p} className="group flex items-center justify-between rounded-xl bg-white p-4 text-sm text-slate-700 transition-colors hover:bg-[#EE3920] hover:text-white">
                 {p}
+                <ArrowRight className="h-3.5 w-3.5 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-white" />
               </div>
             ))}
           </div>
@@ -238,36 +238,73 @@ export default function HomePage() {
       </section>
 
       {/* ── drEKG ─────────────────────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="border-b border-slate-100 py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="overflow-hidden rounded-3xl border border-slate-200">
-            <div className="grid md:grid-cols-2">
-              <div className="flex flex-col justify-center p-10 lg:p-14">
-                <Image src="/images/drekg-logo.png" alt="drEKG" width={160} height={44} className="mb-6 h-9 w-auto" />
-                <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-                  Kardiologia online<br />w całej Polsce
-                </h2>
-                <p className="mt-4 leading-relaxed text-slate-600">
-                  Zamów Holter EKG kurierem, wykonaj badanie w domu i uzyskaj analizę od kardiologa online. Leczymy bezdech senny w Twojej sypialni.
-                </p>
-                <div className="mt-6 flex flex-col gap-2.5">
-                  {["Holter EKG z dostawą na terenie Polski", "Holter ciśnieniowy RR", "Rejestratory arytmii (wielomiesięczne)", "Diagnostyka bezdechu sennego w domu", "Telekonsultacja ze specjalistą"].map((t) => (
-                    <div key={t} className="flex items-center gap-2 text-sm text-slate-700">
-                      <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#EE3920]" />
-                      {t}
-                    </div>
-                  ))}
-                </div>
-                <a href="https://doktorekg.pl" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex">
-                  <Button variant="outline" className="gap-2 border-slate-300 text-slate-900 hover:border-[#EE3920] hover:text-[#EE3920]">
-                    Odwiedź doktorekg.pl <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </a>
-              </div>
-              <div className="relative min-h-72 bg-slate-950">
-                <Image src="/images/drekg-app.png" alt="drEKG aplikacja" fill className="object-contain p-10" />
-              </div>
+          <div className="flex flex-col items-center gap-8 text-center">
+            <Image src="/images/doktorekg-logo.png" alt="doktorEKG" width={220} height={60} className="h-12 w-auto" />
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Kardiologia online w całej Polsce
+              </h2>
+              <p className="mt-4 leading-relaxed text-slate-600">
+                Zamów Holter EKG kurierem, wykonaj badanie w domu i uzyskaj analizę od kardiologa online. Rejestratory arytmii, diagnostyka bezdechu sennego — bez wychodzenia z domu.
+              </p>
             </div>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+              {[
+                "Holter EKG z dostawą",
+                "Holter ciśnieniowy RR",
+                "Rejestratory arytmii",
+                "Diagnostyka bezdechu",
+                "Telekonsultacja",
+              ].map((t) => (
+                <span key={t} className="text-sm text-slate-500">
+                  {t}
+                </span>
+              ))}
+            </div>
+            <a href="https://doktorekg.pl" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="group gap-1 border-slate-300 bg-transparent text-slate-900 hover:border-[#EE3920] hover:bg-transparent hover:text-[#EE3920]">
+                Odwiedź doktorekg.pl<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Button>
+            </a>
+
+            <div className="mt-4 w-full max-w-2xl rounded-2xl bg-slate-50 p-8 text-left">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Dla klinik i lekarzy</p>
+              <h3 className="mt-2 text-xl font-bold text-slate-900">
+                Wynajmij Holter dla swojej placówki
+              </h3>
+              <p className="mt-3 leading-relaxed text-slate-600 text-sm">
+                Prowadzisz poradnię lub gabinet i chcesz oferować pacjentom badania Holter EKG lub ciśnieniowe? Współpracujemy z klinikami i lekarzami indywidualnymi — oferujemy wynajem sprzętu, odczyt wyników przez kardiologa i wsparcie techniczne.
+              </p>
+              <a href="mailto:rejestracja@elkardia.pl" className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#EE3920] hover:underline">
+                Napisz do nas <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MAP ────────────────────────────────────────────────────────── */}
+      <section className="border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+          <div className="mb-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Lokalizacja</p>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Znajdź nas w Lublinie
+            </h2>
+            <p className="mt-2 text-sm text-slate-500">ul. Rotmistrza Witolda Pileckiego 23/20, 20-091 Lublin</p>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-slate-200">
+            <iframe
+              src="https://maps.google.com/maps?q=ul.+Rotmistrza+Witolda+Pileckiego+23%2F20+Lublin&output=embed&z=16"
+              width="100%"
+              height="460"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
