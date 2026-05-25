@@ -49,8 +49,8 @@ export default function AblacjaPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a href="https://elkardia.pl/rejestracja-online-24h/">
-                  <Button className="h-12 gap-2 bg-white px-7 text-base font-semibold text-slate-900 hover:bg-slate-100">
-                    Umów konsultację <ArrowRight className="h-4 w-4" />
+                  <Button className="group h-12 gap-2 bg-white px-7 text-base font-semibold text-slate-900 hover:bg-slate-100">
+                    Umów konsultację <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Button>
                 </a>
                 <a href="tel:+48815657075">

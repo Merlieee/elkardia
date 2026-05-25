@@ -1,13 +1,12 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CheckCircle, ArrowRight, Phone, Home } from "lucide-react"
+import { CheckCircle, ArrowRight, Phone } from "lucide-react"
+import { BadaniaSearch } from "@/components/badania-search"
 
 export const metadata: Metadata = {
-  title: "Badania diagnostyczne",
+  title: "Badania diagnostyczne — Elkardia Lublin",
   description: "Pełna diagnostyka kardiologiczna w Elkardia Lublin — EKG, echo serca, Holter EKG i RR, tilt-test, USG Doppler, badanie elektrofizjologiczne. Holter wysyłany kurierem do domu.",
   openGraph: {
     title: "Badania diagnostyczne — Elkardia Lublin",
@@ -17,177 +16,145 @@ export const metadata: Metadata = {
   },
 }
 
-const cardiac = [
-  "EKG spoczynkowe", "EKG wysiłkowe", "Próba wysiłkowa z saturacją",
-  "Echo serca", "Tilt-test (test pochyleniowy)", "Holter EKG 24h standard",
-  "Holter EKG 12-kanałowy", "Holter EKG 1–8 dniowy",
-  "Rejestratory arytmii (monitoring wielomiesięczny)", "Holter ciśnieniowy RR 24h",
-  "Symultaniczny pomiar RR", "Kontrola stymulatora serca",
-  "Kontrola kardiowertera (ICD)", "Badanie elektrofizjologiczne", "Ablacja serca (RF, PFA)",
-]
-const pediatric = [
-  "EKG dzieci", "Echo serca dzieci", "Holter EKG dzieci 24h",
-  "Holter ciśnieniowy RR dzieci", "Monitorowanie saturacji 24h",
-]
-const usg = [
-  "USG tarczycy", "USG piersi", "USG jamy brzusznej", "USG ślinianek",
-  "USG układu moczowego", "USG prostaty", "USG jąder",
-  "USG węzłów chłonnych", "USG opłucnej",
-  "USG Doppler tętnic szyjnych", "USG Doppler tętnic mózgowych",
-  "USG Doppler tętnic kończyn", "USG Doppler żył kończyn",
-]
-const sleep = [
-  "Holter RR bezdech senny", "Pełne badanie snu w sypialni pacjenta", "Spirometria",
-]
-const risk = [
-  "Wskaźnik ABI (niedokrwienie kończyn)", "Analiza składu ciała (SECA-285)",
-  "Profesjonalny pomiar BMI", "Ocena ryzyka udaru mózgowego",
-  "Ocena ryzyka krwawienia", "Ocena EuroSCORE (operacja serca)",
-  "Ocena ryzyka zabiegowego", "Ocena ryzyka ciąży",
-]
 
 export default function BadaniaPage() {
   return (
     <div>
 
       {/* ── HERO ── */}
-      <section className="relative h-72 overflow-hidden">
-        <Image src="/images/kardiologia-2.webp" alt="Diagnostyka" fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
-        <div className="relative flex h-full items-center">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-            <Badge variant="secondary" className="mb-3">Diagnostyka</Badge>
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">Badania diagnostyczne</h1>
-            <p className="mt-3 max-w-xl text-white/70">
-              Tylko certyfikowany, najnowszy sprzęt. Wyniki tego samego dnia.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FEATURES strip ── */}
-      <section className="border-b bg-muted/30 py-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-6">
-            {["Badania na miejscu", "Wyniki tego samego dnia", "Certyfikowany sprzęt", "Badania w domu pacjenta"].map((t) => (
-              <div key={t} className="flex items-center gap-2 text-sm font-medium">
-                <CheckCircle className="h-4 w-4 text-primary" />{t}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── VISUAL split ── */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 md:grid-cols-2 md:items-center mb-16">
-            <div className="relative h-80 overflow-hidden rounded-2xl">
-              <Image src="/images/spec-7.webp" alt="USG Doppler" fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-4 left-4">
-                <p className="font-bold text-white">USG i Doppler</p>
-                <p className="text-sm text-white/70">Naczynia, narządy, tarczyca, piersi</p>
+      <section className="relative h-[520px] overflow-hidden">
+        <Image src="/images/kardiologia-3.webp" alt="Badania diagnostyczne" fill className="object-cover object-[50%_100%]" priority />
+        <div className="absolute inset-0 bg-slate-950/70" />
+        <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-slate-950/85 to-transparent" />
+        <div className="relative flex h-full items-end pb-16">
+          <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+            <div className="max-w-xl">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">Diagnostyka</p>
+              <h1 className="text-4xl font-bold text-white sm:text-5xl">Badania diagnostyczne</h1>
+              <p className="mt-4 text-base text-white leading-relaxed">
+                Pełen profil badań kardiologicznych, USG i Dopplera pod jednym dachem. Tylko certyfikowany, najnowszy sprzęt — wyniki tego samego dnia.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href="https://elkardia.pl/rejestracja-online-24h/">
+                  <Button className="group h-12 gap-2 bg-white px-7 text-base font-semibold text-slate-900 hover:bg-slate-100">
+                    Umów badanie <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </Button>
+                </a>
+                <a href="tel:+48815657075">
+                  <Button variant="ghost" className="h-12 gap-2 border border-white/50 px-7 text-base text-white hover:bg-white/10 hover:text-white">
+                    <Phone className="h-4 w-4" /> (81) 565 70 75
+                  </Button>
+                </a>
               </div>
             </div>
-            <div>
-              <Badge className="mb-4">USG i obrazowanie</Badge>
-              <h2 className="text-2xl font-bold mb-4">Pełna diagnostyka USG na miejscu</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Badania USG i Doppler wszystkich narządów i naczyń — tarczyca, piersi, jama brzuszna, układ moczowy, prostata, jądra, węzły chłonne, tętnice i żyły kończyn, tętnice szyjne i mózgowe.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <div className="order-2 md:order-1">
-              <Badge className="mb-4">Kardiologia interwencyjna</Badge>
-              <h2 className="text-2xl font-bold mb-4">Ablacja i elektrofizjologia</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Pełne badanie elektrofizjologiczne i ablacja serca — RF i PFA. Kontrola stymulatorów i kardiowerterów. Tilt-test (test pochyleniowy) — jedyny w Lublinie.
-              </p>
-              <Link href="/ablacja-serca" className="mt-6 inline-block">
-                <Button variant="outline" className="gap-2">Więcej o ablacji <ArrowRight className="h-4 w-4" /></Button>
-              </Link>
-            </div>
-            <div className="order-1 md:order-2 relative h-80 overflow-hidden rounded-2xl bg-black">
-              <Image src="/images/ablacja-rf.webp" alt="Ablacja RF" fill className="object-contain p-8" />
-            </div>
           </div>
         </div>
       </section>
 
-      {/* ── TABS ── */}
-      <section className="bg-muted/30 py-16">
+      {/* ── FULL LIST ── */}
+      <section className="bg-muted/30 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-8">Pełna lista badań</h2>
-          <Tabs defaultValue="cardiac">
-            <TabsList className="mb-8 h-auto flex-wrap gap-1">
-              <TabsTrigger value="cardiac">Kardiologiczne</TabsTrigger>
-              <TabsTrigger value="pediatric">Pediatryczne</TabsTrigger>
-              <TabsTrigger value="usg">USG / Doppler</TabsTrigger>
-              <TabsTrigger value="sleep">Sen i oddech</TabsTrigger>
-              <TabsTrigger value="risk">Ocena ryzyka</TabsTrigger>
-            </TabsList>
+          <h2 className="text-3xl font-bold mb-3">Pełna lista badań</h2>
+          <p className="text-muted-foreground mb-8">Wszystkie badania dostępne na miejscu w Elkardii.</p>
+          <BadaniaSearch />
+        </div>
+      </section>
+
+      {/* ── WHY US ── */}
+      <section className="bg-muted/30 pb-20 pt-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Dlaczego warto nam zaufać</p>
+          <h2 className="mt-3 text-3xl font-bold">Najnowszy sprzęt, wyniki tego samego dnia</h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
+            Diagnostyka kardiologiczna wymaga precyzji i doświadczenia. Używamy wyłącznie certyfikowanego sprzętu najnowszej generacji — aparat Philips Affiniti 50 do echo i USG, 12-kanałowe Holtery i rejestratory wielomiesięczne.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { value: "cardiac", items: cardiac },
-              { value: "pediatric", items: pediatric },
-              { value: "usg", items: usg },
-              { value: "sleep", items: sleep },
-              { value: "risk", items: risk },
-            ].map((tab) => (
-              <TabsContent key={tab.value} value={tab.value}>
-                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                  {tab.items.map((item) => (
-                    <div key={item} className="flex items-center gap-3 rounded-lg border bg-card px-4 py-3 text-sm">
-                      <div className="h-2 w-2 rounded-full bg-primary shrink-0" />{item}
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
+              {
+                title: "Wyniki tego samego dnia",
+                desc: "Echo serca, EKG, Holter — wyniki i opis lekarza w dniu badania. Nie czekasz tygodniami na wyniki.",
+              },
+              {
+                title: "Tilt-test — jedyny w Lublinie",
+                desc: "Test pochyleniowy do diagnostyki omdleń i zasłabnięć. Jedyne centrum w Lublinie wykonujące to badanie.",
+              },
+              {
+                title: "Holter kurierem w całej Polsce",
+                desc: "Holter EKG, holter ciśnieniowy i badanie bezdechu sennego dostarczamy kurierem na terenie całej Polski.",
+              },
+              {
+                title: "Echo Philips Affiniti 50",
+                desc: "Aparat echokardiograficzny najnowszej generacji — zarówno dla dorosłych, jak i dla dzieci. Dokładne obrazowanie nawet u najmłodszych.",
+              },
+              {
+                title: "Pełna diagnostyka USG",
+                desc: "USG i Doppler wszystkich narządów i naczyń — tarczyca, piersi, jama brzuszna, tętnice szyjne, żyły kończyn i więcej.",
+              },
+              {
+                title: "Diagnostyka dziecięca",
+                desc: "EKG, echo serca, Holter i monitoring saturacji dla dzieci — od noworodków po młodzież, w przyjaznej atmosferze.",
+              },
+            ].map((c) => (
+              <div key={c.title} className="rounded-2xl border bg-card p-6">
+                <h3 className="font-bold text-base mb-2">{c.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+              </div>
             ))}
-          </Tabs>
+          </div>
         </div>
       </section>
 
       {/* ── HOME TESTING ── */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <div>
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 mb-4">
-                <Home className="h-7 w-7 text-primary" />
-              </div>
-              <h2 className="text-2xl font-bold mb-4">Badania w domu pacjenta</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Nie możesz dojechać? Holter EKG, holter ciśnieniowy i badanie bezdechu sennego dostarczamy kuriersko na terenie całej Polski. Leczymy chrapanie i bezdech w Twojej sypialni!
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-8 text-center">
+            <Image src="/images/doktorekg-logo.webp" alt="doktorEKG" width={220} height={60} className="h-12 w-auto" />
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Badania w domu pacjenta
+              </h2>
+              <p className="mt-4 leading-relaxed text-slate-600">
+                Nie możesz dojechać? Holter EKG, holter ciśnieniowy i badanie bezdechu sennego dostarczamy kuriersko na terenie całej Polski. Leczymy chrapanie i bezdech w Twojej sypialni.
               </p>
-              <a href="https://doktorekg.pl">
-                <Button variant="outline" className="gap-2">
-                  Telemedycyna drEKG <ArrowRight className="h-4 w-4" />
-                </Button>
-              </a>
             </div>
-            <div className="relative h-64 overflow-hidden rounded-2xl">
-              <Image src="/images/rejestracja.webp" alt="Telemedycyna" fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-4 left-4">
-                <p className="font-bold text-white">Dostawa kurierska</p>
-                <p className="text-sm text-white/70">Cała Polska</p>
-              </div>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+              {[
+                "Holter EKG z dostawą",
+                "Holter ciśnieniowy RR",
+                "Rejestratory arytmii",
+                "Diagnostyka bezdechu",
+                "Telekonsultacja",
+              ].map((t) => (
+                <span key={t} className="text-sm text-slate-500">{t}</span>
+              ))}
             </div>
+            <a href="https://doktorekg.pl" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="group gap-1 border-slate-300 bg-transparent text-slate-900 hover:border-[#EE3920] hover:bg-transparent hover:text-[#EE3920]">
+                Odwiedź doktorekg.pl <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
 
       {/* ── CTA ── */}
-      <section className="border-t bg-muted/30 py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Umów badanie</h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.</p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/rejestracja"><Button size="lg" className="gap-2">Rejestracja online <ArrowRight className="h-4 w-4" /></Button></Link>
-            <a href="tel:+48815657075"><Button size="lg" variant="outline" className="gap-2"><Phone className="h-4 w-4" /> (81) 565 70 75</Button></a>
+      <section className="bg-[#0C71C3] py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Umów badanie</h2>
+          <p className="mx-auto mt-4 max-w-md leading-relaxed text-white/70">
+            Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a href="https://elkardia.pl/rejestracja-online-24h/">
+              <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#0C71C3] hover:bg-slate-100">
+                Rejestracja online 24h <ArrowRight className="h-4 w-4" />
+              </Button>
+            </a>
+            <a href="tel:+48815657075">
+              <Button size="lg" variant="ghost" className="h-12 gap-2 border border-white/30 px-6 text-base text-white hover:bg-white/10 hover:text-white">
+                <Phone className="h-4 w-4" /> (81) 565 70 75
+              </Button>
+            </a>
           </div>
         </div>
       </section>

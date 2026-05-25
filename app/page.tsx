@@ -143,7 +143,7 @@ export default function HomePage() {
               <div className="mt-8 flex justify-center">
                 <Link href="/ablacja-serca">
                   <Button className="group mx-auto flex h-10 items-center justify-center gap-1 bg-[#EE3920] px-5 text-sm font-semibold text-white hover:bg-[#d4321c]">
-                    Więcej o zaburzeniach rytmu<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    Dowiedz się więcej<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Button>
                 </Link>
               </div>
@@ -218,31 +218,30 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {[
-              "Poradnia Kardiologiczna ogólna",
-              "Poradnia Kardiologii Dziecięcej",
-              "Poradnia Zaburzeń Rytmu Serca",
-              "Poradnia Hemodynamiczna",
-              "Poradnia Nadciśnienia Tętniczego",
-              "Poradnia Wad Serca",
-              "Poradnia Kontroli Stymulatorów",
-              "Poradnia Kontroli Kardiowerterów",
-              "Poradnia Neurologiczna",
-              "Poradnia Neurochirurgiczna",
-              "Poradnia Chirurgii Naczyniowej",
-              "Poradnia Kardiochirurgiczna",
-              "Poradnia Pulmonologiczna",
-              "Poradnia Diabetologiczna",
-              "Poradnia Endokrynologiczna",
-              "Poradnia Nefrologiczna",
-              "Poradnia Balneologiczna",
-              "Poradnia Radiologiczna",
-              "Poradnia Żywieniowa (Dietetyczna)",
-              "Poradnia Stomatologiczna",
+              { label: "Poradnia Kardiologiczna ogólna",    href: "/kardiologia-doroslych" },
+              { label: "Poradnia Kardiologii Dziecięcej",   href: "/kardiologia-dziecieca" },
+              { label: "Poradnia Zaburzeń Rytmu Serca",     href: "/ablacja-serca" },
+              { label: "Poradnia Hemodynamiczna",           href: "/kardiologia-doroslych" },
+              { label: "Poradnia Nadciśnienia Tętniczego",  href: "/hipertensjologia" },
+              { label: "Poradnia Wad Serca",                href: "/kardiologia-doroslych" },
+              { label: "Poradnia Kontroli Stymulatorów",    href: "/kardiologia-doroslych" },
+              { label: "Poradnia Kontroli Kardiowerterów",  href: "/kardiologia-doroslych" },
+              { label: "Poradnia Neurologiczna",            href: "/neurologia" },
+              { label: "Poradnia Neurochirurgiczna",        href: "/neurochirurgia" },
+              { label: "Poradnia Chirurgii Naczyniowej",    href: "/chirurgia-naczyniowa" },
+              { label: "Poradnia Kardiochirurgiczna",       href: "/kardiochirurgia" },
+              { label: "Poradnia Pulmonologiczna",          href: "/pulmonologia" },
+              { label: "Poradnia Diabetologiczna",          href: "/diabetologia" },
+              { label: "Poradnia Endokrynologiczna",        href: "/endokrynologia" },
+              { label: "Poradnia Nefrologiczna",            href: "/nefrologia" },
+              { label: "Poradnia Balneologiczna",           href: "/balneologia" },
+              { label: "Poradnia Żywieniowa (Dietetyczna)", href: "/dietetycy" },
+              { label: "Poradnia Stomatologiczna",          href: "/stomatologia" },
             ].map((p) => (
-              <div key={p} className="group flex items-center justify-between rounded-xl bg-white p-4 text-sm text-slate-700 transition-colors hover:bg-[#EE3920] hover:text-white">
-                {p}
+              <Link key={p.label} href={p.href} className="group flex items-center justify-between rounded-xl bg-white p-4 text-sm text-slate-700 transition-colors hover:bg-[#EE3920] hover:text-white">
+                {p.label}
                 <ArrowRight className="h-3.5 w-3.5 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-white" />
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -320,7 +320,7 @@ export default function Page() {
     <SpecialtyPage
       title="Kardiologia dziecięca"
       label="Specjalność"
-      description="Specjalistyczna opieka kardiologiczna dla dzieci i młodzieży — od noworodków po 18. rok życia. Diagnostykę prowadzimy aparatem Philips Affiniti 50, gwarantującym dokładne obrazowanie serca nawet u najmłodszych. Każdą wizytę traktujemy indywidualnie, dbając o komfort i bezpieczeństwo małego pacjenta."
+      description="Specjalistyczna opieka kardiologiczna dla dzieci i młodzieży — od noworodków po 18. rok życia. Każdą wizytę traktujemy indywidualnie, dbając o komfort i bezpieczeństwo małego pacjenta."
       heroImage="/images/spec-4.webp"
       doctors={doctors.filter(d => d.group === "Kardiologia dziecięca")}
       extraContent={echoContent}

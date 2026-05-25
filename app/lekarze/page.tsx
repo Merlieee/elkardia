@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
 import { Phone, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { doctors, groups } from "@/lib/doctors"
+import { LekarzeSearch } from "@/components/lekarze-search"
 
 export const metadata: Metadata = {
   title: "Lekarze specjaliści",
@@ -15,27 +14,13 @@ export const metadata: Metadata = {
   },
 }
 
-function toId(group: string) {
-  return group.toLowerCase()
-    .replace(/ą/g, "a").replace(/ć/g, "c").replace(/ę/g, "e")
-    .replace(/ł/g, "l").replace(/ń/g, "n").replace(/ó/g, "o")
-    .replace(/ś/g, "s").replace(/ź/g, "z").replace(/ż/g, "z")
-    .replace(/\s+/g, "-")
-}
-
-function initials(name: string) {
-  const skip = /^(dr|hab\.|n\.|med\.|prof\.|lek\.|stom\.|mgr)$/i
-  const parts = name.split(" ").filter(w => !skip.test(w))
-  return parts.slice(0, 2).map(w => w.charAt(0).toUpperCase()).join("")
-}
-
 export default function LekarzeePage() {
   return (
     <div className="bg-white">
 
       {/* ── HERO ── */}
-      <section className="relative h-[400px] overflow-hidden">
-        <Image src="/images/hero-2.webp" alt="Lekarze specjaliści" fill className="object-cover object-[50%_30%]" />
+      <section className="relative h-[520px] overflow-hidden">
+        <Image src="/images/kardiologia-lublin.webp" alt="Lekarze specjaliści" fill className="object-cover object-[50%_10%]" />
         <div className="absolute inset-0 bg-slate-950/65" />
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-slate-950/70 to-transparent" />
         <div className="relative flex h-full items-end pb-12">
@@ -52,49 +37,7 @@ export default function LekarzeePage() {
       {/* ── DOCTORS ── */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-col gap-16">
-            {groups.map((group) => {
-              const groupDoctors = doctors.filter(d => d.group === group)
-              return (
-                <div key={group} id={toId(group)} className="scroll-mt-24">
-                  <div className="mb-6 flex items-center gap-4">
-                    <h2 className="text-xl font-bold text-slate-900">{group}</h2>
-                    <div className="h-px flex-1 bg-slate-100" />
-                    <span className="text-xs text-slate-400">
-                      {groupDoctors.length} {groupDoctors.length === 1 ? "lekarz" : "lekarzy"}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                    {groupDoctors.map((d) => (
-                      <div key={d.slug} className="h-24">
-                        <Link
-                          href={`/lekarze/${d.slug}`}
-                          className="group flex h-full items-start gap-4 overflow-hidden rounded-xl bg-slate-50 p-5 transition-colors hover:bg-slate-100"
-                        >
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EE3920]/10 text-sm font-bold text-[#EE3920] transition-colors group-hover:bg-[#EE3920] group-hover:text-white">
-                            {initials(d.name)}
-                          </div>
-                          <div className="min-w-0 flex-1 overflow-hidden">
-                            <div className="flex items-start justify-between gap-2">
-                              <p className="line-clamp-1 font-semibold text-slate-900 leading-tight">{d.name}</p>
-                              <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#EE3920]" />
-                            </div>
-                            <div className="mt-2 flex flex-wrap gap-1">
-                              {d.tags.slice(0, 2).map((t) => (
-                                <span key={t} className="rounded-md bg-white px-2 py-0.5 text-xs text-slate-500 ring-1 ring-slate-200">
-                                  {t}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          <LekarzeSearch />
         </div>
       </section>
 
