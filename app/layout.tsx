@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     siteName: "Elkardia — Lubelskie Centrum Kardiologii",
     locale: "pl_PL",
     type: "website",
+    images: [{ url: "/images/logo.png" }],
   },
 }
 
