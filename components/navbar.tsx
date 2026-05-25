@@ -136,7 +136,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
 
         <Link href="/">
-          <Image src="/images/logo.png" alt="Elkardia" width={120} height={32} className="h-7 w-auto" />
+          <Image src="/images/logo.webp" alt="Elkardia" width={120} height={32} className="h-7 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -170,7 +170,7 @@ export function Navbar() {
               <SheetTitle className="sr-only">Menu nawigacyjne</SheetTitle>
               <div className="mb-8">
                 <Link href="/" onClick={() => setOpen(false)}>
-                  <Image src="/images/logo.png" alt="Elkardia" width={110} height={30} className="h-7 w-auto" />
+                  <Image src="/images/logo.webp" alt="Elkardia" width={110} height={30} className="h-7 w-auto" />
                 </Link>
               </div>
               <nav className="flex flex-col gap-1">

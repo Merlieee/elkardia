@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 }
 
 const gallery = [
-  { img: "/images/stomatologia-2.jpg", label: "Gabinet stomatologiczny" },
-  { img: "/images/stomatologia-4.jpg", label: "Protetyka i korony" },
-  { img: "/images/stomatologia-7.jpg", label: "Stomatologia estetyczna" },
-  { img: "/images/spec-5.jpg", label: "Stomatologia zachowawcza" },
-  { img: "/images/spec-6.jpg", label: "Ortodoncja i protetyka" },
-  { img: "/images/spec-9.jpg", label: "Stomatologia dziecięca" },
+  { img: "/images/stomatologia-2.webp", label: "Gabinet stomatologiczny" },
+  { img: "/images/stomatologia-4.webp", label: "Protetyka i korony" },
+  { img: "/images/stomatologia-7.webp", label: "Stomatologia estetyczna" },
+  { img: "/images/spec-5.webp", label: "Stomatologia zachowawcza" },
+  { img: "/images/spec-6.webp", label: "Ortodoncja i protetyka" },
+  { img: "/images/spec-9.webp", label: "Stomatologia dziecięca" },
 ]
 
 export default function StomatologiaPage() {
@@ -30,7 +30,7 @@ export default function StomatologiaPage() {
 
       {/* ── HERO ── */}
       <section className="relative h-80 overflow-hidden">
-        <Image src="/images/stomatologia-7.jpg" alt="Stomatologia" fill className="object-cover" />
+        <Image src="/images/stomatologia-7.webp" alt="Stomatologia" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
         <div className="relative flex h-full items-center">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -102,7 +102,7 @@ export default function StomatologiaPage() {
             <div>
               <h2 className="text-2xl font-bold mb-6">Dla trudnych pacjentów kardiologicznych</h2>
               <div className="relative h-48 overflow-hidden rounded-xl mb-6">
-                <Image src="/images/stomatologia-4.jpg" alt="Stomatologia dla kardiologów" fill className="object-cover" />
+                <Image src="/images/stomatologia-4.webp" alt="Stomatologia dla kardiologów" fill className="object-cover" />
               </div>
               <div className="flex flex-col gap-3">
                 {[

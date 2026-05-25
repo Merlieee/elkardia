@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Elkardia — Lubelskie Centrum Kardiologii",
     locale: "pl_PL",
     type: "website",
-    images: [{ url: "/images/logo.png" }],
+    images: [{ url: "/images/logo.webp" }],
   },
 }
 
@@ -34,7 +34,7 @@ const jsonLd = {
       "@id": "https://elkardia.pl/#organization",
       name: "Elkardia | Lubelskie Centrum Kardiologii",
       url: "https://elkardia.pl",
-      logo: "https://elkardia.pl/images/logo.png",
+      logo: "https://elkardia.pl/images/logo.webp",
       telephone: "+48815657075",
       email: "rejestracja@elkardia.pl",
       sameAs: [

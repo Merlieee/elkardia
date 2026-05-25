@@ -47,7 +47,7 @@ export default function HomePage() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative h-screen min-h-[760px] overflow-hidden">
         <Image
-          src="/images/hero-1.jpg"
+          src="/images/hero-1.webp"
           alt="Elkardia – Lubelskie Centrum Kardiologii"
           fill priority
           className="object-cover object-center"
@@ -86,12 +86,12 @@ export default function HomePage() {
       </section>
 
       {/* ── STATS ─────────────────────────────────────────────────────── */}
-      <section className="border-b border-slate-200">
+      <section>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-2 divide-x divide-slate-200 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col items-center py-10 text-center">
-                <span className="text-3xl font-bold text-slate-900 sm:text-4xl">{s.value}</span>
+                <span className="text-[1.7rem] font-bold text-slate-900 sm:text-4xl">{s.value}</span>
                 <span className="mt-2 text-xs text-slate-500 whitespace-nowrap leading-tight">{s.label}</span>
               </div>
             ))}
@@ -100,7 +100,7 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES ──────────────────────────────────────────────────── */}
-      <section className="py-20 border-b border-slate-100">
+      <section className="border-t border-slate-200 py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12">
             <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Specjalności</p>
@@ -114,18 +114,18 @@ export default function HomePage() {
       </section>
 
       {/* ── ABLACJA ───────────────────────────────────────────────────── */}
-      <section className="bg-slate-950 py-24 text-white">
+      <section className="bg-slate-50 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-[#EE3920]">
                 Zaburzenia rytmu serca
               </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 Kwalifikacja i opieka przed i po ablacji
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-slate-300">
-                Nasz elektrofizjolog diagnozuje zaburzenia rytmu serca, kwalifikuje pacjentów do ablacji i sprawuje opiekę po zabiegu. Badanie elektrofizjologiczne, Holter, rejestratory arytmii — kompleksowa diagnostyka na miejscu.
+              <p className="mt-4 leading-relaxed text-slate-600">
+                Nasi elektrofizjolodzy diagnozują zaburzenia rytmu serca, kwalifikują pacjentów do ablacji i sprawują opiekę po zabiegu. Badanie elektrofizjologiczne, Holter, rejestratory arytmii — kompleksowa diagnostyka na miejscu.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
                 {[
@@ -134,9 +134,9 @@ export default function HomePage() {
                   { v: "EPS", l: "Badanie elektrofizjologiczne na miejscu" },
                   { v: "RF / PFA", l: "Kwalifikacja do ablacji obu metod" },
                 ].map((s) => (
-                  <div key={s.l} className="rounded-xl border border-white/10 p-4">
-                    <div className="text-2xl font-bold text-[#EE3920]">{s.v}</div>
-                    <div className="mt-1 text-sm text-slate-400">{s.l}</div>
+                  <div key={s.l} className="rounded-xl border bg-card p-4">
+                    <div className="text-[1.7rem] font-bold text-slate-900">{s.v}</div>
+                    <div className="mt-1 text-sm text-slate-500">{s.l}</div>
                   </div>
                 ))}
               </div>
@@ -156,7 +156,7 @@ export default function HomePage() {
                 { img: "/images/ablacja-VT.webp", label: "Częstoskurcz komorowy (VT)" },
                 { img: "/images/ablacja-WPW.webp", label: "Zespół WPW" },
               ].map((item) => (
-                <div key={item.label} className="group relative aspect-square overflow-hidden rounded-xl bg-slate-900">
+                <div key={item.label} className="group relative aspect-square overflow-hidden rounded-xl bg-muted">
                   <Image
                     src={item.img} alt={item.label} fill
                     className="object-cover opacity-80 transition-opacity group-hover:opacity-100"
@@ -176,7 +176,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <div className="relative h-[500px] overflow-hidden rounded-2xl">
-              <Image src="/images/kardiologia-3.jpg" alt="Diagnostyka" fill className="object-cover" />
+              <Image src="/images/kardiologia-3.webp" alt="Diagnostyka" fill className="object-cover" />
             </div>
 
             <div>
@@ -208,7 +208,7 @@ export default function HomePage() {
       </section>
 
       {/* ── PORADNIE ──────────────────────────────────────────────────── */}
-      <section className="border-b border-slate-100 bg-slate-50 py-24">
+      <section className="bg-slate-50 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12">
             <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Poradnie specjalistyczne</p>
@@ -249,10 +249,10 @@ export default function HomePage() {
       </section>
 
       {/* ── drEKG ─────────────────────────────────────────────────────── */}
-      <section className="border-b border-slate-100 py-20">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col items-center gap-8 text-center">
-            <Image src="/images/doktorekg-logo.png" alt="doktorEKG" width={220} height={60} className="h-12 w-auto" />
+            <Image src="/images/doktorekg-logo.webp" alt="doktorEKG" width={220} height={60} className="h-12 w-auto" />
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 Kardiologia online w całej Polsce
@@ -274,7 +274,7 @@ export default function HomePage() {
                 </span>
               ))}
             </div>
-            <a href="https://doktorekg.pl" target="_blank" rel="noopener noreferrer">
+            <a href="https://doktorekg.pl">
               <Button variant="outline" className="group gap-1 border-slate-300 bg-transparent text-slate-900 hover:border-[#EE3920] hover:bg-transparent hover:text-[#EE3920]">
                 Odwiedź doktorekg.pl<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Button>
@@ -297,7 +297,7 @@ export default function HomePage() {
       </section>
 
       {/* ── MAP ────────────────────────────────────────────────────────── */}
-      <section className="border-b border-slate-100">
+      <section>
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <div className="mb-8">
             <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Lokalizacja</p>
@@ -321,18 +321,18 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
-      <section className="bg-[#0C71C3] py-20">
+      <section className="bg-[#0C71C3] py-14">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <Image src="/images/award.png" alt="Orły Medycyny" width={180} height={54} className="mx-auto mb-8 h-14 w-auto opacity-90 brightness-0 invert" />
+          <Image src="/images/award.webp" alt="Orły Medycyny" width={220} height={66} className="mx-auto mb-10 h-[4.5rem] w-auto opacity-90 brightness-0 invert" />
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Jesteś w dobrych rękach
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-white/70 leading-relaxed">
+          <p className="mx-auto mt-6 max-w-md text-white/70 leading-relaxed">
             Laureat Orłów Medycyny. Rejestracja telefoniczna pon–pt 8:00–20:00, online 24h/dobę — 7 dni w tygodniu.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
             <a href="https://elkardia.pl/rejestracja-online-24h/">
-              <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#0C71C3] hover:bg-slate-100">
+              <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#0C71C3] hover:bg-slate-50">
                 Rejestracja online 24h <ArrowRight className="h-4 w-4 transition-transform group-hover/button:translate-x-0.5" />
               </Button>
             </a>

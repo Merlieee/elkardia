@@ -34,40 +34,89 @@ export default function AblacjaPage() {
     <div>
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden bg-foreground py-20 text-primary-foreground">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <div>
-              <Badge variant="secondary" className="mb-4">Tylko u nas w Lublinie</Badge>
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">Ablacja serca</h1>
-              <p className="text-primary-foreground/75 text-lg leading-relaxed">
-                Wykonujemy ablację RF oraz najnowocześniejszą ablację Volt PFA — nietermiczną metodę II generacji. Zabiegi prowadzą <strong className="text-white">dr hab. Maciej Wójcik</strong> i <strong className="text-white">dr Paweł Błaszkiewicz</strong>.
+      <section className="relative h-[520px] overflow-hidden">
+        <Image src="/images/hero-ablacja.webp" alt="Ablacja serca — zabieg elektrofizjologiczny" fill className="object-cover object-[50%_20%]" priority />
+        <div className="absolute inset-0 bg-slate-950/70" />
+        <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-slate-950/85 to-transparent" />
+        <div className="relative flex h-full items-end pb-16">
+          <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+            <div className="max-w-xl">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">Zaburzenia rytmu serca</p>
+              <h1 className="text-4xl font-bold text-white sm:text-5xl">Ablacja serca</h1>
+              <p className="mt-4 text-base text-white leading-relaxed">
+                Wykonujemy ablację RF oraz najnowocześniejszą ablację Volt PFA — nietermiczną metodę II generacji. Zabiegi prowadzą <strong>dr hab. Maciej Wójcik</strong> i <strong>dr Paweł Błaszkiewicz</strong>.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/rejestracja">
-                  <Button variant="secondary" className="gap-2">Umów konsultację <ArrowRight className="h-4 w-4" /></Button>
-                </Link>
+                <a href="https://elkardia.pl/rejestracja-online-24h/">
+                  <Button className="h-12 gap-2 bg-white px-7 text-base font-semibold text-slate-900 hover:bg-slate-100">
+                    Umów konsultację <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </a>
                 <a href="tel:+48815657075">
-                  <Button variant="outline" className="gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white">
+                  <Button variant="ghost" className="h-12 gap-2 border border-white/50 px-7 text-base text-white hover:bg-white/10 hover:text-white">
                     <Phone className="h-4 w-4" /> (81) 565 70 75
                   </Button>
                 </a>
               </div>
             </div>
-            {/* stat grid */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* stat strip */}
+            <div className="mt-10 flex flex-wrap gap-8">
               {[
-                { v: "80–90%", l: "Skuteczność ablacji AF po 1 zabiegu" },
+                { v: "80–90%", l: "Skuteczność ablacji AF" },
                 { v: "95–98%", l: "Skuteczność ablacji trzepotania" },
-                { v: "<0,5%", l: "Ryzyko poważnych powikłań" },
-                { v: "10+", l: "Lat doświadczenia zespołu" },
+                { v: "<0,5%", l: "Ryzyko powikłań" },
+                { v: "10+", l: "Lat doświadczenia" },
               ].map((s) => (
-                <div key={s.l} className="rounded-xl bg-white/10 p-5 text-center">
-                  <div className="text-3xl font-bold text-primary">{s.v}</div>
-                  <div className="mt-1 text-xs text-primary-foreground/60 leading-tight">{s.l}</div>
+                <div key={s.l}>
+                  <div className="text-2xl font-bold text-white">{s.v}</div>
+                  <div className="text-sm text-white/80 mt-0.5">{s.l}</div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHY US ── */}
+      <section className="bg-muted/30 pb-20 pt-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Dlaczego warto nam zaufać</p>
+          <h2 className="mt-3 text-2xl font-bold">Elektrofizjolodzy z najwyższymi kwalifikacjami w Polsce</h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
+            Ablacja serca to zabieg wymagający wyjątkowej precyzji i doświadczenia. Nasi lekarze wykonują go od ponad 10 lat — zarówno w prostych, jak i najbardziej złożonych przypadkach.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Ponad 1000 ablacji rocznie",
+                desc: "Jeden z najwyższych wolumenów zabiegów elektrofizjologicznych w Polsce. Większa liczba zabiegów oznacza większe doświadczenie i lepsze wyniki.",
+              },
+              {
+                title: "Habilitacja z elektrofizjologii",
+                desc: "Dr hab. Maciej Wójcik posiada stopień doktora habilitowanego — najwyższy stopień naukowy specjalizacji w dziedzinie ablacji serca w regionie.",
+              },
+              {
+                title: "Najnowsza technologia PFA",
+                desc: "Jako jedyne centrum w Lublinie wykonujemy ablację Volt PFA II generacji — bezpieczniejszą i skuteczniejszą niż starsze metody.",
+              },
+              {
+                title: "Organizatorzy konferencji międzynarodowych",
+                desc: "Nasi lekarze organizują warsztaty ablacyjne dla elektrofizjologów z całej Europy i USA — szkoląc innych specjalistów z własnych technik.",
+              },
+              {
+                title: "Kompleksowa opieka",
+                desc: "Zajmujemy się pacjentem od pierwszej konsultacji, przez kwalifikację, zabieg, aż po kontrolę po ablacji — bez przekazywania do innych ośrodków.",
+              },
+              {
+                title: "Leczenie najtrudniejszych przypadków",
+                desc: "Burza elektryczna, złożone arytmie komorowe, przypadki po nieudanych ablacjach w innych ośrodkach — to nasza specjalność.",
+              },
+            ].map((c) => (
+              <div key={c.title} className="rounded-2xl border bg-card p-6">
+                <h3 className="font-bold text-base mb-2">{c.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -79,14 +128,14 @@ export default function AblacjaPage() {
           <div className="grid gap-6 md:grid-cols-2">
             {[
               {
-                img: "/images/ablacja-rf.png",
+                img: "/images/ablacja-rf.webp",
                 title: "Ablacja RF",
                 subtitle: "Radiofrekwencyjna",
                 desc: "Punktowa ablacja prądem RF oparta na gęstej mapie elektroanatomicznej 3D. Energia cieplna precyzyjnie niszczy ognisko arytmii. Skuteczna dla wszystkich typów arytmii serca.",
                 tag: "Wszystkie typy arytmii",
               },
               {
-                img: "/images/ablacja-pfa.png",
+                img: "/images/ablacja-pfa.webp",
                 title: "Ablacja Volt PFA",
                 subtitle: "Pulsed Field Ablation",
                 desc: "Nietermiczna elektroporacja — system II generacji. Lepsza efektywność i bezpieczeństwo niż wcześniejsze systemy PFA. Wykonywana w znieczuleniu ogólnym. Najnowocześniejsza metoda leczenia migotania przedsionków.",
@@ -107,7 +156,7 @@ export default function AblacjaPage() {
             ))}
           </div>
           <p className="mt-6 text-sm text-muted-foreground border rounded-xl p-4 bg-muted/40">
-            <strong>Uwaga:</strong> W centrum nie wykonuje się krioablacji — metoda porzucona ponad 10 lat temu ze względu na niższą precyzję.
+            <strong>Uwaga:</strong> Nie wykonujemy krioablacji — metoda porzucona ponad 10 lat temu ze względu na niższą precyzję.
           </p>
         </div>
       </section>
@@ -191,13 +240,23 @@ export default function AblacjaPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="border-t bg-muted/30 py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Umów konsultację</h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.</p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/rejestracja"><Button size="lg" className="gap-2">Rejestracja online <ArrowRight className="h-4 w-4" /></Button></Link>
-            <a href="tel:+48815657075"><Button size="lg" variant="outline" className="gap-2"><Phone className="h-4 w-4" /> (81) 565 70 75</Button></a>
+      <section className="bg-[#0C71C3] py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Umów konsultację</h2>
+          <p className="mx-auto mt-4 max-w-md leading-relaxed text-white/70">
+            Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a href="https://elkardia.pl/rejestracja-online-24h/">
+              <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#0C71C3] hover:bg-slate-100">
+                Rejestracja online 24h <ArrowRight className="h-4 w-4" />
+              </Button>
+            </a>
+            <a href="tel:+48815657075">
+              <Button size="lg" variant="ghost" className="h-12 gap-2 border border-white/30 px-6 text-base text-white hover:bg-white/10 hover:text-white">
+                <Phone className="h-4 w-4" /> (81) 565 70 75
+              </Button>
+            </a>
           </div>
         </div>
       </section>

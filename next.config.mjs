@@ -2,19 +2,19 @@
 const nextConfig = {
   async redirects() {
     return [
-      // ─── Specialty category pages → /lekarze ──────────────────────────
-      { source: "/lekarze-specjalisci-lublin",                              destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/kardiolog-lublin",             destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/kardiolog-dzieciecy-lublin",   destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/nadcisnienie-tetnicze-lublin", destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/kardiochirurg-lublin",         destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/neurolog-lublin",              destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/neurochirurg-lublin",          destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/chirurg-naczyniowy-lublin",    destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/pulmonolog-lublin",            destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/diabetolog-endokrynolog-lublin", destination: "/lekarze", permanent: true },
-      { source: "/lekarze-specjalisci-lublin/radiolog-usg-lublin",          destination: "/lekarze", permanent: true },
-      { source: "/nefrolog-lublin-lekarze",                                 destination: "/lekarze", permanent: true },
+      // ─── Specialty category pages → dedicated pages ───────────────────
+      { source: "/lekarze-specjalisci-lublin",                              destination: "/lekarze",               permanent: true },
+      { source: "/lekarze-specjalisci-lublin/kardiolog-lublin",             destination: "/kardiologia-doroslych", permanent: true },
+      { source: "/lekarze-specjalisci-lublin/kardiolog-dzieciecy-lublin",   destination: "/kardiologia-dziecieca", permanent: true },
+      { source: "/lekarze-specjalisci-lublin/nadcisnienie-tetnicze-lublin", destination: "/hipertensjologia",      permanent: true },
+      { source: "/lekarze-specjalisci-lublin/kardiochirurg-lublin",         destination: "/kardiochirurgia",       permanent: true },
+      { source: "/lekarze-specjalisci-lublin/neurolog-lublin",              destination: "/neurologia",            permanent: true },
+      { source: "/lekarze-specjalisci-lublin/neurochirurg-lublin",          destination: "/neurochirurgia",        permanent: true },
+      { source: "/lekarze-specjalisci-lublin/chirurg-naczyniowy-lublin",    destination: "/chirurgia-naczyniowa",  permanent: true },
+      { source: "/lekarze-specjalisci-lublin/pulmonolog-lublin",            destination: "/pulmonologia",          permanent: true },
+      { source: "/lekarze-specjalisci-lublin/diabetolog-endokrynolog-lublin", destination: "/endokrynologia",      permanent: true },
+      { source: "/lekarze-specjalisci-lublin/radiolog-usg-lublin",          destination: "/badania",               permanent: true },
+      { source: "/nefrolog-lublin-lekarze",                                 destination: "/nefrologia",            permanent: true },
 
       // ─── Adult cardiologists ───────────────────────────────────────────
       { source: "/lekarze-specjalisci-lublin/kardiolog-lublin/maciej-wojcik-kardiolog",         destination: "/lekarze/maciej-wojcik",       permanent: true },

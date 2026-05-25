@@ -20,7 +20,7 @@ export default function RejestracjaPage() {
 
       {/* ── HERO ── */}
       <section className="relative h-64 overflow-hidden">
-        <Image src="/images/rejestracja.jpg" alt="Rejestracja" fill className="object-cover" />
+        <Image src="/images/rejestracja.webp" alt="Rejestracja" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
         <div className="relative flex h-full items-center">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">

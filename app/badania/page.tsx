@@ -51,7 +51,7 @@ export default function BadaniaPage() {
 
       {/* ── HERO ── */}
       <section className="relative h-72 overflow-hidden">
-        <Image src="/images/kardiologia-2.jpg" alt="Diagnostyka" fill className="object-cover" />
+        <Image src="/images/kardiologia-2.webp" alt="Diagnostyka" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
         <div className="relative flex h-full items-center">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -82,7 +82,7 @@ export default function BadaniaPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 md:grid-cols-2 md:items-center mb-16">
             <div className="relative h-80 overflow-hidden rounded-2xl">
-              <Image src="/images/spec-7.jpg" alt="USG Doppler" fill className="object-cover" />
+              <Image src="/images/spec-7.webp" alt="USG Doppler" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-4 left-4">
                 <p className="font-bold text-white">USG i Doppler</p>
@@ -110,7 +110,7 @@ export default function BadaniaPage() {
               </Link>
             </div>
             <div className="order-1 md:order-2 relative h-80 overflow-hidden rounded-2xl bg-black">
-              <Image src="/images/ablacja-rf.png" alt="Ablacja RF" fill className="object-contain p-8" />
+              <Image src="/images/ablacja-rf.webp" alt="Ablacja RF" fill className="object-contain p-8" />
             </div>
           </div>
         </div>
@@ -161,14 +161,14 @@ export default function BadaniaPage() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Nie możesz dojechać? Holter EKG, holter ciśnieniowy i badanie bezdechu sennego dostarczamy kuriersko na terenie całej Polski. Leczymy chrapanie i bezdech w Twojej sypialni!
               </p>
-              <a href="https://doktorekg.pl" target="_blank" rel="noopener noreferrer">
+              <a href="https://doktorekg.pl">
                 <Button variant="outline" className="gap-2">
                   Telemedycyna drEKG <ArrowRight className="h-4 w-4" />
                 </Button>
               </a>
             </div>
             <div className="relative h-64 overflow-hidden rounded-2xl">
-              <Image src="/images/rejestracja.jpg" alt="Telemedycyna" fill className="object-cover" />
+              <Image src="/images/rejestracja.webp" alt="Telemedycyna" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-4 left-4">
                 <p className="font-bold text-white">Dostawa kurierska</p>

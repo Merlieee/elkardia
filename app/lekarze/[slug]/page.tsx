@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { Phone, ArrowLeft, ArrowRight, CheckCircle, Clock, CreditCard } from "lucide-react"
+import { Phone, ArrowLeft, ArrowRight, CheckCircle, Clock, CreditCard, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { getDoctorBySlug, doctors } from "@/lib/doctors"
 
@@ -95,12 +95,26 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-3">
 
-            {/* Left: bio + services */}
+            {/* Left: bio + conditions + services */}
             <div className="lg:col-span-2 flex flex-col gap-10">
               <div>
                 <h2 className="text-lg font-semibold text-slate-900 mb-3">O lekarzu</h2>
                 <p className="leading-relaxed text-slate-600">{doctor.bio}</p>
               </div>
+
+              {doctor.conditions && doctor.conditions.length > 0 && (
+                <div>
+                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Zakres diagnostyki i leczenia</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {doctor.conditions.map(c => (
+                      <div key={c} className="flex items-start gap-2.5 text-sm text-slate-700">
+                        <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#EE3920]" />
+                        {c}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {doctor.services && doctor.services.length > 0 && (
                 <div>
@@ -111,6 +125,30 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
                         <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#EE3920]" />
                         {s}
                       </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {doctor.patientInfo && (
+                <div className="rounded-xl border border-slate-100 bg-slate-50 p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Info className="h-4 w-4 text-[#EE3920]" />
+                    <h2 className="text-sm font-semibold text-slate-900">Informacje dla pacjenta</h2>
+                  </div>
+                  <div className="flex flex-col gap-3 text-sm text-slate-700">
+                    {doctor.patientInfo.minAge !== undefined && (
+                      <div className="flex items-start justify-between gap-4">
+                        <span className="text-slate-500">Minimalny wiek pacjenta</span>
+                        <span className="font-medium text-slate-900">{doctor.patientInfo.minAge} lat</span>
+                      </div>
+                    )}
+                    <div className="flex items-start justify-between gap-4">
+                      <span className="text-slate-500">NFZ</span>
+                      <span className="font-medium text-slate-900">{doctor.patientInfo.nfz ? "Tak" : "Nie"}</span>
+                    </div>
+                    {doctor.patientInfo.notes && doctor.patientInfo.notes.map(n => (
+                      <p key={n} className="text-slate-600 border-t border-slate-200 pt-3 first:border-0 first:pt-0">{n}</p>
                     ))}
                   </div>
                 </div>
