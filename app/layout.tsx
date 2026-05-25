@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   },
   description: "Wysoko­specjalistyczne centrum medyczne dla pacjentów z chorobami serca i układu krążenia. Kardiologia dzieci i dorosłych, ablacja serca, diagnostyka, stomatologia — Lublin.",
   metadataBase: new URL("https://elkardia.pl"),
+  colorScheme: "light",
   openGraph: {
     siteName: "Elkardia — Lubelskie Centrum Kardiologii",
     locale: "pl_PL",

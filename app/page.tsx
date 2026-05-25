@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Phone, ArrowRight, CheckCircle, ChevronRight } from "lucide-react"
 import { SpecialtiesGrid } from "@/components/specialties-grid"
+import { ReviewsCarousel } from "@/components/reviews-carousel"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
@@ -65,7 +66,7 @@ export default function HomePage() {
               <span className="text-white">nie tylko kardiolodzy</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
-              Centrum kardiologii dorosłych i dziecięcej — z dostępem do neurologa, stomatologa, dietetyka i wielu innych specjalistów pod jednym dachem. W Lublinie, od 2014 roku.
+              Centrum kardiologii dorosłych i dzieci — z dostępem do neurologa, stomatologa, dietetyka i wielu innych specjalistów pod jednym dachem. W Lublinie, od 2014 roku.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="https://elkardia.pl/rejestracja-online-24h/">
@@ -307,7 +308,7 @@ export default function HomePage() {
           </div>
           <div className="overflow-hidden rounded-2xl border border-slate-200">
             <iframe
-              src="https://maps.google.com/maps?q=ul.+Rotmistrza+Witolda+Pileckiego+23%2F20+Lublin&output=embed&z=16"
+              src="https://maps.google.com/maps?cid=9985688829928667718&output=embed&z=17"
               width="100%"
               height="460"
               style={{ border: 0 }}
@@ -318,6 +319,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── REVIEWS ──────────────────────────────────────────────────── */}
+      <ReviewsCarousel />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="bg-[#0C71C3] py-14">

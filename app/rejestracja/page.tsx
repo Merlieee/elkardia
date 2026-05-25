@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Clock, ArrowRight, Globe } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -19,65 +17,62 @@ export default function RejestracjaPage() {
     <div>
 
       {/* ── HERO ── */}
-      <section className="relative h-64 overflow-hidden">
-        <Image src="/images/rejestracja.webp" alt="Rejestracja" fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
-        <div className="relative flex h-full items-center">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-            <Badge variant="secondary" className="mb-3">Kontakt</Badge>
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">Rejestracja i kontakt</h1>
-            <p className="mt-2 text-white/70">Online 24h/dobę · Telefon pon–pt 8:00–20:00</p>
+      <section className="relative h-[520px] overflow-hidden">
+        <Image src="/images/rejestracja.webp" alt="Rejestracja" fill className="object-cover object-[50%_40%]" priority />
+        <div className="absolute inset-0 bg-slate-950/65" />
+        <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-slate-950/85 to-transparent" />
+        <div className="relative flex h-full items-end pb-16">
+          <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+            <div className="max-w-xl">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">Kontakt</p>
+              <h1 className="text-4xl font-bold text-white sm:text-5xl">Rejestracja i kontakt</h1>
+              <p className="mt-4 text-base text-white/70 leading-relaxed">Zarejestruj się online przez całą dobę lub zadzwoń do nas w godzinach przyjęć. Nasz zespół chętnie pomoże dobrać odpowiedniego specjalistę.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── CONTACT CARDS ── */}
       <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Phone */}
-            <div className="rounded-2xl border bg-card p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 mb-4">
-                <Phone className="h-6 w-6 text-primary" />
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid gap-4 sm:grid-cols-3">
+            <a href="https://elkardia.pl/rejestracja-online-24h/" className="group flex flex-col gap-4 rounded-2xl bg-slate-50 p-7 transition-colors hover:bg-slate-100">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EE3920]/10 text-[#EE3920] transition-colors group-hover:bg-[#EE3920] group-hover:text-white">
+                <Globe className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-lg mb-3">Telefon</h3>
-              <div className="space-y-2 mb-5">
-                <a href="tel:+48815657075" className="block text-sm font-medium hover:text-primary transition-colors">+48 81 565 70 75</a>
-                <a href="tel:+48536102112" className="block text-sm font-medium hover:text-primary transition-colors">+48 536 102 112</a>
-                <p className="text-xs text-muted-foreground">Pon–Pt: 8:00–20:00</p>
+              <div>
+                <p className="font-semibold text-slate-900">Rejestracja online</p>
+                <p className="mt-1 text-sm text-slate-500">Dostępna 24h/dobę, 7 dni w tygodniu</p>
               </div>
-              <a href="tel:+48815657075">
-                <Button className="w-full gap-2"><Phone className="h-4 w-4" /> Zadzwoń teraz</Button>
-              </a>
-            </div>
+              <span className="mt-auto text-sm font-semibold text-[#EE3920] flex items-center gap-1">
+                Zarejestruj się <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </a>
 
-            {/* Email */}
-            <div className="rounded-2xl border bg-card p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 mb-4">
-                <Mail className="h-6 w-6 text-primary" />
+            <a href="tel:+48815657075" className="group flex flex-col gap-4 rounded-2xl bg-slate-50 p-7 transition-colors hover:bg-slate-100">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EE3920]/10 text-[#EE3920] transition-colors group-hover:bg-[#EE3920] group-hover:text-white">
+                <Phone className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-lg mb-3">E-mail</h3>
-              <a href="mailto:rejestracja@elkardia.pl" className="block text-sm font-medium hover:text-primary transition-colors mb-5">
-                rejestracja@elkardia.pl
-              </a>
-              <a href="mailto:rejestracja@elkardia.pl">
-                <Button variant="outline" className="w-full gap-2"><Mail className="h-4 w-4" /> Napisz do nas</Button>
-              </a>
-            </div>
+              <div>
+                <p className="font-semibold text-slate-900">Telefon</p>
+                <p className="mt-1 text-sm text-slate-500">Pon–Pt: 8:00–20:00</p>
+              </div>
+              <div className="mt-auto space-y-0.5">
+                <p className="text-sm font-semibold text-slate-900">+48 81 565 70 75</p>
+                <p className="text-sm text-slate-500">+48 536 102 112</p>
+              </div>
+            </a>
 
-            {/* Online */}
-            <div className="rounded-2xl border-2 border-primary/30 bg-primary/5 p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 mb-4">
-                <Globe className="h-6 w-6 text-primary" />
+            <a href="mailto:rejestracja@elkardia.pl" className="group flex flex-col gap-4 rounded-2xl bg-slate-50 p-7 transition-colors hover:bg-slate-100">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EE3920]/10 text-[#EE3920] transition-colors group-hover:bg-[#EE3920] group-hover:text-white">
+                <Mail className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-lg mb-3">Rejestracja online</h3>
-              <p className="text-sm text-muted-foreground mb-5">
-                System online dostępny <strong>24 godziny</strong> na dobę, 7 dni w tygodniu.
-              </p>
-              <Button className="w-full gap-2">
-                Zarejestruj się online <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
+              <div>
+                <p className="font-semibold text-slate-900">E-mail</p>
+                <p className="mt-1 text-sm text-slate-500">Odpowiadamy w ciągu 24h</p>
+              </div>
+              <span className="mt-auto text-sm font-semibold text-slate-900">rejestracja@elkardia.pl</span>
+            </a>
           </div>
         </div>
       </section>
@@ -98,7 +93,7 @@ export default function RejestracjaPage() {
               </div>
               <div className="mt-4 aspect-video w-full overflow-hidden rounded-xl border bg-muted">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.3!2d22.5!3d51.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDE1JzAwLjAiTiAyMsKwMzAnMDAuMCJF!5e0!3m2!1spl!2spl!4v1620000000000!5m2!1spl!2spl"
+                  src="https://maps.google.com/maps?cid=9985688829928667718&output=embed&z=17"
                   width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" title="Lokalizacja"
                 />
               </div>
@@ -115,9 +110,9 @@ export default function RejestracjaPage() {
                   { day: "Sobota", hours: "Nieczynne", open: false },
                   { day: "Niedziela", hours: "Nieczynne", open: false },
                 ].map((r, i) => (
-                  <div key={r.day} className={`flex justify-between px-5 py-3.5 text-sm ${i < 6 ? "border-b" : ""} ${!r.open ? "text-muted-foreground" : ""}`}>
+                  <div key={r.day} className={`flex justify-between px-5 py-3.5 text-sm ${i < 6 ? "border-b" : ""}`}>
                     <span className="font-medium">{r.day}</span>
-                    <span className={r.open ? "text-primary font-medium" : ""}>{r.hours}</span>
+                    <span className={r.open ? "font-medium text-slate-900" : "text-[#EE3920]/60 font-medium"}>{r.hours}</span>
                   </div>
                 ))}
               </div>
