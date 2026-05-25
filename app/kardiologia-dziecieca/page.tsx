@@ -15,6 +15,7 @@ function initials(name: string) {
 export const metadata: Metadata = {
   title: "Kardiologia dziecięca — Elkardia Lublin",
   description: "Specjalistyczna opieka kardiologiczna dla dzieci i młodzieży w Lublinie. Echokardiografia dziecięca, Holter EKG, diagnostyka wad serca u dzieci.",
+  openGraph: { images: [{ url: "/images/spec-4.webp" }] },
 }
 
 const conditions = [
@@ -120,7 +121,10 @@ const echoContent = (
           Echo serca dziecka – na czym polega badanie?
         </h2>
         <p className="mb-4 text-base leading-relaxed text-slate-600">
-          Echokardiografia (USG serca) to podstawowe badanie diagnostyczne w kardiologii dziecięcej. Przy użyciu fal ultradźwiękowych lekarz ocenia w czasie rzeczywistym budowę i funkcję serca — u dzieci w każdym wieku, od noworodków po nastolatków. W Elkardii badanie wykonujemy aparatem <strong className="text-slate-800">Philips Affiniti 50</strong> — jednym z najnowszych i najdokładniejszych systemów echokardiograficznych dostępnych na rynku, który zapewnia szczegółowe obrazowanie nawet u najmłodszych pacjentów. Wynik omawia się bezpośrednio po badaniu, bez konieczności oczekiwania.
+          Echokardiografia (USG serca) to podstawowe badanie diagnostyczne w kardiologii dziecięcej. Przy użyciu fal ultradźwiękowych lekarz ocenia w czasie rzeczywistym budowę i funkcję serca — u dzieci w każdym wieku, od noworodków po nastolatków. W Elkardii diagnostykę wykonujemy najnowszym aparatem <strong className="text-slate-800">Philips Affiniti 50</strong> — jednym z najdokładniejszych systemów echokardiograficznych dostępnych na rynku, który zapewnia szczegółowe obrazowanie nawet u najmłodszych pacjentów. Wynik omawia się bezpośrednio po badaniu, bez konieczności oczekiwania.
+        </p>
+        <p className="mb-4 text-base leading-relaxed text-slate-600">
+          Dysponujemy pełnym zestawem głowic echokardiograficznych — dwiema dedykowanymi głowicami pediatrycznymi oraz głowicą dla starszych i większych dzieci. Dzięki temu jesteśmy w stanie precyzyjnie zbadać każde dziecko: od noworodka i wcześniaka po osiemnastolatka.
         </p>
         <p className="text-base leading-relaxed text-slate-600">
           Badanie pozwala wykrywać wrodzone i nabyte choroby serca, monitorować rozwój układu krążenia oraz kontrolować efekty leczenia. Jest całkowicie bezpieczne, bezbolesne i nie wymaga promieniowania rentgenowskiego.
@@ -248,7 +252,7 @@ const echoContent = (
           <div className="mb-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#EE3920]/10 text-xs font-bold text-[#EE3920]">2</div>
           <h4 className="mb-3 font-semibold text-slate-900">W trakcie badania</h4>
           <p className="text-sm leading-relaxed text-slate-600">
-            Dziecko leży na leżance, a lekarz przykłada do klatki piersiowej specjalną głowicę ultrasonograficzną pokrytą żelem. Na monitorze widoczny jest obraz serca w czasie rzeczywistym. Badanie trwa zazwyczaj od 15 do 30 minut.
+            Dziecko leży na leżance, a lekarz przykłada do klatki piersiowej specjalną głowicę ultrasonograficzną pokrytą żelem. Stosujemy <strong className="text-slate-700">podgrzewacz żelu</strong> — żel ma temperaturę zbliżoną do ciała, dzięki czemu dziecko nie odczuwa zimna na początku badania. Na monitorze widoczny jest obraz serca w czasie rzeczywistym. Badanie trwa zazwyczaj od 15 do 30 minut.
           </p>
         </div>
 

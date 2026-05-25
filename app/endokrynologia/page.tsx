@@ -5,6 +5,7 @@ import { SpecialtyPage } from "@/components/specialty-page"
 export const metadata: Metadata = {
   title: "Endokrynologia — Elkardia Lublin",
   description: "Diagnostyka i leczenie chorób gruczołów wydzielania wewnętrznego w Lublinie. Tarczyca, nadnercza, przysadka, osteoporoza.",
+  openGraph: { images: [{ url: "/images/endokrynologia.webp" }] },
 }
 
 const conditions = [
@@ -24,7 +25,7 @@ export default function Page() {
       title="Endokrynologia"
       label="Specjalność"
       description="Diagnostyka i leczenie zaburzeń hormonalnych i chorób gruczołów wydzielania wewnętrznego."
-      heroImage="/images/spec-7.webp"
+      heroImage="/images/endokrynologia.webp"
       conditions={conditions}
       doctors={doctors.filter(d => d.group === "Endokrynologia i diabetologia")}
     />

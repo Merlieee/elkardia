@@ -5,6 +5,7 @@ import { SpecialtyPage } from "@/components/specialty-page"
 export const metadata: Metadata = {
   title: "Pulmonologia — Elkardia Lublin",
   description: "Diagnostyka i leczenie chorób płuc i układu oddechowego w Lublinie. Spirometria, diagnostyka POChP, astmy i bezdechu sennego.",
+  openGraph: { images: [{ url: "/images/spec-2.webp" }] },
 }
 
 const conditions = [

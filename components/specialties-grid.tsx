@@ -18,7 +18,6 @@ const specialties = [
   { icon: Filter,        label: "Nefrologia",                    desc: "Choroby nerek i leczenie nerkozastępcze.",                                                 href: "/nefrologia" },
   { icon: Apple,         label: "Dietetyka kliniczna",           desc: "Analiza składu ciała i indywidualny plan żywienia.",                                       href: "/dietetycy" },
   { icon: Activity,      label: "Balneologia",                   desc: "Leczenie uzdrowiskowe i rehabilitacja kardiologiczna.",                                    href: "/balneologia" },
-  { icon: ScanLine,      label: "Radiologia — USG",              desc: "Badania ultrasonograficzne i diagnostyka obrazowa.",                                       href: "/badania" },
   { icon: Smile,         label: "Stomatologia i protetyka",      desc: "Pełna stomatologia z obserwacją kardiologiczną — jedyne takie miejsce w Lublinie.",        href: "/stomatologia" },
 ]
 

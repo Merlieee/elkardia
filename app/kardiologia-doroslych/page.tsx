@@ -5,6 +5,7 @@ import { SpecialtyPage } from "@/components/specialty-page"
 export const metadata: Metadata = {
   title: "Kardiologia dorosłych — Elkardia Lublin",
   description: "Konsultacje kardiologiczne dla dorosłych w Lublinie. Elektrofizjolodzy, echokardiografia, Holter EKG, próba wysiłkowa — ponad 15 kardiologów pod jednym dachem.",
+  openGraph: { images: [{ url: "/images/kardiologia-lublin.webp" }] },
 }
 
 const conditions = [

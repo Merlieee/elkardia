@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     title: "Dietetycy kliniczni — Elkardia Lublin",
     description: "Indywidualny plan żywienia, analiza składu ciała, dieta przy chorobach serca i cukrzycy. Umów konsultację online 24h.",
     url: "https://elkardia.pl/dietetycy",
+    images: [{ url: "/images/dietetyka-kliniczna.webp" }],
   },
 }
 
@@ -31,7 +32,8 @@ export default function Page() {
       title="Dietetyka kliniczna"
       label="Specjalność"
       description="Indywidualny plan żywienia, analiza składu ciała i diety terapeutyczne — bez suplementów, bez leków."
-      heroImage="/images/dietetyk.webp"
+      heroImage="/images/dietetyka-kliniczna.webp"
+      heroPosition="center_110%"
       conditions={conditions}
       doctors={doctors.filter(d => d.group === "Dietetyka")}
     />

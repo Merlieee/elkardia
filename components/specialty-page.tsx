@@ -14,20 +14,21 @@ type Props = {
   title: string
   label: string
   description: string
-  heroImage: string
+  heroImage?: string
+  heroPosition?: string
   conditions?: string[]
   doctors: Doctor[]
   extraContent?: React.ReactNode
   heroExtra?: React.ReactNode
 }
 
-export function SpecialtyPage({ title, label, description, heroImage, conditions, doctors, extraContent, heroExtra }: Props) {
+export function SpecialtyPage({ title, label, description, heroImage, heroPosition = "center_30%", conditions, doctors, extraContent, heroExtra }: Props) {
   return (
     <div>
 
       {/* ── HERO ── */}
       <section className="relative h-[520px] overflow-hidden">
-        <Image src={heroImage} alt={title} fill className="object-cover object-[center_30%]" priority />
+        {heroImage && <Image src={heroImage} alt={title} fill className={`object-cover object-[${heroPosition}]`} priority />}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-transparent" />
         <div className="relative flex h-full items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">

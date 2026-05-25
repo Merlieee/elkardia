@@ -5,6 +5,7 @@ import { SpecialtyPage } from "@/components/specialty-page"
 export const metadata: Metadata = {
   title: "Nefrologia — Elkardia Lublin",
   description: "Diagnostyka i leczenie chorób nerek i układu moczowego w Lublinie. Nefrologia dziecięca i dorosłych.",
+  openGraph: { images: [{ url: "/images/nefrologia.webp" }] },
 }
 
 const conditions = [
@@ -23,7 +24,7 @@ export default function Page() {
       title="Nefrologia"
       label="Specjalność"
       description="Diagnostyka i leczenie chorób nerek i układu moczowego u dzieci i dorosłych."
-      heroImage="/images/spec-9.webp"
+      heroImage="/images/nefrologia.webp"
       conditions={conditions}
       doctors={doctors.filter(d =>
         d.tags.some(t => t.toLowerCase().includes("nefrol")) ||

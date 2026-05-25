@@ -5,6 +5,7 @@ import { SpecialtyPage } from "@/components/specialty-page"
 export const metadata: Metadata = {
   title: "Chirurgia naczyniowa — Elkardia Lublin",
   description: "Diagnostyka i leczenie chorób naczyń krwionośnych w Lublinie. USG Doppler, żylaki, zakrzepica, choroby tętnic obwodowych.",
+  openGraph: { images: [{ url: "/images/chirurgia-naczyniowa.webp" }] },
 }
 
 const conditions = [
@@ -23,7 +24,8 @@ export default function Page() {
       title="Chirurgia naczyniowa"
       label="Specjalność"
       description="Nieinwazyjna diagnostyka i leczenie chorób żył, tętnic i naczyń limfatycznych."
-      heroImage="/images/spec-6.webp"
+      heroImage="/images/chirurgia-naczyniowa.webp"
+      heroPosition="center_60%"
       conditions={conditions}
       doctors={doctors.filter(d => d.group === "Chirurgia naczyniowa")}
     />

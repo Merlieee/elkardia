@@ -19,7 +19,6 @@ const specjalnosciItems = [
   { href: "/nefrologia", label: "Nefrologia" },
   { href: "/dietetycy", label: "Dietetyka kliniczna" },
   { href: "/balneologia", label: "Balneologia" },
-  { href: "/badania", label: "Radiologia — USG" },
   { href: "/stomatologia", label: "Stomatologia i protetyka" },
 ]
 
@@ -55,8 +54,8 @@ const links: NavLink[] = [
   { href: "/lekarze", label: "Lekarze" },
   { href: "/ablacja-serca", label: "Ablacje Serca" },
   { href: "/kardiologia-dziecieca", label: "Kardiologia Dziecięca" },
+  { href: "/badania", label: "Badania" },
   { href: "/specjalnosci", label: "Specjalności", items: specjalnosciItems },
-  { href: "/poradnie", label: "Poradnie", items: poradnieItems },
   { href: "/rejestracja", label: "Rejestracja 24h" },
 ]
 

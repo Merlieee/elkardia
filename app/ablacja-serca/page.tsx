@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Ablacja serca — kwalifikacja i opieka | Elkardia Lublin",
     description: "Diagnoza zaburzeń rytmu serca, kwalifikacja do ablacji RF i PFA, opieka przed i po zabiegu. Elektrofizjolodzy w Lublinie.",
     url: "https://elkardia.pl/ablacja-serca",
+    images: [{ url: "/images/hero-ablacja.webp" }],
   },
 }
 
@@ -81,7 +82,7 @@ export default function AblacjaPage() {
       <section className="bg-muted/30 pb-20 pt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Dlaczego warto nam zaufać</p>
-          <h2 className="mt-3 text-2xl font-bold">Elektrofizjolodzy z najwyższymi kwalifikacjami w Polsce</h2>
+          <h2 className="mt-3 text-3xl font-bold">Elektrofizjolodzy z najwyższymi kwalifikacjami w Polsce</h2>
           <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
             Ablacja serca to zabieg wymagający wyjątkowej precyzji i doświadczenia. Nasi lekarze wykonują go od ponad 10 lat — zarówno w prostych, jak i najbardziej złożonych przypadkach.
           </p>
@@ -124,7 +125,7 @@ export default function AblacjaPage() {
       {/* ── TWO METHOD CARDS with real diagrams ── */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-8">Metody ablacji</h2>
+          <h2 className="text-3xl font-bold mb-8">Metody ablacji</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {[
               {
@@ -164,7 +165,7 @@ export default function AblacjaPage() {
       {/* ── ARRHYTHMIA GALLERY ── */}
       <section className="bg-muted/30 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-3">Leczone arytmie</h2>
+          <h2 className="text-3xl font-bold mb-3">Leczone arytmie</h2>
           <p className="text-muted-foreground mb-8">Wizualizacje elektrofizjologiczne z rzeczywistych zabiegów wykonywanych w centrum</p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {arrhythmias.map((a) => (

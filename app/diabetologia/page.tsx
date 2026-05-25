@@ -5,6 +5,7 @@ import { SpecialtyPage } from "@/components/specialty-page"
 export const metadata: Metadata = {
   title: "Diabetologia — Elkardia Lublin",
   description: "Leczenie cukrzycy i zaburzeń metabolicznych w Lublinie. Diabetologia dla dorosłych i dzieci.",
+  openGraph: { images: [{ url: "/images/spec-7.webp" }] },
 }
 
 const conditions = [
@@ -23,7 +24,8 @@ export default function Page() {
       title="Diabetologia"
       label="Specjalność"
       description="Leczenie cukrzycy i zaburzeń metabolicznych u dorosłych i dzieci."
-      heroImage="/images/spec-8.webp"
+      heroImage="/images/spec-7.webp"
+      heroPosition="center_45%"
       conditions={conditions}
       doctors={doctors.filter(d => d.group === "Endokrynologia i diabetologia")}
     />

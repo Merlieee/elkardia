@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Badania diagnostyczne — Elkardia Lublin",
     description: "EKG, echo serca, Holter EKG i ciśnieniowy, tilt-test, USG Doppler. Wyniki tego samego dnia. Holter dostępny kurierem.",
     url: "https://elkardia.pl/badania",
+    images: [{ url: "/images/kardiologia-2.webp" }],
   },
 }
 

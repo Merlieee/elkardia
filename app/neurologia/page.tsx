@@ -5,6 +5,7 @@ import { SpecialtyPage } from "@/components/specialty-page"
 export const metadata: Metadata = {
   title: "Neurologia — Elkardia Lublin",
   description: "Diagnostyka i leczenie chorób układu nerwowego w Lublinie. Konsultacje neurologiczne, diagnostyka omdleń, udaru, padaczki i migreny.",
+  openGraph: { images: [{ url: "/images/spec-8.webp" }] },
 }
 
 const conditions = [
@@ -22,11 +23,11 @@ const conditions = [
 export default function Page() {
   return (
     <SpecialtyPage
+      heroImage="/images/spec-8.webp"
       title="Neurologia"
       label="Specjalność"
       description="Diagnostyka i leczenie chorób centralnego i obwodowego układu nerwowego."
-      heroImage="/images/spec-4.webp"
-      conditions={conditions}
+conditions={conditions}
       doctors={doctors.filter(d => d.group === "Neurologia")}
     />
   )

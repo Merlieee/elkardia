@@ -5,6 +5,7 @@ import { SpecialtyPage } from "@/components/specialty-page"
 export const metadata: Metadata = {
   title: "Balneologia — Elkardia Lublin",
   description: "Leczenie uzdrowiskowe i rehabilitacja kardiologiczna w Lublinie. Kwalifikacja do leczenia uzdrowiskowego.",
+  openGraph: { images: [{ url: "/images/spec-2.webp" }] },
 }
 
 const conditions = [
@@ -22,7 +23,8 @@ export default function Page() {
       title="Balneologia"
       label="Specjalność"
       description="Leczenie uzdrowiskowe i rehabilitacja kardiologiczna — medycyna fizykalna i kwalifikacja do sanatorium."
-      heroImage="/images/hero-2.webp"
+      heroImage="/images/spec-2.webp"
+      heroPosition="center_100%"
       conditions={conditions}
       doctors={doctors.filter(d => d.tags.some(t => t.toLowerCase().includes("balneolog")))}
     />
