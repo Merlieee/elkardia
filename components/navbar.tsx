@@ -3,17 +3,116 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, Phone } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Menu, Phone, ChevronDown } from "lucide-react"
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 
-const links = [
+const specjalnosciItems = [
+  { href: "/kardiologia-doroslych", label: "Kardiologia dorosłych" },
+  { href: "/hipertensjologia", label: "Hipertensjologia" },
+  { href: "/kardiochirurgia", label: "Kardiochirurgia" },
+  { href: "/pulmonologia", label: "Pulmonologia" },
+  { href: "/neurologia", label: "Neurologia" },
+  { href: "/neurochirurgia", label: "Neurochirurgia" },
+  { href: "/chirurgia-naczyniowa", label: "Chirurgia naczyniowa" },
+  { href: "/endokrynologia", label: "Endokrynologia" },
+  { href: "/diabetologia", label: "Diabetologia" },
+  { href: "/nefrologia", label: "Nefrologia" },
+  { href: "/dietetycy", label: "Dietetyka kliniczna" },
+  { href: "/balneologia", label: "Balneologia" },
+  { href: "/badania", label: "Radiologia — USG" },
+  { href: "/stomatologia", label: "Stomatologia i protetyka" },
+]
+
+const poradnieItems = [
+  { href: "/kardiologia-doroslych", label: "Poradnia Kardiologiczna ogólna" },
+  { href: "/kardiologia-dziecieca", label: "Poradnia Kardiologii Dziecięcej" },
+  { href: "/ablacja-serca", label: "Poradnia Zaburzeń Rytmu Serca" },
+  { href: "/kardiologia-doroslych", label: "Poradnia Hemodynamiczna" },
+  { href: "/hipertensjologia", label: "Poradnia Nadciśnienia Tętniczego" },
+  { href: "/kardiologia-doroslych", label: "Poradnia Wad Serca" },
+  { href: "/kardiologia-doroslych", label: "Poradnia Kontroli Stymulatorów" },
+  { href: "/kardiologia-doroslych", label: "Poradnia Kontroli Kardiowerterów" },
+  { href: "/neurologia", label: "Poradnia Neurologiczna" },
+  { href: "/neurochirurgia", label: "Poradnia Neurochirurgiczna" },
+  { href: "/chirurgia-naczyniowa", label: "Poradnia Chirurgii Naczyniowej" },
+  { href: "/kardiochirurgia", label: "Poradnia Kardiochirurgiczna" },
+  { href: "/pulmonologia", label: "Poradnia Pulmonologiczna" },
+  { href: "/diabetologia", label: "Poradnia Diabetologiczna" },
+  { href: "/endokrynologia", label: "Poradnia Endokrynologiczna" },
+  { href: "/nefrologia", label: "Poradnia Nefrologiczna" },
+  { href: "/balneologia", label: "Poradnia Balneologiczna" },
+  { href: "/badania", label: "Poradnia Radiologiczna" },
+  { href: "/dietetycy", label: "Poradnia Żywieniowa (Dietetyczna)" },
+  { href: "/stomatologia", label: "Poradnia Stomatologiczna" },
+]
+
+type DropdownItem = { href: string; label: string }
+type NavLink =
+  | { href: string; label: string; items?: undefined }
+  | { href: string; label: string; items: DropdownItem[] }
+
+const links: NavLink[] = [
   { href: "/lekarze", label: "Lekarze" },
-  { href: "/ablacja-serca", label: "Ablacja Serca" },
-  { href: "/stomatologia", label: "Stomatologia" },
-  { href: "/dietetycy", label: "Dietetycy" },
-  { href: "/badania", label: "Badania" },
+  { href: "/ablacja-serca", label: "Ablacje Serca" },
+  { href: "/kardiologia-dziecieca", label: "Kardiologia Dziecięca" },
+  { href: "/specjalnosci", label: "Specjalności", items: specjalnosciItems },
+  { href: "/poradnie", label: "Poradnie", items: poradnieItems },
   { href: "/rejestracja", label: "Rejestracja 24h" },
 ]
+
+function DropdownNavItem({ link }: { link: NavLink & { items: DropdownItem[] } }) {
+  return (
+    <div className="group relative">
+      <button className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">
+        {link.label}
+        <ChevronDown className="h-3.5 w-3.5 text-slate-400 transition-transform duration-150 group-hover:rotate-180" />
+      </button>
+
+      <div className="pointer-events-none absolute left-0 top-full z-50 min-w-[220px] pt-1 opacity-0 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100">
+        <div className="max-h-[33rem] overflow-y-auto rounded-xl border border-slate-200 bg-white py-1.5 shadow-lg">
+        {link.items.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            className="block px-4 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+          >
+            {item.label}
+          </Link>
+        ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MobileAccordion({ link, onClose }: { link: NavLink & { items: DropdownItem[] }; onClose: () => void }) {
+  const [expanded, setExpanded] = useState(false)
+  return (
+    <div>
+      <button
+        onClick={() => setExpanded((v) => !v)}
+        className="flex w-full items-center justify-between rounded-md px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+      >
+        {link.label}
+        <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform duration-150 ${expanded ? "rotate-180" : ""}`} />
+      </button>
+      {expanded && (
+        <div className="ml-3 flex flex-col border-l border-slate-100">
+          {link.items.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              onClick={onClose}
+              className="px-4 py-2.5 text-sm text-slate-600 hover:text-slate-900"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -41,12 +140,16 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) =>
+            link.items ? (
+              <DropdownNavItem key={link.href} link={link} />
+            ) : (
+              <Link key={link.href} href={link.href}
+                className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -63,19 +166,24 @@ export function Navbar() {
                 <Menu className="h-4 w-4" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-72 bg-white p-6">
+            <SheetContent side="right" className="w-[85vw] max-w-sm bg-white p-6">
+              <SheetTitle className="sr-only">Menu nawigacyjne</SheetTitle>
               <div className="mb-8">
                 <Link href="/" onClick={() => setOpen(false)}>
                   <Image src="/images/logo.png" alt="Elkardia" width={110} height={30} className="h-7 w-auto" />
                 </Link>
               </div>
               <nav className="flex flex-col gap-1">
-                {links.map((link) => (
-                  <Link key={link.href} href={link.href} onClick={() => setOpen(false)}
-                    className="rounded-md px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">
-                    {link.label}
-                  </Link>
-                ))}
+                {links.map((link) =>
+                  link.items ? (
+                    <MobileAccordion key={link.href} link={link} onClose={() => setOpen(false)} />
+                  ) : (
+                    <Link key={link.href} href={link.href} onClick={() => setOpen(false)}
+                      className="rounded-md px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">
+                      {link.label}
+                    </Link>
+                  )
+                )}
               </nav>
               <div className="mt-8 space-y-2">
                 <a href="tel:+48815657075">
