@@ -1,7 +1,7 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Phone, Mail, MapPin, Clock, Star } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
+import { ElkardiaLogo } from "@/components/logos"
 
 function FacebookIcon() {
   return (
@@ -26,7 +26,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-6">
             <Link href="/">
-              <Image src="/images/elkardia-logo-SVG.svg" alt="Elkardia" width={1215} height={339} className="h-8 w-auto" unoptimized />
+              <ElkardiaLogo className="h-8 w-auto" />
             </Link>
             <p className="text-pretty text-sm text-muted-foreground leading-relaxed">
               Lubelskie Centrum Kardiologii — wysoko­specjalistyczna opieka nad sercem dla dzieci i dorosłych. Działamy nieprzerwanie od 2014 roku.

@@ -5,6 +5,7 @@ import { Phone, ArrowRight, CheckCircle, ChevronRight } from "lucide-react"
 import { SpecialtiesGrid } from "@/components/specialties-grid"
 import { ReviewsCarousel } from "@/components/reviews-carousel"
 import { Button } from "@/components/ui/button"
+import { DoktorEkgLogo } from "@/components/logos"
 
 export const metadata: Metadata = {
   title: { absolute: "Elkardia — Lubelskie Centrum Kardiologii w Lublinie" },
@@ -298,7 +299,7 @@ export default function HomePage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col items-center gap-8 text-center">
-            <Image src="/images/doktorekg-logo-SVG.svg" alt="doktorEKG" width={1491} height={336} className="h-12 w-auto" unoptimized />
+            <DoktorEkgLogo className="h-12 w-auto" />
             <div className="max-w-2xl">
               <h2 className="text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 Kardiologia online w całej Polsce

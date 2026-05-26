@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { Menu, Phone, ChevronDown } from "lucide-react"
+import { ElkardiaLogo } from "@/components/logos"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 
 const specjalnosciItems = [
@@ -140,7 +140,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
 
         <Link href="/">
-          <Image src="/images/elkardia-logo-SVG.svg" alt="Elkardia" width={1215} height={339} className="h-7 w-auto" unoptimized />
+          <ElkardiaLogo className="h-7 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -179,7 +179,7 @@ export function Navbar() {
               <SheetTitle className="sr-only">Menu nawigacyjne</SheetTitle>
               <div className="mb-8">
                 <Link href="/" onClick={() => setOpen(false)}>
-                  <Image src="/images/elkardia-logo-SVG.svg" alt="Elkardia" width={1215} height={339} className="h-7 w-auto" unoptimized />
+                  <ElkardiaLogo className="h-7 w-auto" />
                 </Link>
               </div>
               <nav className="flex flex-col gap-1">
