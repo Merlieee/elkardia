@@ -109,7 +109,7 @@ export default function BadaniaPage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col items-center gap-8 text-center">
-            <Image src="/images/doktorekg-logo.svg" alt="doktorEKG" width={1299} height={295} className="h-12 w-auto" unoptimized />
+            <Image src="/images/doktorekg-logo-SVG.svg" alt="doktorEKG" width={1491} height={336} className="h-12 w-auto" unoptimized />
             <div className="max-w-2xl">
               <h2 className="text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 Badania w domu pacjenta

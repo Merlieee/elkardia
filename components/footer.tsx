@@ -26,7 +26,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-6">
             <Link href="/">
-              <Image src="/images/elkardia-logo.svg" alt="Elkardia" width={766} height={213} className="h-8 w-auto" unoptimized />
+              <Image src="/images/elkardia-logo-SVG.svg" alt="Elkardia" width={1215} height={339} className="h-8 w-auto" unoptimized />
             </Link>
             <p className="text-pretty text-sm text-muted-foreground leading-relaxed">
               Lubelskie Centrum Kardiologii — wysoko­specjalistyczna opieka nad sercem dla dzieci i dorosłych. Działamy nieprzerwanie od 2014 roku.

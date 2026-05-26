@@ -41,7 +41,7 @@ const jsonLd = {
       "@id": "https://elkardia.pl/#organization",
       name: "Elkardia | Lubelskie Centrum Kardiologii",
       url: "https://elkardia.pl",
-      logo: "https://elkardia.pl/images/logo.webp",
+      logo: "https://elkardia.pl/images/logo.png",
       telephone: "+48815657075",
       email: "rejestracja@elkardia.pl",
       sameAs: [
