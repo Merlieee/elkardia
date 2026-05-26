@@ -3,7 +3,8 @@ import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
 
 export const metadata: Metadata = {
-  title: "Kardiochirurgia — Elkardia Lublin",
+  title: "Kardiochirurgia",
+  alternates: { canonical: "/kardiochirurgia" },
   description: "Konsultacje kardiochirurgiczne i opieka pooperacyjna w Lublinie. Kwalifikacja do operacji serca, bypassów, zastawek i tętniaków aorty.",
   openGraph: { images: [{ url: "/images/spec-1.webp" }] },
 }

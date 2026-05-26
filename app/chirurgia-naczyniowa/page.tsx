@@ -3,7 +3,8 @@ import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
 
 export const metadata: Metadata = {
-  title: "Chirurgia naczyniowa — Elkardia Lublin",
+  title: "Chirurgia naczyniowa",
+  alternates: { canonical: "/chirurgia-naczyniowa" },
   description: "Diagnostyka i leczenie chorób naczyń krwionośnych w Lublinie. USG Doppler, żylaki, zakrzepica, choroby tętnic obwodowych.",
   openGraph: { images: [{ url: "/images/chirurgia-naczyniowa.webp" }] },
 }

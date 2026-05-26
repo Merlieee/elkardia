@@ -4,8 +4,10 @@ import { Phone, Mail, MapPin, Clock, ArrowRight, Globe } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Rejestracja — umów wizytę online 24h",
+  alternates: { canonical: "/rejestracja" },
   description: "Zarejestruj się do lekarza specjalisty w Elkardia Lublin — online 24h lub telefonicznie pon–pt 8:00–20:00. Tel. (81) 565 70 75, ul. Pileckiego 23/20.",
   openGraph: {
+    images: [{ url: "/images/og-default-logo.png", width: 1200, height: 630, alt: "Elkardia — Lubelskie Centrum Kardiologii" }],
     title: "Rejestracja — Elkardia Lublin",
     description: "Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00. Szybki dostęp do kardiologów i specjalistów.",
     url: "https://elkardia.pl/rejestracja",
@@ -24,9 +26,9 @@ export default function RejestracjaPage() {
         <div className="relative flex h-full items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <div className="max-w-xl">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">Kontakt</p>
-              <h1 className="text-4xl font-bold text-white sm:text-5xl">Rejestracja i kontakt</h1>
-              <p className="mt-4 text-base text-white/70 leading-relaxed">Zarejestruj się online przez całą dobę lub zadzwoń do nas w godzinach przyjęć. Nasz zespół chętnie pomoże dobrać odpowiedniego specjalistę.</p>
+              <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">Kontakt</p>
+              <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">Rejestracja i kontakt</h1>
+              <p className="text-pretty mt-4 text-base text-white/70 leading-relaxed">Zarejestruj się online przez całą dobę lub zadzwoń do nas w godzinach przyjęć. Nasz zespół chętnie pomoże dobrać odpowiedniego specjalistę.</p>
             </div>
           </div>
         </div>
@@ -41,8 +43,8 @@ export default function RejestracjaPage() {
                 <Globe className="h-5 w-5" />
               </div>
               <div>
-                <p className="font-semibold text-slate-900">Rejestracja online</p>
-                <p className="mt-1 text-sm text-slate-500">Dostępna 24h/dobę, 7 dni w tygodniu</p>
+                <p className="text-pretty font-semibold text-slate-900">Rejestracja online</p>
+                <p className="text-pretty mt-1 text-sm text-slate-500">Dostępna 24h/dobę, 7 dni w tygodniu</p>
               </div>
               <span className="mt-auto text-sm font-semibold text-[#EE3920] flex items-center gap-1">
                 Zarejestruj się <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -54,12 +56,12 @@ export default function RejestracjaPage() {
                 <Phone className="h-5 w-5" />
               </div>
               <div>
-                <p className="font-semibold text-slate-900">Telefon</p>
-                <p className="mt-1 text-sm text-slate-500">Pon–Pt: 8:00–20:00</p>
+                <p className="text-pretty font-semibold text-slate-900">Telefon</p>
+                <p className="text-pretty mt-1 text-sm text-slate-500">Pon–Pt: 8:00–20:00</p>
               </div>
               <div className="mt-auto space-y-0.5">
-                <p className="text-sm font-semibold text-slate-900">+48 81 565 70 75</p>
-                <p className="text-sm text-slate-500">+48 536 102 112</p>
+                <p className="text-pretty text-sm font-semibold text-slate-900">+48 81 565 70 75</p>
+                <p className="text-pretty text-sm text-slate-500">+48 536 102 112</p>
               </div>
             </a>
 
@@ -68,8 +70,8 @@ export default function RejestracjaPage() {
                 <Mail className="h-5 w-5" />
               </div>
               <div>
-                <p className="font-semibold text-slate-900">E-mail</p>
-                <p className="mt-1 text-sm text-slate-500">Odpowiadamy w ciągu 24h</p>
+                <p className="text-pretty font-semibold text-slate-900">E-mail</p>
+                <p className="text-pretty mt-1 text-sm text-slate-500">Odpowiadamy w ciągu 24h</p>
               </div>
               <span className="mt-auto text-sm font-semibold text-slate-900">rejestracja@elkardia.pl</span>
             </a>
@@ -82,13 +84,13 @@ export default function RejestracjaPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="text-2xl font-bold mb-6">Lokalizacja</h2>
+              <h2 className="text-balance text-2xl font-bold mb-6">Lokalizacja</h2>
               <div className="flex items-start gap-3 mb-4">
                 <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-medium">Elkardia Sp. z o.o.</p>
-                  <p className="text-sm text-muted-foreground">ul. R. W. Pileckiego 23/20, 20-091 Lublin</p>
-                  <p className="text-sm text-muted-foreground mt-1">Prywatny parking dla pacjentów</p>
+                  <p className="text-pretty font-medium">Elkardia Sp. z o.o.</p>
+                  <p className="text-pretty text-sm text-muted-foreground">ul. R. W. Pileckiego 23/20, 20-091 Lublin</p>
+                  <p className="text-pretty text-sm text-muted-foreground mt-1">Prywatny parking dla pacjentów</p>
                 </div>
               </div>
               <div className="mt-4 aspect-video w-full overflow-hidden rounded-xl border bg-muted">
@@ -99,7 +101,7 @@ export default function RejestracjaPage() {
               </div>
             </div>
             <div>
-              <h2 className="text-2xl font-bold mb-6">Godziny przyjęć</h2>
+              <h2 className="text-balance text-2xl font-bold mb-6">Godziny przyjęć</h2>
               <div className="rounded-xl border bg-card overflow-hidden mb-4">
                 {[
                   { day: "Poniedziałek", hours: "8:00 – 20:00", open: true },
@@ -118,7 +120,7 @@ export default function RejestracjaPage() {
               </div>
               <div className="flex items-center gap-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 p-4">
                 <Clock className="h-5 w-5 text-emerald-600 shrink-0" />
-                <p className="text-sm text-emerald-700 dark:text-emerald-400">
+                <p className="text-pretty text-sm text-emerald-700 dark:text-emerald-400">
                   Rejestracja online <strong>24h/dobę</strong>, 7 dni w tygodniu
                 </p>
               </div>
@@ -130,7 +132,7 @@ export default function RejestracjaPage() {
       {/* ── LEGAL ── */}
       <section className="py-10 border-t">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h3 className="text-base font-semibold mb-4">Dane rejestrowe</h3>
+          <h3 className="text-balance text-base font-semibold mb-4">Dane rejestrowe</h3>
           <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm text-muted-foreground sm:grid-cols-4">
             <div><span className="font-medium text-foreground">Firma:</span> Elkardia Sp. z o.o.</div>
             <div><span className="font-medium text-foreground">KRS:</span> 0000945384</div>

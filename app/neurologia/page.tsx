@@ -3,7 +3,8 @@ import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
 
 export const metadata: Metadata = {
-  title: "Neurologia — Elkardia Lublin",
+  title: "Neurologia",
+  alternates: { canonical: "/neurologia" },
   description: "Diagnostyka i leczenie chorób układu nerwowego w Lublinie. Konsultacje neurologiczne, diagnostyka omdleń, udaru, padaczki i migreny.",
   openGraph: { images: [{ url: "/images/spec-8.webp" }] },
 }

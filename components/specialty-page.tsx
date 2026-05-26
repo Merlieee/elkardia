@@ -28,13 +28,13 @@ export function SpecialtyPage({ title, label, description, heroImage, heroPositi
 
       {/* ── HERO ── */}
       <section className="relative h-[520px] overflow-hidden">
-        {heroImage && <Image src={heroImage} alt={title} fill className={`object-cover object-[${heroPosition}]`} priority />}
+        {heroImage && <Image src={heroImage} alt={title} fill className="object-cover" style={{ objectPosition: heroPosition.replace(/_/g, " ") }} priority />}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-transparent" />
         <div className="relative flex h-full items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{label}</p>
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">{title}</h1>
-            <p className="mt-3 max-w-lg text-white/70">{description}</p>
+            <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{label}</p>
+            <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{title}</h1>
+            <p className="text-pretty mt-3 max-w-lg text-white/70">{description}</p>
             {heroExtra}
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="https://elkardia.pl/rejestracja-online-24h/">
@@ -59,7 +59,7 @@ export function SpecialtyPage({ title, label, description, heroImage, heroPositi
             <div className="grid gap-14 lg:grid-cols-2">
 
               <div>
-                <h2 className="mb-6 text-2xl font-bold text-slate-900">Leczone schorzenia</h2>
+                <h2 className="text-balance mb-6 text-2xl font-bold text-slate-900">Leczone schorzenia</h2>
                 <div className="flex flex-col gap-3">
                   {conditions.map((c) => (
                     <div key={c} className="flex items-start gap-3">
@@ -71,7 +71,7 @@ export function SpecialtyPage({ title, label, description, heroImage, heroPositi
               </div>
 
               <div>
-                <h2 className="mb-6 text-2xl font-bold text-slate-900">Specjaliści</h2>
+                <h2 className="text-balance mb-6 text-2xl font-bold text-slate-900">Specjaliści</h2>
                 <div className="flex flex-col gap-3">
                   {doctors.map((d) => (
                     <Link key={d.slug} href={`/lekarze/${d.slug}`}
@@ -80,8 +80,8 @@ export function SpecialtyPage({ title, label, description, heroImage, heroPositi
                         {initials(d.name)}
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="font-semibold text-slate-900 text-sm leading-tight">{d.name}</p>
-                        <p className="mt-0.5 text-xs text-slate-500">{d.tags.slice(0, 2).join(" · ")}</p>
+                        <p className="text-pretty font-semibold text-slate-900 text-sm leading-tight">{d.name}</p>
+                        <p className="text-pretty mt-0.5 text-xs text-slate-500">{d.tags.slice(0, 2).join(" · ")}</p>
                       </div>
                       <ArrowRight className="h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#EE3920]" />
                     </Link>
@@ -105,8 +105,8 @@ export function SpecialtyPage({ title, label, description, heroImage, heroPositi
       {/* ── CTA ── */}
       <section className="bg-[#0C71C3] py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white">Umów wizytę</h2>
-          <p className="mx-auto mt-4 max-w-md text-white/70">Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.</p>
+          <h2 className="text-balance text-3xl font-bold text-white">Umów wizytę</h2>
+          <p className="text-pretty mx-auto mt-4 max-w-md text-white/70">Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a href="https://elkardia.pl/rejestracja-online-24h/">
               <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#0C71C3] hover:bg-slate-100">

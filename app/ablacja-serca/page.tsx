@@ -4,9 +4,17 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, XCircle, Phone, ArrowRight } from "lucide-react"
+import { ArrhythmiaGallery } from "@/components/arrhythmia-gallery"
+
+function initials(name: string) {
+  const skip = /^(dr|hab\.|n\.|med\.|prof\.|lek\.|stom\.|mgr)$/i
+  const parts = name.split(" ").filter(w => !skip.test(w))
+  return parts.slice(0, 2).map(w => w.charAt(0).toUpperCase()).join("")
+}
 
 export const metadata: Metadata = {
   title: "Ablacja serca — kwalifikacja i opieka",
+  alternates: { canonical: "/ablacja-serca" },
   description: "Elektrofizjolodzy Elkardia diagnozują zaburzenia rytmu serca i kwalifikują pacjentów do ablacji RF i PFA. Badanie elektrofizjologiczne, Holter, rejestratory arytmii — Lublin.",
   openGraph: {
     title: "Ablacja serca — kwalifikacja i opieka | Elkardia Lublin",
@@ -42,10 +50,10 @@ export default function AblacjaPage() {
         <div className="relative flex h-full items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <div className="max-w-xl">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">Zaburzenia rytmu serca</p>
-              <h1 className="text-4xl font-bold text-white sm:text-5xl">Ablacja serca</h1>
-              <p className="mt-4 text-base text-white leading-relaxed">
-                Wykonujemy ablację RF oraz najnowocześniejszą ablację Volt PFA — nietermiczną metodę II generacji. Zabiegi prowadzą <strong>dr hab. Maciej Wójcik</strong> i <strong>dr Paweł Błaszkiewicz</strong>.
+              <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">Zaburzenia rytmu serca</p>
+              <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">Ablacje serca</h1>
+              <p className="text-pretty mt-4 text-base text-white leading-relaxed">
+                Nasi elektrofizjolodzy wykonują ablacje RF i PFA w warunkach szpitalnych — w Elkardia prowadzimy diagnostykę, kwalifikację oraz opiekę przed i po zabiegu. Zabiegi wykonują <strong>dr hab. Maciej Wójcik</strong> i <strong>dr Paweł Błaszkiewicz</strong>.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a href="https://elkardia.pl/rejestracja-online-24h/">
@@ -61,7 +69,7 @@ export default function AblacjaPage() {
               </div>
             </div>
             {/* stat strip */}
-            <div className="mt-10 flex flex-wrap gap-8">
+            <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 sm:gap-8">
               {[
                 { v: "80–90%", l: "Skuteczność ablacji AF" },
                 { v: "95–98%", l: "Skuteczność ablacji trzepotania" },
@@ -69,8 +77,8 @@ export default function AblacjaPage() {
                 { v: "10+", l: "Lat doświadczenia" },
               ].map((s) => (
                 <div key={s.l}>
-                  <div className="text-2xl font-bold text-white">{s.v}</div>
-                  <div className="text-sm text-white/80 mt-0.5">{s.l}</div>
+                  <div className="text-lg font-bold text-white sm:text-2xl">{s.v}</div>
+                  <div className="mt-0.5 text-xs text-white/80 sm:text-sm">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -81,10 +89,10 @@ export default function AblacjaPage() {
       {/* ── WHY US ── */}
       <section className="bg-muted/30 pb-20 pt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Dlaczego warto nam zaufać</p>
-          <h2 className="mt-3 text-3xl font-bold">Elektrofizjolodzy z najwyższymi kwalifikacjami w Polsce</h2>
-          <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
-            Ablacja serca to zabieg wymagający wyjątkowej precyzji i doświadczenia. Nasi lekarze wykonują go od ponad 10 lat — zarówno w prostych, jak i najbardziej złożonych przypadkach.
+          <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Dlaczego warto nam zaufać</p>
+          <h2 className="text-balance mt-3 text-3xl font-bold">Elektrofizjolodzy z najwyższymi kwalifikacjami w Polsce</h2>
+          <p className="text-pretty mt-3 max-w-2xl text-muted-foreground leading-relaxed">
+            Ablacja serca to zabieg wymagający wyjątkowej precyzji i doświadczenia. Nasi elektrofizjolodzy wykonują ablacje od ponad 10 lat — zarówno proste, jak i najbardziej złożone przypadki. W Elkardii zajmujemy się pełną diagnostyką i opieką wokół zabiegu.
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -93,12 +101,8 @@ export default function AblacjaPage() {
                 desc: "Jeden z najwyższych wolumenów zabiegów elektrofizjologicznych w Polsce. Większa liczba zabiegów oznacza większe doświadczenie i lepsze wyniki.",
               },
               {
-                title: "Habilitacja z elektrofizjologii",
-                desc: "Dr hab. Maciej Wójcik posiada stopień doktora habilitowanego — najwyższy stopień naukowy specjalizacji w dziedzinie ablacji serca w regionie.",
-              },
-              {
                 title: "Najnowsza technologia PFA",
-                desc: "Jako jedyne centrum w Lublinie wykonujemy ablację Volt PFA II generacji — bezpieczniejszą i skuteczniejszą niż starsze metody.",
+                desc: "Nasi elektrofizjolodzy wykonują ablację Volt PFA II generacji — bezpieczniejszą i skuteczniejszą niż starsze metody. Jedni z niewielu w regionie.",
               },
               {
                 title: "Organizatorzy konferencji międzynarodowych",
@@ -106,7 +110,7 @@ export default function AblacjaPage() {
               },
               {
                 title: "Kompleksowa opieka",
-                desc: "Zajmujemy się pacjentem od pierwszej konsultacji, przez kwalifikację, zabieg, aż po kontrolę po ablacji — bez przekazywania do innych ośrodków.",
+                desc: "Zajmujemy się pacjentem od pierwszej konsultacji i kwalifikacji, aż po kontrole po ablacji. Zabieg wykonują ci sami lekarze — bez przekazywania do nieznanego ośrodka.",
               },
               {
                 title: "Leczenie najtrudniejszych przypadków",
@@ -114,8 +118,8 @@ export default function AblacjaPage() {
               },
             ].map((c) => (
               <div key={c.title} className="rounded-2xl border bg-card p-6">
-                <h3 className="font-bold text-base mb-2">{c.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                <h3 className="text-balance font-bold text-base mb-2">{c.title}</h3>
+                <p className="text-pretty text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -125,22 +129,22 @@ export default function AblacjaPage() {
       {/* ── TWO METHOD CARDS with real diagrams ── */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8">Metody ablacji</h2>
+          <h2 className="text-balance text-3xl font-bold mb-8">Metody ablacji</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {[
-              {
-                img: "/images/ablacja-rf.webp",
-                title: "Ablacja RF",
-                subtitle: "Radiofrekwencyjna",
-                desc: "Punktowa ablacja prądem RF oparta na gęstej mapie elektroanatomicznej 3D. Energia cieplna precyzyjnie niszczy ognisko arytmii. Skuteczna dla wszystkich typów arytmii serca.",
-                tag: "Wszystkie typy arytmii",
-              },
               {
                 img: "/images/ablacja-pfa.webp",
                 title: "Ablacja Volt PFA",
                 subtitle: "Pulsed Field Ablation",
                 desc: "Nietermiczna elektroporacja — system II generacji. Lepsza efektywność i bezpieczeństwo niż wcześniejsze systemy PFA. Wykonywana w znieczuleniu ogólnym. Najnowocześniejsza metoda leczenia migotania przedsionków.",
                 tag: "Migotanie przedsionków",
+              },
+              {
+                img: "/images/ablacja-rf.webp",
+                title: "Ablacja RF",
+                subtitle: "Radiofrekwencyjna",
+                desc: "Punktowa ablacja prądem RF oparta na gęstej mapie elektroanatomicznej 3D. Energia cieplna precyzyjnie niszczy ognisko arytmii. Skuteczna dla wszystkich typów arytmii serca.",
+                tag: "Wszystkie typy arytmii",
               },
             ].map((m) => (
               <div key={m.title} className="overflow-hidden rounded-2xl border bg-card">
@@ -149,14 +153,14 @@ export default function AblacjaPage() {
                 </div>
                 <div className="p-6">
                   <Badge className="mb-3">{m.tag}</Badge>
-                  <h3 className="text-xl font-bold">{m.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1 mb-3">{m.subtitle}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
+                  <h3 className="text-balance text-xl font-bold">{m.title}</h3>
+                  <p className="text-pretty text-sm text-muted-foreground mt-1 mb-3">{m.subtitle}</p>
+                  <p className="text-pretty text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
                 </div>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-sm text-muted-foreground border rounded-xl p-4 bg-muted/40">
+          <p className="text-pretty mt-6 text-sm text-muted-foreground border rounded-xl p-4 bg-muted/40">
             <strong>Uwaga:</strong> Nie wykonujemy krioablacji — metoda porzucona ponad 10 lat temu ze względu na niższą precyzję.
           </p>
         </div>
@@ -165,22 +169,9 @@ export default function AblacjaPage() {
       {/* ── ARRHYTHMIA GALLERY ── */}
       <section className="bg-muted/30 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-3">Leczone arytmie</h2>
-          <p className="text-muted-foreground mb-8">Wizualizacje elektrofizjologiczne z rzeczywistych zabiegów wykonywanych w centrum</p>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {arrhythmias.map((a) => (
-              <div key={a.short} className="group overflow-hidden rounded-xl bg-black">
-                <div className="relative h-40">
-                  <Image src={a.img} alt={a.label} fill className="object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-3">
-                    <span className="text-xs font-bold text-primary">{a.short}</span>
-                    <p className="text-xs text-white/80 leading-tight">{a.label}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <h2 className="text-balance text-3xl font-bold mb-3">Leczone arytmie</h2>
+          <p className="text-pretty text-muted-foreground mb-8">Wizualizacje elektrofizjologiczne z rzeczywistych zabiegów wykonywanych przez naszych elektrofizjologów</p>
+          <ArrhythmiaGallery items={arrhythmias} />
         </div>
       </section>
 
@@ -189,7 +180,7 @@ export default function AblacjaPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="text-2xl font-bold mb-6">Wskazania do ablacji</h2>
+              <h2 className="text-balance text-2xl font-bold mb-6">Wskazania do ablacji</h2>
               <div className="flex flex-col gap-3">
                 {[
                   "Migotanie przedsionków", "Trzepotanie przedsionków",
@@ -205,7 +196,7 @@ export default function AblacjaPage() {
               </div>
             </div>
             <div>
-              <h2 className="text-2xl font-bold mb-6">Przeciwwskazania</h2>
+              <h2 className="text-balance text-2xl font-bold mb-6">Przeciwwskazania</h2>
               <div className="flex flex-col gap-3">
                 {[
                   "Skrzepliny w jamach serca",
@@ -220,18 +211,22 @@ export default function AblacjaPage() {
                 ))}
               </div>
               <div className="mt-8">
-                <h2 className="text-2xl font-bold mb-4">Lekarze prowadzący</h2>
+                <h2 className="text-balance text-2xl font-bold mb-4">Lekarze prowadzący</h2>
                 <div className="flex flex-col gap-3">
-                  {["dr hab. Maciej Wójcik", "dr Paweł Błaszkiewicz"].map((d) => (
-                    <div key={d} className="flex items-center gap-3 rounded-xl border bg-card p-4">
-                      <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
-                        {d.split(" ").pop()?.charAt(0)}
+                  {[
+                    { name: "dr hab. Maciej Wójcik", slug: "maciej-wojcik" },
+                    { name: "dr Paweł Błaszkiewicz", slug: "pawel-blaszkiewicz" },
+                  ].map((d) => (
+                    <Link key={d.slug} href={`/lekarze/${d.slug}`} className="group flex items-center gap-3 rounded-xl border bg-card p-4 transition-colors hover:bg-slate-50">
+                      <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary transition-colors group-hover:bg-[#EE3920] group-hover:text-white">
+                        {initials(d.name)}
                       </div>
-                      <div>
-                        <p className="font-medium text-sm">{d}</p>
-                        <p className="text-xs text-muted-foreground">Kardiolog, elektrofizjolog</p>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-pretty font-medium text-sm">{d.name}</p>
+                        <p className="text-pretty text-xs text-muted-foreground">Kardiolog, elektrofizjolog</p>
                       </div>
-                    </div>
+                      <ArrowRight className="h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#EE3920]" />
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -243,8 +238,8 @@ export default function AblacjaPage() {
       {/* ── CTA ── */}
       <section className="bg-[#0C71C3] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Umów konsultację</h2>
-          <p className="mx-auto mt-4 max-w-md leading-relaxed text-white/70">
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">Umów konsultację</h2>
+          <p className="text-pretty mx-auto mt-4 max-w-md leading-relaxed text-white/70">
             Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

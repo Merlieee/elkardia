@@ -28,7 +28,7 @@ export function Footer() {
             <Link href="/">
               <Image src="/images/logo.webp" alt="Elkardia" width={130} height={34} className="h-8 w-auto" />
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-pretty text-sm text-muted-foreground leading-relaxed">
               Lubelskie Centrum Kardiologii — wysoko­specjalistyczna opieka nad sercem dla dzieci i dorosłych. Działamy nieprzerwanie od 2014 roku.
             </p>
             <div className="flex items-center gap-2">
@@ -49,15 +49,15 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-semibold text-sm">Usługi</h4>
+            <h4 className="text-balance font-semibold text-sm">Usługi</h4>
             <nav className="flex flex-col gap-2">
               {[
                 { href: "/lekarze", label: "Lekarze specjaliści" },
-                { href: "/ablacja-serca", label: "Ablacja serca" },
+                { href: "/ablacja-serca", label: "Ablacje serca" },
+                { href: "/kardiologia-dziecieca", label: "Kardiologia dziecięca" },
                 { href: "/badania", label: "Badania diagnostyczne" },
-                { href: "/stomatologia", label: "Stomatologia" },
-                { href: "/dietetycy", label: "Dietetycy" },
-                { href: "/rejestracja", label: "Rejestracja online 24h" },
+                { href: "/specjalnosci", label: "Specjalności" },
+                { href: "/rejestracja", label: "Rejestracja 24h" },
               ].map((link) => (
                 <Link
                   key={link.href}
@@ -71,7 +71,7 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-semibold text-sm">Kontakt</h4>
+            <h4 className="text-balance font-semibold text-sm">Kontakt</h4>
             <div className="flex flex-col gap-3">
               <a href="tel:+48815657075" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
@@ -89,7 +89,7 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-semibold text-sm">Lokalizacja</h4>
+            <h4 className="text-balance font-semibold text-sm">Lokalizacja</h4>
             <div className="flex flex-col gap-3">
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
@@ -106,22 +106,21 @@ export function Footer() {
         <Separator className="my-8" />
 
         <div className="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs leading-relaxed text-muted-foreground">
-          <p>
+          <p className="text-pretty">
             Elkardia Sp. z o.o. z siedzibą w Lublinie, 20-091 Lublin ul. Rotmistrza Witolda Pileckiego 23/20, wpisaną do krajowego rejestru sądowego prowadzonego przez Sąd Rejonowy VI Wydział Krajowego Rejestru Sądowego Lublin – Wschód w Lublinie pod numerem 0000945384, NIP: 7123429164, o kapitale zakładowym 10.000,00 zł.
           </p>
-          <p className="mt-1">
+          <p className="text-pretty mt-1">
             Podmiot leczniczy wpisany do Rejestru Podmiotów Wykonujących Działalność Leczniczą (nr księgi: 000000249308).
           </p>
         </div>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-pretty text-xs text-muted-foreground">
             © 2024 Elkardia Sp. z o.o. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex gap-4">
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Regulamin</Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Polityka prywatności</Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Kontakt</Link>
+            <Link href="https://doktorekg.pl/regulamin/" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Regulamin</Link>
+            <Link href="https://doktorekg.pl/polityka-prywatnosci/" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Polityka prywatności</Link>
           </div>
         </div>
       </div>

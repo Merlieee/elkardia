@@ -3,7 +3,8 @@ import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
 
 export const metadata: Metadata = {
-  title: "Diabetologia — Elkardia Lublin",
+  title: "Diabetologia",
+  alternates: { canonical: "/diabetologia" },
   description: "Leczenie cukrzycy i zaburzeń metabolicznych w Lublinie. Diabetologia dla dorosłych i dzieci.",
   openGraph: { images: [{ url: "/images/spec-7.webp" }] },
 }

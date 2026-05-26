@@ -25,7 +25,7 @@ export function FaqAccordion({ items }: { items: Item[] }) {
             style={{ gridTemplateRows: open === i ? "1fr" : "0fr" }}
           >
             <div className="overflow-hidden">
-              <p className="pb-4 text-sm text-slate-600">{a}</p>
+              <p className="text-pretty pb-4 text-sm text-slate-600">{a}</p>
             </div>
           </div>
         </div>

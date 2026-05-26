@@ -83,7 +83,7 @@ export function BadaniaSearch() {
           type="text"
           value={query}
           onChange={e => setQuery(e.target.value)}
-          placeholder="Szukaj badania…"
+          placeholder="Wyszukaj badanie..."
           className="w-full rounded-xl border bg-white py-3 pl-10 pr-10 text-sm outline-none ring-0 transition focus:border-[#EE3920] focus:ring-1 focus:ring-[#EE3920]"
         />
         {query && (
@@ -107,7 +107,7 @@ export function BadaniaSearch() {
             ))}
           </div>
         ) : (
-          <p className="text-sm text-slate-500">Brak wyników dla „{query}".</p>
+          <p className="text-pretty text-sm text-slate-500">Brak wyników dla „{query}".</p>
         )
       ) : (
         <Tabs defaultValue="cardiac">

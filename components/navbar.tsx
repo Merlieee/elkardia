@@ -56,16 +56,16 @@ const links: NavLink[] = [
   { href: "/kardiologia-dziecieca", label: "Kardiologia Dziecięca" },
   { href: "/badania", label: "Badania" },
   { href: "/specjalnosci", label: "Specjalności", items: specjalnosciItems },
-  { href: "/rejestracja", label: "Rejestracja 24h" },
+  { href: "https://elkardia.pl/rejestracja-online-24h/", label: "Rejestracja 24h" },
 ]
 
 function DropdownNavItem({ link }: { link: NavLink & { items: DropdownItem[] } }) {
   return (
     <div className="group relative">
-      <button className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">
+      <Link href={link.href} className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">
         {link.label}
         <ChevronDown className="h-3.5 w-3.5 text-slate-400 transition-transform duration-150 group-hover:rotate-180" />
-      </button>
+      </Link>
 
       <div className="pointer-events-none absolute left-0 top-full z-50 min-w-[220px] pt-1 opacity-0 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100">
         <div className="max-h-[33rem] overflow-y-auto rounded-xl border border-slate-200 bg-white py-1.5 shadow-lg">
@@ -90,25 +90,30 @@ function MobileAccordion({ link, onClose }: { link: NavLink & { items: DropdownI
     <div>
       <button
         onClick={() => setExpanded((v) => !v)}
+        aria-expanded={expanded}
         className="flex w-full items-center justify-between rounded-md px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
       >
         {link.label}
-        <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform duration-150 ${expanded ? "rotate-180" : ""}`} />
+        <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} />
       </button>
-      {expanded && (
-        <div className="ml-3 flex flex-col border-l border-slate-100">
-          {link.items.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={onClose}
-              className="px-4 py-2.5 text-sm text-slate-600 hover:text-slate-900"
-            >
-              {item.label}
-            </Link>
-          ))}
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+      >
+        <div className="overflow-hidden">
+          <div className="ml-3 flex flex-col border-l border-slate-100">
+            {link.items.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={onClose}
+                className={`px-4 py-2.5 text-sm text-slate-600 transition-opacity duration-300 hover:text-slate-900 ${expanded ? "opacity-100" : "opacity-0"}`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   )
 }
@@ -142,6 +147,11 @@ export function Navbar() {
           {links.map((link) =>
             link.items ? (
               <DropdownNavItem key={link.href} link={link} />
+            ) : link.href.startsWith("http") ? (
+              <a key={link.href} href={link.href}
+                className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">
+                {link.label}
+              </a>
             ) : (
               <Link key={link.href} href={link.href}
                 className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900">
@@ -165,7 +175,7 @@ export function Navbar() {
                 <Menu className="h-4 w-4" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[85vw] max-w-sm bg-white p-6">
+            <SheetContent side="right" className="flex h-full w-[85vw] max-w-sm flex-col overflow-y-auto bg-white p-6">
               <SheetTitle className="sr-only">Menu nawigacyjne</SheetTitle>
               <div className="mb-8">
                 <Link href="/" onClick={() => setOpen(false)}>
@@ -176,6 +186,11 @@ export function Navbar() {
                 {links.map((link) =>
                   link.items ? (
                     <MobileAccordion key={link.href} link={link} onClose={() => setOpen(false)} />
+                  ) : link.href.startsWith("http") ? (
+                    <a key={link.href} href={link.href} onClick={() => setOpen(false)}
+                      className="rounded-md px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">
+                      {link.label}
+                    </a>
                   ) : (
                     <Link key={link.href} href={link.href} onClick={() => setOpen(false)}
                       className="rounded-md px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900">
@@ -184,13 +199,16 @@ export function Navbar() {
                   )
                 )}
               </nav>
-              <div className="mt-8 space-y-2">
-                <a href="tel:+48815657075">
-                  <button className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#EE3920] py-2.5 text-sm font-semibold text-white">
-                    <Phone className="h-4 w-4" /> (81) 565 70 75
-                  </button>
+              <div className="mt-auto rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                <p className="text-pretty mb-3 text-center text-xs font-semibold uppercase tracking-wide text-slate-500">Rejestracja telefoniczna</p>
+                <a href="tel:+48815657075" className="flex items-center gap-3 rounded-xl bg-[#EE3920] px-4 py-3 text-white transition-colors hover:bg-[#d4321c]">
+                  <Phone className="h-5 w-5 shrink-0" />
+                  <span className="text-base font-semibold">(81) 565 70 75</span>
                 </a>
-                <p className="text-center text-xs text-slate-400">lub 536 102 112</p>
+                <a href="tel:+48536102112" className="mt-2 flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-700 transition-colors hover:bg-slate-50">
+                  <Phone className="h-5 w-5 shrink-0 text-slate-400" />
+                  <span className="text-base font-semibold">536 102 112</span>
+                </a>
               </div>
             </SheetContent>
           </Sheet>

@@ -6,7 +6,8 @@ import { CheckCircle, ArrowRight, Phone } from "lucide-react"
 import { BadaniaSearch } from "@/components/badania-search"
 
 export const metadata: Metadata = {
-  title: "Badania diagnostyczne — Elkardia Lublin",
+  title: "Badania diagnostyczne",
+  alternates: { canonical: "/badania" },
   description: "Pełna diagnostyka kardiologiczna w Elkardia Lublin — EKG, echo serca, Holter EKG i RR, tilt-test, USG Doppler, badanie elektrofizjologiczne. Holter wysyłany kurierem do domu.",
   openGraph: {
     title: "Badania diagnostyczne — Elkardia Lublin",
@@ -29,9 +30,9 @@ export default function BadaniaPage() {
         <div className="relative flex h-full items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <div className="max-w-xl">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">Diagnostyka</p>
-              <h1 className="text-4xl font-bold text-white sm:text-5xl">Badania diagnostyczne</h1>
-              <p className="mt-4 text-base text-white leading-relaxed">
+              <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">Diagnostyka</p>
+              <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">Badania diagnostyczne</h1>
+              <p className="text-pretty mt-4 text-base text-white leading-relaxed">
                 Pełen profil badań kardiologicznych, USG i Dopplera pod jednym dachem. Tylko certyfikowany, najnowszy sprzęt — wyniki tego samego dnia.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -54,8 +55,8 @@ export default function BadaniaPage() {
       {/* ── FULL LIST ── */}
       <section className="bg-muted/30 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-3">Pełna lista badań</h2>
-          <p className="text-muted-foreground mb-8">Wszystkie badania dostępne na miejscu w Elkardii.</p>
+          <h2 className="text-balance text-3xl font-bold mb-3">Pełna lista badań</h2>
+          <p className="text-pretty text-muted-foreground mb-8">Wszystkie badania dostępne w Elkardii.</p>
           <BadaniaSearch />
         </div>
       </section>
@@ -63,41 +64,41 @@ export default function BadaniaPage() {
       {/* ── WHY US ── */}
       <section className="bg-muted/30 pb-20 pt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Dlaczego warto nam zaufać</p>
-          <h2 className="mt-3 text-3xl font-bold">Najnowszy sprzęt, wyniki tego samego dnia</h2>
-          <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
-            Diagnostyka kardiologiczna wymaga precyzji i doświadczenia. Używamy wyłącznie certyfikowanego sprzętu najnowszej generacji — aparat Philips Affiniti 50 do echo i USG, 12-kanałowe Holtery i rejestratory wielomiesięczne.
+          <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Dlaczego warto nam zaufać</p>
+          <h2 className="text-balance mt-3 text-3xl font-bold">Najnowszy sprzęt, wyniki tego samego dnia</h2>
+          <p className="text-pretty mt-3 max-w-2xl text-muted-foreground leading-relaxed">
+            Dokładna diagnoza zaczyna się od dobrego sprzętu i doświadczonego zespołu. W Elkardii badania wykonujemy aparatem Philips Affiniti 50 do echo i USG, 12-kanałowymi Holterami oraz rejestratorami wielomiesięcznymi — a wyniki omawia lekarz jeszcze tego samego dnia.
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "Wyniki tego samego dnia",
-                desc: "Echo serca, EKG, Holter — wyniki i opis lekarza w dniu badania. Nie czekasz tygodniami na wyniki.",
+                desc: "Echo, EKG czy Holter — opis lekarza otrzymujesz w dniu badania, bez tygodni oczekiwania.",
               },
               {
                 title: "Tilt-test — jedyny w Lublinie",
-                desc: "Test pochyleniowy do diagnostyki omdleń i zasłabnięć. Jedyne centrum w Lublinie wykonujące to badanie.",
+                desc: "Jako jedyni w Lublinie wykonujemy test pochyleniowy, kluczowy w diagnostyce omdleń i zasłabnięć.",
               },
               {
-                title: "Holter kurierem w całej Polsce",
-                desc: "Holter EKG, holter ciśnieniowy i badanie bezdechu sennego dostarczamy kurierem na terenie całej Polski.",
+                title: "Holter z dostawą do domu",
+                desc: "Holter EKG, ciśnieniowy i badanie bezdechu sennego wysyłamy kurierem w całej Polsce.",
               },
               {
-                title: "Echo Philips Affiniti 50",
-                desc: "Aparat echokardiograficzny najnowszej generacji — zarówno dla dorosłych, jak i dla dzieci. Dokładne obrazowanie nawet u najmłodszych.",
+                title: "Echo na aparacie Philips Affiniti 50",
+                desc: "Echokardiografia najnowszej generacji — precyzyjne obrazowanie u dorosłych, dzieci i noworodków.",
               },
               {
-                title: "Pełna diagnostyka USG",
-                desc: "USG i Doppler wszystkich narządów i naczyń — tarczyca, piersi, jama brzuszna, tętnice szyjne, żyły kończyn i więcej.",
+                title: "Pełen zakres USG i Doppler",
+                desc: "Od tarczycy i jamy brzusznej po tętnice szyjne i żyły kończyn — diagnostyka wszystkich narządów i naczyń.",
               },
               {
-                title: "Diagnostyka dziecięca",
-                desc: "EKG, echo serca, Holter i monitoring saturacji dla dzieci — od noworodków po młodzież, w przyjaznej atmosferze.",
+                title: "Przyjazna diagnostyka dziecięca",
+                desc: "EKG, echo, Holter i monitoring saturacji dla najmłodszych — w spokojnej atmosferze dostosowanej do dziecka.",
               },
             ].map((c) => (
               <div key={c.title} className="rounded-2xl border bg-card p-6">
-                <h3 className="font-bold text-base mb-2">{c.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                <h3 className="text-balance font-bold text-base mb-2">{c.title}</h3>
+                <p className="text-pretty text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -110,10 +111,10 @@ export default function BadaniaPage() {
           <div className="flex flex-col items-center gap-8 text-center">
             <Image src="/images/doktorekg-logo.webp" alt="doktorEKG" width={220} height={60} className="h-12 w-auto" />
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              <h2 className="text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 Badania w domu pacjenta
               </h2>
-              <p className="mt-4 leading-relaxed text-slate-600">
+              <p className="text-pretty mt-4 leading-relaxed text-slate-600">
                 Nie możesz dojechać? Holter EKG, holter ciśnieniowy i badanie bezdechu sennego dostarczamy kuriersko na terenie całej Polski. Leczymy chrapanie i bezdech w Twojej sypialni.
               </p>
             </div>
@@ -140,8 +141,8 @@ export default function BadaniaPage() {
       {/* ── CTA ── */}
       <section className="bg-[#0C71C3] py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Umów badanie</h2>
-          <p className="mx-auto mt-4 max-w-md leading-relaxed text-white/70">
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">Umów badanie</h2>
+          <p className="text-pretty mx-auto mt-4 max-w-md leading-relaxed text-white/70">
             Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

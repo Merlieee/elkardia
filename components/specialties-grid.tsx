@@ -25,7 +25,7 @@ const INITIAL_ROWS = 2
 const PER_ROW = 3
 const INITIAL_COUNT = INITIAL_ROWS * PER_ROW
 
-export function SpecialtiesGrid() {
+export function SpecialtiesGrid({ showAll = false }: { showAll?: boolean }) {
   const [expanded, setExpanded] = useState(false)
 
   const renderCard = (s: typeof specialties[0], i: number) => {
@@ -37,14 +37,22 @@ export function SpecialtiesGrid() {
             <Icon className="h-5 w-5" />
           </div>
           <div>
-            <h3 className="inline-flex items-center gap-1.5 font-semibold text-slate-900">
+            <h3 className="text-balance inline-flex items-center gap-1.5 font-semibold text-slate-900">
               {s.label}
               <ArrowRight className="h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-[#EE3920]" />
             </h3>
-            <p className="mt-1 text-sm leading-relaxed text-slate-500">{s.desc}</p>
+            <p className="text-pretty mt-1 text-sm leading-relaxed text-slate-500">{s.desc}</p>
           </div>
         </div>
       </Link>
+    )
+  }
+
+  if (showAll) {
+    return (
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {specialties.map(renderCard)}
+      </div>
     )
   }
 
@@ -55,11 +63,12 @@ export function SpecialtiesGrid() {
       </div>
 
       <div
-        style={{ maxHeight: expanded ? "1000px" : "0px", opacity: expanded ? 1 : 0 }}
-        className="overflow-hidden transition-all duration-500 ease-in-out"
+        className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
       >
-        <div className="grid grid-cols-1 gap-3 pt-3 sm:grid-cols-2 lg:grid-cols-3">
-          {specialties.slice(INITIAL_COUNT).map(renderCard)}
+        <div className="overflow-hidden">
+          <div className="grid grid-cols-1 gap-3 pt-3 sm:grid-cols-2 lg:grid-cols-3">
+            {specialties.slice(INITIAL_COUNT).map(renderCard)}
+          </div>
         </div>
       </div>
 

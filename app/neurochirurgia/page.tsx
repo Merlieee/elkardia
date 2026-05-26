@@ -3,7 +3,8 @@ import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
 
 export const metadata: Metadata = {
-  title: "Neurochirurgia — Elkardia Lublin",
+  title: "Neurochirurgia",
+  alternates: { canonical: "/neurochirurgia" },
   description: "Konsultacje neurochirurgiczne i kwalifikacja do leczenia operacyjnego chorób mózgu, rdzenia kręgowego i nerwów obwodowych.",
   openGraph: { images: [{ url: "/images/neurochirurgia.webp" }] },
 }

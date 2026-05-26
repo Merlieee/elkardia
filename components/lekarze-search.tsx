@@ -31,7 +31,7 @@ function DoctorCard({ d }: { d: typeof doctors[0] }) {
         </div>
         <div className="min-w-0 flex-1 overflow-hidden">
           <div className="flex items-start justify-between gap-2">
-            <p className="line-clamp-1 font-semibold text-slate-900 leading-tight">{d.name}</p>
+            <p className="text-pretty line-clamp-1 font-semibold text-slate-900 leading-tight">{d.name}</p>
             <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#EE3920]" />
           </div>
           <div className="mt-2 flex flex-wrap gap-1">
@@ -62,8 +62,8 @@ export function LekarzeSearch() {
   return (
     <div className="flex flex-col gap-16">
       <div>
-        <h2 className="text-3xl font-bold text-slate-900">Nasz zespół</h2>
-        <p className="mt-2 text-slate-500">Znajdź lekarza po nazwisku lub specjalizacji.</p>
+        <h2 className="text-balance text-3xl font-bold text-slate-900">Nasz zespół</h2>
+        <p className="text-pretty mt-2 text-slate-500">Znajdź lekarza po nazwisku lub specjalizacji.</p>
         <div className="relative mt-6 max-w-md">
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
         <input
@@ -82,7 +82,7 @@ export function LekarzeSearch() {
       </div>
 
       {filtered !== null && filtered.length === 0 ? (
-        <p className="text-sm text-slate-500">Brak wyników dla „{query}".</p>
+        <p className="text-pretty text-sm text-slate-500">Brak wyników dla „{query}".</p>
       ) : (
         groups.map((group) => {
           const groupDoctors = (filtered ?? doctors).filter(d => d.group === group)
@@ -90,7 +90,7 @@ export function LekarzeSearch() {
           return (
             <div key={group} id={toId(group)} className="scroll-mt-24">
               <div className="mb-6 flex items-center gap-4">
-                <h2 className="text-xl font-bold text-slate-900">{group}</h2>
+                <h2 className="text-balance text-xl font-bold text-slate-900">{group}</h2>
                 <div className="h-px flex-1 bg-slate-100" />
                 <span className="text-xs text-slate-400">
                   {groupDoctors.length} {groupDoctors.length === 1 ? "lekarz" : "lekarzy"}

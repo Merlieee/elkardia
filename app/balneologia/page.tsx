@@ -3,7 +3,8 @@ import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
 
 export const metadata: Metadata = {
-  title: "Balneologia — Elkardia Lublin",
+  title: "Balneologia",
+  alternates: { canonical: "/balneologia" },
   description: "Leczenie uzdrowiskowe i rehabilitacja kardiologiczna w Lublinie. Kwalifikacja do leczenia uzdrowiskowego.",
   openGraph: { images: [{ url: "/images/spec-2.webp" }] },
 }

@@ -3,7 +3,8 @@ import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
 
 export const metadata: Metadata = {
-  title: "Hipertensjologia — Elkardia Lublin",
+  title: "Hipertensjologia",
+  alternates: { canonical: "/hipertensjologia" },
   description: "Diagnostyka i leczenie nadciśnienia tętniczego pierwotnego, wtórnego i opornego. Hipertensjolodzy w Lublinie.",
   openGraph: { images: [{ url: "/images/kardiologia-3.webp" }] },
 }

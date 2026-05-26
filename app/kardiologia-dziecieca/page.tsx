@@ -13,7 +13,8 @@ function initials(name: string) {
 }
 
 export const metadata: Metadata = {
-  title: "Kardiologia dziecięca — Elkardia Lublin",
+  title: "Kardiologia dziecięca",
+  alternates: { canonical: "/kardiologia-dziecieca" },
   description: "Specjalistyczna opieka kardiologiczna dla dzieci i młodzieży w Lublinie. Echokardiografia dziecięca, Holter EKG, diagnostyka wad serca u dzieci.",
   openGraph: { images: [{ url: "/images/spec-4.webp" }] },
 }
@@ -116,17 +117,17 @@ const echoContent = (
     {/* ── Intro ── */}
     <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:items-start">
       <div className="max-w-2xl">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Badanie echokardiograficzne</p>
-        <h2 className="mb-5 text-3xl font-bold text-slate-900">
+        <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Badanie echokardiograficzne</p>
+        <h2 className="text-balance mb-5 text-3xl font-bold text-slate-900">
           Echo serca dziecka – na czym polega badanie?
         </h2>
-        <p className="mb-4 text-base leading-relaxed text-slate-600">
+        <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600">
           Echokardiografia (USG serca) to podstawowe badanie diagnostyczne w kardiologii dziecięcej. Przy użyciu fal ultradźwiękowych lekarz ocenia w czasie rzeczywistym budowę i funkcję serca — u dzieci w każdym wieku, od noworodków po nastolatków. W Elkardii diagnostykę wykonujemy najnowszym aparatem <strong className="text-slate-800">Philips Affiniti 50</strong> — jednym z najdokładniejszych systemów echokardiograficznych dostępnych na rynku, który zapewnia szczegółowe obrazowanie nawet u najmłodszych pacjentów. Wynik omawia się bezpośrednio po badaniu, bez konieczności oczekiwania.
         </p>
-        <p className="mb-4 text-base leading-relaxed text-slate-600">
+        <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600">
           Dysponujemy pełnym zestawem głowic echokardiograficznych — dwiema dedykowanymi głowicami pediatrycznymi oraz głowicą dla starszych i większych dzieci. Dzięki temu jesteśmy w stanie precyzyjnie zbadać każde dziecko: od noworodka i wcześniaka po osiemnastolatka.
         </p>
-        <p className="text-base leading-relaxed text-slate-600">
+        <p className="text-pretty text-base leading-relaxed text-slate-600">
           Badanie pozwala wykrywać wrodzone i nabyte choroby serca, monitorować rozwój układu krążenia oraz kontrolować efekty leczenia. Jest całkowicie bezpieczne, bezbolesne i nie wymaga promieniowania rentgenowskiego.
         </p>
       </div>
@@ -143,15 +144,15 @@ const echoContent = (
 
     {/* ── 3 feature cards ── */}
     <div>
-      <h3 className="mb-6 text-xl font-bold text-slate-900">Co oceniamy podczas badania echokardiograficznego?</h3>
+      <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">Co oceniamy podczas badania echokardiograficznego?</h3>
       <div className="grid gap-4 sm:grid-cols-3">
 
         <div className="rounded-xl bg-slate-50 p-6">
           <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#EE3920]/10">
             <Eye className="h-5 w-5 text-[#EE3920]" />
           </div>
-          <h4 className="mb-2 font-semibold text-slate-900">Ocena struktury serca</h4>
-          <p className="mb-4 text-sm leading-relaxed text-slate-500">Badanie pozwala na szczegółową analizę budowy serca, nawet u noworodków i niemowląt. Ma kluczowe znaczenie w diagnostyce:</p>
+          <h4 className="text-balance mb-2 font-semibold text-slate-900">Ocena struktury serca</h4>
+          <p className="text-pretty mb-4 text-sm leading-relaxed text-slate-500">Badanie pozwala na szczegółową analizę budowy serca, nawet u noworodków i niemowląt. Ma kluczowe znaczenie w diagnostyce:</p>
           <div className="space-y-1.5">
             {highQualityItems.map(item => (
               <div key={item} className="flex items-start gap-2">
@@ -166,8 +167,8 @@ const echoContent = (
           <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#EE3920]/10">
             <Activity className="h-5 w-5 text-[#EE3920]" />
           </div>
-          <h4 className="mb-2 font-semibold text-slate-900">Zaawansowane badania Doppler</h4>
-          <p className="mb-4 text-sm leading-relaxed text-slate-500">Ocena przepływu krwi przez serce i naczynia pozwala lekarzowi wykryć:</p>
+          <h4 className="text-balance mb-2 font-semibold text-slate-900">Zaawansowane badania Doppler</h4>
+          <p className="text-pretty mb-4 text-sm leading-relaxed text-slate-500">Ocena przepływu krwi przez serce i naczynia pozwala lekarzowi wykryć:</p>
           <div className="space-y-1.5">
             {dopplerItems.map(item => (
               <div key={item} className="flex items-start gap-2">
@@ -182,8 +183,8 @@ const echoContent = (
           <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#EE3920]/10">
             <ShieldCheck className="h-5 w-5 text-[#EE3920]" />
           </div>
-          <h4 className="mb-2 font-semibold text-slate-900">Komfort i bezpieczeństwo</h4>
-          <p className="mb-4 text-sm leading-relaxed text-slate-500">Echokardiografia jest metodą całkowicie bezpieczną dla dziecka — badanie jest:</p>
+          <h4 className="text-balance mb-2 font-semibold text-slate-900">Komfort i bezpieczeństwo</h4>
+          <p className="text-pretty mb-4 text-sm leading-relaxed text-slate-500">Echokardiografia jest metodą całkowicie bezpieczną dla dziecka — badanie jest:</p>
           <div className="space-y-1.5">
             {safetyItems.map(item => (
               <div key={item} className="flex items-start gap-2">
@@ -199,12 +200,12 @@ const echoContent = (
 
     {/* ── When to do echo ── */}
     <div>
-      <h3 className="mb-8 text-xl font-bold text-slate-900">Kiedy warto wykonać echo serca dziecka?</h3>
+      <h3 className="text-balance mb-8 text-xl font-bold text-slate-900">Kiedy warto wykonać echo serca dziecka?</h3>
       <div className="grid gap-8 lg:grid-cols-3">
 
         <div className="border-l-2 border-[#EE3920] pl-5">
-          <h4 className="mb-2 font-semibold text-slate-900">Niepokojące objawy</h4>
-          <p className="mb-3 text-sm text-slate-500">Lekarz może zalecić badanie w przypadku:</p>
+          <h4 className="text-balance mb-2 font-semibold text-slate-900">Niepokojące objawy</h4>
+          <p className="text-pretty mb-3 text-sm text-slate-500">Lekarz może zalecić badanie w przypadku:</p>
           <div className="space-y-1.5">
             {whenSymptoms.map(item => (
               <p key={item} className="text-sm text-slate-600">— {item}</p>
@@ -213,8 +214,8 @@ const echoContent = (
         </div>
 
         <div className="border-l-2 border-[#EE3920] pl-5">
-          <h4 className="mb-2 font-semibold text-slate-900">Kontrola wad serca</h4>
-          <p className="mb-3 text-sm text-slate-500">Badanie wykonywane u dzieci:</p>
+          <h4 className="text-balance mb-2 font-semibold text-slate-900">Kontrola wad serca</h4>
+          <p className="text-pretty mb-3 text-sm text-slate-500">Badanie wykonywane u dzieci:</p>
           <div className="space-y-1.5">
             {whenMonitoring.map(item => (
               <p key={item} className="text-sm text-slate-600">— {item}</p>
@@ -223,8 +224,8 @@ const echoContent = (
         </div>
 
         <div className="border-l-2 border-[#EE3920] pl-5">
-          <h4 className="mb-2 font-semibold text-slate-900">Profilaktyka i sport</h4>
-          <p className="text-sm leading-relaxed text-slate-600">
+          <h4 className="text-balance mb-2 font-semibold text-slate-900">Profilaktyka i sport</h4>
+          <p className="text-pretty text-sm leading-relaxed text-slate-600">
             Echo serca może być elementem diagnostyki dzieci i młodzieży aktywnie uprawiających sport oraz kwalifikowanych do treningów wyczynowych.
           </p>
         </div>
@@ -234,13 +235,13 @@ const echoContent = (
 
     {/* ── How it goes ── */}
     <div>
-      <h3 className="mb-6 text-xl font-bold text-slate-900">Jak przebiega badanie?</h3>
+      <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">Jak przebiega badanie?</h3>
       <div className="grid gap-4 lg:grid-cols-3">
 
         <div className="rounded-xl bg-slate-50 p-6">
           <div className="mb-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#EE3920]/10 text-xs font-bold text-[#EE3920]">1</div>
-          <h4 className="mb-3 font-semibold text-slate-900">Przed badaniem</h4>
-          <p className="mb-3 text-sm text-slate-600">W większości przypadków echo serca nie wymaga specjalnego przygotowania. Warto zabrać:</p>
+          <h4 className="text-balance mb-3 font-semibold text-slate-900">Przed badaniem</h4>
+          <p className="text-pretty mb-3 text-sm text-slate-600">W większości przypadków echo serca nie wymaga specjalnego przygotowania. Warto zabrać:</p>
           <div className="space-y-1.5 text-sm text-slate-600">
             <div className="flex gap-2"><span className="text-slate-400">–</span><span>wcześniejsze wyniki badań</span></div>
             <div className="flex gap-2"><span className="text-slate-400">–</span><span>dokumentację medyczną</span></div>
@@ -250,16 +251,16 @@ const echoContent = (
 
         <div className="rounded-xl bg-slate-50 p-6">
           <div className="mb-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#EE3920]/10 text-xs font-bold text-[#EE3920]">2</div>
-          <h4 className="mb-3 font-semibold text-slate-900">W trakcie badania</h4>
-          <p className="text-sm leading-relaxed text-slate-600">
+          <h4 className="text-balance mb-3 font-semibold text-slate-900">W trakcie badania</h4>
+          <p className="text-pretty text-sm leading-relaxed text-slate-600">
             Dziecko leży na leżance, a lekarz przykłada do klatki piersiowej specjalną głowicę ultrasonograficzną pokrytą żelem. Stosujemy <strong className="text-slate-700">podgrzewacz żelu</strong> — żel ma temperaturę zbliżoną do ciała, dzięki czemu dziecko nie odczuwa zimna na początku badania. Na monitorze widoczny jest obraz serca w czasie rzeczywistym. Badanie trwa zazwyczaj od 15 do 30 minut.
           </p>
         </div>
 
         <div className="rounded-xl bg-slate-50 p-6">
           <div className="mb-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#EE3920]/10 text-xs font-bold text-[#EE3920]">3</div>
-          <h4 className="mb-3 font-semibold text-slate-900">Po badaniu</h4>
-          <p className="text-sm leading-relaxed text-slate-600">
+          <h4 className="text-balance mb-3 font-semibold text-slate-900">Po badaniu</h4>
+          <p className="text-pretty text-sm leading-relaxed text-slate-600">
             Rodzice otrzymują opis oraz omówienie wyniku przez lekarza. Dziecko może natychmiast wrócić do codziennych aktywności.
           </p>
         </div>
@@ -269,7 +270,7 @@ const echoContent = (
 
     {/* ── Diseases ── */}
     <div className="rounded-2xl bg-slate-50 p-8">
-      <h3 className="mb-5 text-xl font-bold text-slate-900">Jakie choroby można wykryć?</h3>
+      <h3 className="text-balance mb-5 text-xl font-bold text-slate-900">Jakie choroby można wykryć?</h3>
       <div className="space-y-2">
         {diseases.map(item => (
           <div key={item} className="flex items-start gap-2.5">
@@ -282,7 +283,7 @@ const echoContent = (
 
     {/* ── Specialists ── */}
     <div>
-      <h3 className="mb-6 text-xl font-bold text-slate-900">Specjaliści</h3>
+      <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">Specjaliści</h3>
       <div className="flex flex-col gap-3">
         {doctors.filter(d => d.group === "Kardiologia dziecięca").map((d) => (
           <Link key={d.slug} href={`/lekarze/${d.slug}`}
@@ -291,8 +292,8 @@ const echoContent = (
               {initials(d.name)}
             </div>
             <div className="min-w-0 flex-1">
-              <p className="font-semibold text-slate-900 text-sm leading-tight">{d.name}</p>
-              <p className="mt-0.5 text-xs text-slate-500">{d.tags.slice(0, 2).join(" · ")}</p>
+              <p className="text-pretty font-semibold text-slate-900 text-sm leading-tight">{d.name}</p>
+              <p className="text-pretty mt-0.5 text-xs text-slate-500">{d.tags.slice(0, 2).join(" · ")}</p>
             </div>
             <ArrowRight className="h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#EE3920]" />
           </Link>
@@ -302,12 +303,12 @@ const echoContent = (
 
     {/* ── FAQ ── */}
     <div>
-      <h3 className="mb-6 text-xl font-bold text-slate-900">Najczęściej zadawane pytania</h3>
+      <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">Najczęściej zadawane pytania</h3>
       <FaqAccordion items={faq} />
-      <p className="mt-6 text-sm text-slate-500">
+      <p className="text-pretty mt-6 text-sm text-slate-500">
         Nie odpowiedzieliśmy na Twoje pytanie?{" "}
-        <a href="/rejestracja" className="font-medium text-[#EE3920] hover:underline">
-          Skontaktuj się z nami
+        <a href="https://elkardia.pl/rejestracja-online-24h/" className="font-medium text-[#EE3920] hover:underline">
+          Skontaktuj się z nami.
         </a>
       </p>
     </div>

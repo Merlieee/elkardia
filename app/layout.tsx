@@ -23,7 +23,13 @@ export const metadata: Metadata = {
     siteName: "Elkardia — Lubelskie Centrum Kardiologii",
     locale: "pl_PL",
     type: "website",
-    images: [{ url: "/images/logo.webp" }],
+    images: [{ url: "/images/og-default-logo.png", width: 1200, height: 630, alt: "Elkardia — Lubelskie Centrum Kardiologii" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@elkardia_pl",
+    creator: "@elkardia_pl",
+    images: [{ url: "/images/og-default-logo.png", width: 1200, height: 630, alt: "Elkardia — Lubelskie Centrum Kardiologii" }],
   },
 }
 
@@ -82,6 +88,15 @@ export default function RootLayout({
   return (
     <html lang="pl" suppressHydrationWarning className={cn("antialiased", lato.variable, "font-sans")}>
       <head>
+        {/* Google Consent Mode v2 — default everything to denied BEFORE GA loads,
+            so Analytics runs cookieless until the user accepts via the banner.
+            The banner is responsible for calling gtag('consent','update', …). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});`,
+          }}
+        />
+
         {/* JSON-LD structured data */}
         <script
           type="application/ld+json"
@@ -118,10 +133,10 @@ export default function RootLayout({
           src="//code.tidio.co/cnicz45mzjg0gwamid9nmitflt6jdwbz.js"
           strategy="lazyOnload"
         />
-      </body>
 
-      {/* Google Analytics 4 */}
-      <GoogleAnalytics gaId="G-PEJZE9ZS3L" />
+        {/* Google Analytics 4 — respects the Consent Mode defaults set in <head> */}
+        <GoogleAnalytics gaId="G-PEJZE9ZS3L" />
+      </body>
     </html>
   )
 }

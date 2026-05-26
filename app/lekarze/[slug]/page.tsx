@@ -11,8 +11,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!doctor) return {}
   return {
     title: doctor.name,
+    alternates: { canonical: `/lekarze/${slug}` },
     description: `${doctor.name} — ${doctor.tags.join(", ")}. ${doctor.bio.substring(0, 140)}...`,
     openGraph: {
+      images: [{ url: "/images/og-default-logo.png", width: 1200, height: 630, alt: "Elkardia — Lubelskie Centrum Kardiologii" }],
       title: `${doctor.name} | Elkardia Lublin`,
       description: `${doctor.group} — ${doctor.tags.join(", ")}. Umów wizytę online 24h.`,
       url: `https://elkardia.pl/lekarze/${slug}`,
@@ -76,8 +78,8 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
               {initials(doctor.name)}
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{doctor.group}</p>
-              <h1 className="mt-1 text-3xl font-bold text-slate-900 sm:text-4xl">{doctor.name}</h1>
+              <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{doctor.group}</p>
+              <h1 className="text-balance mt-1 text-3xl font-bold text-slate-900 sm:text-4xl">{doctor.name}</h1>
               <div className="mt-3 flex flex-wrap gap-2">
                 {doctor.tags.map(t => (
                   <span key={t} className="rounded-md bg-white px-3 py-1 text-sm text-slate-600 ring-1 ring-slate-200">
@@ -98,13 +100,13 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
             {/* Left: bio + conditions + services */}
             <div className="lg:col-span-2 flex flex-col gap-10">
               <div>
-                <h2 className="text-lg font-semibold text-slate-900 mb-3">O lekarzu</h2>
-                <p className="leading-relaxed text-slate-600">{doctor.bio}</p>
+                <h2 className="text-balance text-lg font-semibold text-slate-900 mb-3">O lekarzu</h2>
+                <p className="text-pretty leading-relaxed text-slate-600">{doctor.bio}</p>
               </div>
 
               {doctor.conditions && doctor.conditions.length > 0 && (
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Zakres diagnostyki i leczenia</h2>
+                  <h2 className="text-balance text-lg font-semibold text-slate-900 mb-4">Zakres diagnostyki i leczenia</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {doctor.conditions.map(c => (
                       <div key={c} className="flex items-start gap-2.5 text-sm text-slate-700">
@@ -118,7 +120,7 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
 
               {doctor.services && doctor.services.length > 0 && (
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Zakres usług</h2>
+                  <h2 className="text-balance text-lg font-semibold text-slate-900 mb-4">Zakres usług</h2>
                   <div className="flex flex-col gap-2">
                     {doctor.services.map(s => (
                       <div key={s} className="flex items-start gap-2.5 text-sm text-slate-700">
@@ -134,7 +136,7 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
                 <div className="rounded-xl border border-slate-100 bg-slate-50 p-5">
                   <div className="flex items-center gap-2 mb-4">
                     <Info className="h-4 w-4 text-[#EE3920]" />
-                    <h2 className="text-sm font-semibold text-slate-900">Informacje dla pacjenta</h2>
+                    <h2 className="text-balance text-sm font-semibold text-slate-900">Informacje dla pacjenta</h2>
                   </div>
                   <div className="flex flex-col gap-3 text-sm text-slate-700">
                     {doctor.patientInfo.minAge !== undefined && (
@@ -162,9 +164,9 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
                 <div className="rounded-xl bg-slate-50 p-5">
                   <div className="flex items-center gap-2 mb-3">
                     <Clock className="h-4 w-4 text-[#EE3920]" />
-                    <h3 className="font-semibold text-slate-900 text-sm">Godziny przyjęć</h3>
+                    <h3 className="text-balance font-semibold text-slate-900 text-sm">Godziny przyjęć</h3>
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed">{doctor.hours}</p>
+                  <p className="text-pretty text-sm text-slate-600 leading-relaxed">{doctor.hours}</p>
                 </div>
               )}
 
@@ -172,7 +174,7 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
                 <div className="rounded-xl bg-slate-50 p-5">
                   <div className="flex items-center gap-2 mb-3">
                     <CreditCard className="h-4 w-4 text-[#EE3920]" />
-                    <h3 className="font-semibold text-slate-900 text-sm">Cennik</h3>
+                    <h3 className="text-balance font-semibold text-slate-900 text-sm">Cennik</h3>
                   </div>
                   <div className="flex flex-col gap-2">
                     {doctor.prices.map(p => (
@@ -186,8 +188,8 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
               )}
 
               <div className="rounded-xl bg-[#EE3920] p-5 text-white">
-                <h3 className="font-semibold mb-1">Umów wizytę</h3>
-                <p className="text-sm text-white/70 mb-4">Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.</p>
+                <h3 className="text-balance font-semibold mb-1">Umów wizytę</h3>
+                <p className="text-pretty text-sm text-white/70 mb-4">Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.</p>
                 <a href="https://elkardia.pl/rejestracja-online-24h/" className="block">
                   <Button className="w-full bg-white text-[#EE3920] hover:bg-slate-100 gap-1 font-semibold">
                     Zarejestruj się <ArrowRight className="h-4 w-4" />

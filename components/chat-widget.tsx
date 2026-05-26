@@ -86,8 +86,8 @@ export function ChatWidget() {
               <Bot className="h-4 w-4" />
             </div>
             <div className="flex-1">
-              <p className="text-sm font-semibold leading-none">Asystent Elkardia</p>
-              <p className="mt-0.5 text-xs text-white/70">Odpowiadamy na pytania</p>
+              <p className="text-pretty text-sm font-semibold leading-none">Asystent Elkardia</p>
+              <p className="text-pretty mt-0.5 text-xs text-white/70">Odpowiadamy na pytania</p>
             </div>
             <button onClick={() => setOpen(false)} className="rounded-md p-1 hover:bg-white/20 transition-colors">
               <X className="h-4 w-4" />
@@ -145,7 +145,7 @@ export function ChatWidget() {
                 <Send className="h-3.5 w-3.5" />
               </button>
             </div>
-            <p className="mt-2 text-center text-[10px] text-slate-400">Pilne sprawy: (81) 565 70 75</p>
+            <p className="text-pretty mt-2 text-center text-[10px] text-slate-400">Pilne sprawy: (81) 565 70 75</p>
           </div>
         </div>
       )}

@@ -3,7 +3,8 @@ import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
 
 export const metadata: Metadata = {
-  title: "Dietetyka kliniczna — Elkardia Lublin",
+  title: "Dietetyka kliniczna",
+  alternates: { canonical: "/dietetycy" },
   description: "Dietetycy kliniczni w Elkardia Lublin — indywidualny plan żywienia, analiza składu ciała (SECA-285), dieta kardiologiczna. Konsultacje stacjonarne i online.",
   openGraph: {
     title: "Dietetycy kliniczni — Elkardia Lublin",

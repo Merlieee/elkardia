@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useId } from "react"
 
 const reviews = [
   {
@@ -111,9 +111,9 @@ function StarFull() {
   )
 }
 
-let _partialId = 0
 function StarPartial({ pct }: { pct: number }) {
-  const id = `partial-${Math.round(pct * 100)}-${_partialId++}`
+  const uid = useId()
+  const id = `partial-${Math.round(pct * 100)}-${uid}`
   return (
     <svg className="h-4 w-4" viewBox="0 0 20 20">
       <defs>
@@ -210,8 +210,8 @@ export function ReviewsCarousel() {
     <section className="overflow-hidden py-20 bg-slate-50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-10 flex items-end justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Opinie pacjentów</p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Co mówią o nas pacjenci</h2>
+          <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Opinie pacjentów</p>
+          <h2 className="text-balance mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Co mówią o nas pacjenci</h2>
           <div className="mt-3 flex items-center gap-2">
             <RatingStars rating={4.8} />
             <span className="text-sm font-semibold text-slate-900">4,8</span>
@@ -241,11 +241,11 @@ export function ReviewsCarousel() {
                   {initials(r.name)}
                 </div>
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold text-slate-900">{r.name}</p>
+                  <p className="text-pretty truncate text-sm font-semibold text-slate-900">{r.name}</p>
                   <CardStars rating={r.stars} />
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-slate-600 line-clamp-5">{r.text}</p>
+              <p className="text-pretty text-sm leading-relaxed text-slate-600 line-clamp-5">{r.text}</p>
             </div>
           ))}
         </div>
