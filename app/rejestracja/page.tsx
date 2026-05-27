@@ -37,7 +37,7 @@ export default function RejestracjaPage() {
       {/* ── ONLINE BOOKING WIDGET ── */}
       <section id="rejestracja-online" className="scroll-mt-20 py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 text-center">
+          <div className="mb-5 text-center">
             <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Rejestracja online</p>
             <h2 className="text-balance mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Umów wizytę online — 24h/dobę</h2>
             <p className="text-pretty mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-500">
