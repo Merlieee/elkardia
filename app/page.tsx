@@ -72,7 +72,7 @@ export default function HomePage() {
               Centrum kardiologii dorosłych i dzieci — z dostępem do neurologa, stomatologa, dietetyka i wielu innych specjalistów pod jednym dachem. W Lublinie, od 2014 roku.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://elkardia.pl/rejestracja-online-24h/">
+              <a href="/rejestracja">
                 <Button size="lg" className="group inline-flex h-12 items-center justify-center gap-1 bg-[#EE3920] px-6 text-base font-semibold text-white shadow-none hover:bg-[#d4321c]">
                   Zarejestruj się online<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Button>
@@ -381,7 +381,7 @@ export default function HomePage() {
             Laureat Orłów Medycyny. Rejestracja telefoniczna pon–pt 8:00–20:00, online 24h/dobę — 7 dni w tygodniu.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-            <a href="https://elkardia.pl/rejestracja-online-24h/">
+            <a href="/rejestracja">
               <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#0C71C3] hover:bg-slate-50">
                 Rejestracja online 24h <ArrowRight className="h-4 w-4 transition-transform group-hover/button:translate-x-0.5" />
               </Button>

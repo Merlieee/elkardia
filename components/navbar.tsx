@@ -56,7 +56,7 @@ const links: NavLink[] = [
   { href: "/kardiologia-dziecieca", label: "Kardiologia Dziecięca" },
   { href: "/badania", label: "Badania" },
   { href: "/specjalnosci", label: "Specjalności", items: specjalnosciItems },
-  { href: "https://elkardia.pl/rejestracja-online-24h/", label: "Rejestracja 24h" },
+  { href: "/rejestracja", label: "Rejestracja 24h" },
 ]
 
 function DropdownNavItem({ link }: { link: NavLink & { items: DropdownItem[] } }) {

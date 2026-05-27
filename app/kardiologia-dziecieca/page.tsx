@@ -307,7 +307,7 @@ const echoContent = (
       <FaqAccordion items={faq} />
       <p className="text-pretty mt-6 text-sm text-slate-500">
         Nie odpowiedzieliśmy na Twoje pytanie?{" "}
-        <a href="https://elkardia.pl/rejestracja-online-24h/" className="font-medium text-[#EE3920] hover:underline">
+        <a href="/rejestracja" className="font-medium text-[#EE3920] hover:underline">
           Skontaktuj się z nami.
         </a>
       </p>

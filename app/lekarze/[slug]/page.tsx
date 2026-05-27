@@ -190,7 +190,7 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
               <div className="rounded-xl bg-[#EE3920] p-5 text-white">
                 <h3 className="text-balance font-semibold mb-1">Umów wizytę</h3>
                 <p className="text-pretty text-sm text-white/70 mb-4">Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.</p>
-                <a href="https://elkardia.pl/rejestracja-online-24h/" className="block">
+                <a href="/rejestracja" className="block">
                   <Button className="w-full bg-white text-[#EE3920] hover:bg-slate-100 gap-1 font-semibold">
                     Zarejestruj się <ArrowRight className="h-4 w-4" />
                   </Button>
