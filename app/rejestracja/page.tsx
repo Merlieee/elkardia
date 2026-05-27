@@ -37,10 +37,10 @@ export default function RejestracjaPage() {
       {/* ── ONLINE BOOKING WIDGET ── */}
       <section id="rejestracja-online" className="scroll-mt-20 py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
+          <div className="mb-8 text-center">
             <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Rejestracja online</p>
             <h2 className="text-balance mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Umów wizytę online — 24h/dobę</h2>
-            <p className="text-pretty mt-3 max-w-xl text-sm leading-relaxed text-slate-500">
+            <p className="text-pretty mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-500">
               Wybierz specjalizację, lekarza oraz dogodny termin. Rejestracja czynna przez całą dobę, 7 dni w tygodniu.
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function RejestracjaPage() {
             sandbox="allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin"
             loading="lazy"
           />
-          <p className="text-pretty mt-4 text-sm text-slate-500">
+          <p className="text-pretty mt-4 text-center text-sm text-slate-500">
             Problem z rejestracją online? Zadzwoń:{" "}
             <a href="tel:+48815657075" className="font-medium text-[#EE3920] hover:underline">(81) 565 70 75</a>
           </p>
