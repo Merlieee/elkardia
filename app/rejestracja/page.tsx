@@ -36,7 +36,7 @@ export default function RejestracjaPage() {
 
       {/* ── ONLINE BOOKING WIDGET ── */}
       <section id="rejestracja-online" className="scroll-mt-20 py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[960px] px-4 sm:px-6 lg:px-8">
           <div className="mb-5 text-center">
             <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Rejestracja online</p>
             <h2 className="text-balance mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Umów wizytę online — 24h/dobę</h2>
@@ -46,7 +46,7 @@ export default function RejestracjaPage() {
           </div>
           {/* overflow-hidden + negative top margin clips the widget's empty
               internal top padding so it sits closer to the header */}
-          <div className="overflow-hidden rounded-xl">
+          <div className="-mx-4 overflow-hidden rounded-xl sm:-mx-6 lg:-mx-8">
             <iframe
               src="https://www.infotel-software.eu/newgrafikonlinev4/index.php/GoController/GetMessage?Serial=4391e423-8704-40db-b3f4-4dd8223e1635"
               title="Rejestracja online — Grafik Online"
