@@ -44,13 +44,17 @@ export default function RejestracjaPage() {
               Wybierz specjalizację, lekarza oraz dogodny termin. Rejestracja czynna przez całą dobę, 7 dni w tygodniu.
             </p>
           </div>
-          <iframe
-            src="https://www.infotel-software.eu/newgrafikonlinev4/index.php/GoController/GetMessage?Serial=4391e423-8704-40db-b3f4-4dd8223e1635"
-            title="Rejestracja online — Grafik Online"
-            className="h-[860px] w-full rounded-xl sm:h-[740px]"
-            sandbox="allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin"
-            loading="lazy"
-          />
+          {/* overflow-hidden + negative top margin clips the widget's empty
+              internal top padding so it sits closer to the header */}
+          <div className="overflow-hidden rounded-xl">
+            <iframe
+              src="https://www.infotel-software.eu/newgrafikonlinev4/index.php/GoController/GetMessage?Serial=4391e423-8704-40db-b3f4-4dd8223e1635"
+              title="Rejestracja online — Grafik Online"
+              className="-mt-16 h-[924px] w-full sm:h-[804px]"
+              sandbox="allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin"
+              loading="lazy"
+            />
+          </div>
           <p className="text-pretty mt-4 text-center text-sm text-slate-500">
             Problem z rejestracją online? Zadzwoń:{" "}
             <a href="tel:+48815657075" className="font-medium text-[#EE3920] hover:underline">(81) 565 70 75</a>
