@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { BookingEmbed } from "@/components/booking-embed"
 
 export const metadata: Metadata = {
   title: "Rejestracja — umów wizytę online 24h",
@@ -44,16 +45,10 @@ export default function RejestracjaPage() {
               Wybierz specjalizację, lekarza oraz dogodny termin. Rejestracja czynna przez całą dobę, 7 dni w tygodniu.
             </p>
           </div>
-          {/* overflow-hidden + negative top margin clips the widget's empty
-              internal top padding so it sits closer to the header */}
-          <div className="-mx-4 overflow-hidden rounded-xl sm:-mx-6 lg:-mx-8">
-            <iframe
-              src="https://www.infotel-software.eu/newgrafikonlinev4/index.php/GoController/GetMessage?Serial=4391e423-8704-40db-b3f4-4dd8223e1635"
-              title="Rejestracja online — Grafik Online"
-              className="-mt-16 h-[924px] w-full sm:h-[804px]"
-              sandbox="allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin"
-              loading="lazy"
-            />
+          {/* break out of container padding so the widget gets its full natural
+              width on desktop; BookingEmbed scales it down to fit on mobile */}
+          <div className="-mx-4 sm:-mx-6 lg:-mx-8">
+            <BookingEmbed />
           </div>
           <p className="text-pretty mt-4 text-center text-sm text-slate-500">
             Problem z rejestracją online? Zadzwoń:{" "}
