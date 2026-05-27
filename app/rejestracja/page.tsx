@@ -36,24 +36,22 @@ export default function RejestracjaPage() {
 
       {/* ── ONLINE BOOKING WIDGET ── */}
       <section id="rejestracja-online" className="scroll-mt-20 py-16">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 text-center">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
             <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Rejestracja online</p>
             <h2 className="text-balance mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Umów wizytę online — 24h/dobę</h2>
-            <p className="text-pretty mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-500">
+            <p className="text-pretty mt-3 max-w-xl text-sm leading-relaxed text-slate-500">
               Wybierz specjalizację, lekarza oraz dogodny termin. Rejestracja czynna przez całą dobę, 7 dni w tygodniu.
             </p>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <iframe
-              src="https://www.infotel-software.eu/newgrafikonlinev4/index.php/GoController/GetMessage?Serial=4391e423-8704-40db-b3f4-4dd8223e1635"
-              title="Rejestracja online — Grafik Online"
-              className="h-[860px] w-full sm:h-[740px]"
-              sandbox="allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin"
-              loading="lazy"
-            />
-          </div>
-          <p className="text-pretty mt-4 text-center text-xs text-slate-400">
+          <iframe
+            src="https://www.infotel-software.eu/newgrafikonlinev4/index.php/GoController/GetMessage?Serial=4391e423-8704-40db-b3f4-4dd8223e1635"
+            title="Rejestracja online — Grafik Online"
+            className="h-[860px] w-full rounded-xl sm:h-[740px]"
+            sandbox="allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin"
+            loading="lazy"
+          />
+          <p className="text-pretty mt-4 text-sm text-slate-500">
             Problem z rejestracją online? Zadzwoń:{" "}
             <a href="tel:+48815657075" className="font-medium text-[#EE3920] hover:underline">(81) 565 70 75</a>
           </p>
@@ -84,7 +82,7 @@ export default function RejestracjaPage() {
               </div>
               <div>
                 <p className="text-pretty font-semibold text-slate-900">E-mail</p>
-                <p className="text-pretty mt-1 text-sm text-slate-500">Odpowiadamy w ciągu 24h</p>
+                <p className="text-pretty mt-1 text-sm text-slate-500">Skontaktuj się z nami mailowo</p>
               </div>
               <span className="mt-auto text-sm font-semibold text-slate-900">rejestracja@elkardia.pl</span>
             </a>
