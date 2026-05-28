@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, ArrowRight, CheckCircle, ChevronRight, Users, UserRound } from "lucide-react"
+import { Phone, ArrowRight, CheckCircle, ChevronRight } from "lucide-react"
 import { SpecialtiesGrid } from "@/components/specialties-grid"
 import { ReviewsCarousel } from "@/components/reviews-carousel"
 import { Button } from "@/components/ui/button"
@@ -383,19 +383,9 @@ export default function HomePage() {
                 Jako placówka przyjazna rodzinom i seniorom uznajemy Kartę Dużej Rodziny oraz Kartę Seniora.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#EE3920]/10 text-[#EE3920]">
-                  <Users className="h-5 w-5" />
-                </div>
-                <span className="font-semibold text-slate-900">Karta Dużej Rodziny</span>
-              </div>
-              <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#EE3920]/10 text-[#EE3920]">
-                  <UserRound className="h-5 w-5" />
-                </div>
-                <span className="font-semibold text-slate-900">Karta Seniora</span>
-              </div>
+            <div className="flex flex-wrap items-center gap-5">
+              <Image src="/images/karta-duzej-rodziny.png" alt="Tu honorujemy Kartę Dużej Rodziny" width={394} height={368} className="h-28 w-auto rounded-xl sm:h-32" />
+              <Image src="/images/karta-seniora.jpg" alt="Tu honorujemy Kartę Seniora" width={2482} height={1750} className="h-28 w-auto rounded-xl sm:h-32" />
             </div>
           </div>
         </div>
