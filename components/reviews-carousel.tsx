@@ -207,7 +207,7 @@ export function ReviewsCarousel() {
   const doubled = [...reviews, ...reviews]
 
   return (
-    <section className="overflow-hidden py-20 bg-slate-50">
+    <section className="overflow-hidden py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-10 flex items-end justify-between">
         <div>
           <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Opinie pacjentów</p>

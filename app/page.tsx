@@ -161,10 +161,10 @@ export default function HomePage() {
                 { img: "/images/ablacja-VT.webp", label: "Częstoskurcz komorowy (VT)" },
                 { img: "/images/ablacja-WPW.webp", label: "Zespół WPW" },
               ].map((item) => (
-                <div key={item.label} className="group relative aspect-square overflow-hidden rounded-xl bg-muted">
+                <div key={item.label} className="relative aspect-square overflow-hidden rounded-xl bg-muted">
                   <Image
                     src={item.img} alt={item.label} fill
-                    className="object-cover opacity-80 transition-all duration-500 ease-out group-hover:scale-110 group-hover:opacity-100"
+                    className="object-cover opacity-80"
                   />
                   <div className="absolute bottom-2 left-2 right-2">
                     <span className="rounded-md bg-black/70 px-2 py-0.5 text-xs text-slate-300">{item.label}</span>
@@ -371,21 +371,50 @@ export default function HomePage() {
       <ReviewsCarousel />
 
       {/* ── DISCOUNT CARDS ───────────────────────────────────────────── */}
-      <section className="border-t border-slate-200 py-16">
+      <section className="bg-white py-14">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid items-center gap-8 rounded-2xl bg-slate-50 p-8 sm:p-10 lg:grid-cols-[1fr_auto]">
-            <div>
-              <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Zniżki</p>
-              <h2 className="text-balance mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-                Honorujemy karty zniżkowe
+          <div className="text-center">
+            <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Zniżki</p>
+            <h2 className="text-balance mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+              Honorujemy karty zniżkowe
+            </h2>
+            <p className="text-pretty mx-auto mt-3 max-w-xl leading-relaxed text-slate-600">
+              Jako placówka przyjazna rodzinom i seniorom uznajemy Kartę Dużej Rodziny oraz Kartę Seniora.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
+              <div className="h-28 overflow-hidden rounded-xl sm:h-32">
+                <Image src="/images/karta-duzej-rodziny 1.png" alt="Tu honorujemy Kartę Dużej Rodziny" width={394} height={368} className="h-full w-auto scale-[1.06]" />
+              </div>
+              <Image src="/images/karta-seniora 1.png" alt="Tu honorujemy Kartę Seniora" width={2482} height={1750} className="h-28 w-auto rounded-xl sm:h-32" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── INSURANCE PARTNERS ───────────────────────────────────────── */}
+      <section className="bg-slate-50 py-14">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
+            <div className="lg:flex-1">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Ubezpieczenia</p>
+              <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                Współpracujemy z ubezpieczycielami
               </h2>
-              <p className="text-pretty mt-3 max-w-xl leading-relaxed text-slate-600">
-                Jako placówka przyjazna rodzinom i seniorom uznajemy Kartę Dużej Rodziny oraz Kartę Seniora.
+              <p className="mt-3 max-w-md leading-relaxed text-slate-600">
+                Przyjmujemy pacjentów w ramach ubezpieczeń zdrowotnych i abonamentów medycznych.
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-5">
-              <Image src="/images/karta-duzej-rodziny.png" alt="Tu honorujemy Kartę Dużej Rodziny" width={394} height={368} className="h-28 w-auto rounded-xl sm:h-32" />
-              <Image src="/images/karta-seniora.jpg" alt="Tu honorujemy Kartę Seniora" width={2482} height={1750} className="h-28 w-auto rounded-xl sm:h-32" />
+            <div className="grid grid-cols-2 gap-6 lg:flex-1">
+              {[
+                { src: "/images/tuzdrowie-logo.svg",  alt: "TuZdrowie",     width: 160, height: 48 },
+                { src: "/images/swiatzdrowia.svg",     alt: "Świat Zdrowia", width: 160, height: 48 },
+                { src: "/images/saneo-logo2.png",      alt: "Saneo",         width: 140, height: 48 },
+                { src: "/images/polmed-logo.webp",     alt: "Polmed",        width: 140, height: 48 },
+              ].map((logo) => (
+                <div key={logo.alt} className="flex items-center justify-center rounded-xl bg-white p-6">
+                  <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} className="h-8 w-auto object-contain" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -394,12 +423,18 @@ export default function HomePage() {
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="bg-[#0C71C3] py-14">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <Image src="/images/award.webp" alt="Orły Medycyny" width={220} height={66} className="mx-auto mb-10 h-[4.5rem] w-auto opacity-90 brightness-0 invert" />
+          <div className="mb-10 flex flex-wrap items-center justify-center gap-2">
+            <Image src="/images/orly-medycyny.png" alt="Orły Medycyny" width={220} height={66} className="h-10 w-auto opacity-90 brightness-0 invert" />
+            {[2022, 2023, 2024].flatMap((year) => [
+              <Image key={`laureat-${year}`} src={`/images/orly-laureat-${year}.png`} alt={`${year} Laureat Konkursu Orły Medycyny`} width={83} height={60} className="h-12 w-auto opacity-90 brightness-0 invert" />,
+              <Image key={`gold-${year}`} src={`/images/orly-gold-${year}.png`} alt={`${year} Gold Orły Medycyny`} width={83} height={60} className="h-12 w-auto opacity-90 brightness-0 invert" />,
+            ])}
+          </div>
           <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Jesteś w dobrych rękach
           </h2>
           <p className="text-pretty mx-auto mt-6 max-w-md text-white/70 leading-relaxed">
-            Laureat Orłów Medycyny. Rejestracja telefoniczna pon–pt 8:00–20:00, online 24h/dobę — 7 dni w tygodniu.
+            Laureat Orłów Medycyny 2020–2024. Rejestracja telefoniczna pon–pt 8:00–20:00, online 24h/dobę — 7 dni w tygodniu.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
             <a href="/rejestracja">
