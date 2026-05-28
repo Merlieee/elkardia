@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, ArrowRight, CheckCircle, ChevronRight } from "lucide-react"
+import { Phone, ArrowRight, CheckCircle, ChevronRight, Users, UserRound } from "lucide-react"
 import { SpecialtiesGrid } from "@/components/specialties-grid"
 import { ReviewsCarousel } from "@/components/reviews-carousel"
 import { Button } from "@/components/ui/button"
@@ -369,6 +369,37 @@ export default function HomePage() {
 
       {/* ── REVIEWS ──────────────────────────────────────────────────── */}
       <ReviewsCarousel />
+
+      {/* ── DISCOUNT CARDS ───────────────────────────────────────────── */}
+      <section className="border-t border-slate-200 py-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid items-center gap-8 rounded-2xl bg-slate-50 p-8 sm:p-10 lg:grid-cols-[1fr_auto]">
+            <div>
+              <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Zniżki</p>
+              <h2 className="text-balance mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                Honorujemy karty zniżkowe
+              </h2>
+              <p className="text-pretty mt-3 max-w-xl leading-relaxed text-slate-600">
+                Jako placówka przyjazna rodzinom i seniorom uznajemy Kartę Dużej Rodziny oraz Kartę Seniora.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#EE3920]/10 text-[#EE3920]">
+                  <Users className="h-5 w-5" />
+                </div>
+                <span className="font-semibold text-slate-900">Karta Dużej Rodziny</span>
+              </div>
+              <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#EE3920]/10 text-[#EE3920]">
+                  <UserRound className="h-5 w-5" />
+                </div>
+                <span className="font-semibold text-slate-900">Karta Seniora</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="bg-[#0C71C3] py-14">
