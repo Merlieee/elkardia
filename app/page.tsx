@@ -118,7 +118,7 @@ export default function HomePage() {
                 { img: "/images/ablacja-WPW.webp", label: h.ablacjaImages.wpw },
               ] as const).map((item) => (
                 <div key={item.label} className="relative aspect-square overflow-hidden rounded-xl bg-muted">
-                  <Image src={item.img} alt={item.label} fill className="object-cover opacity-80" />
+                  <Image src={item.img} alt={item.label} fill className="object-cover" />
                   <div className="absolute bottom-2 left-2 right-2">
                     <span className="rounded-md bg-black/70 px-2 py-0.5 text-xs text-slate-300">{item.label}</span>
                   </div>

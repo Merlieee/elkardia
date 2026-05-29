@@ -1,7 +1,7 @@
 const en = {
   banner: {
-    message: "Ta strona dostępna jest również w języku polskim.",
-    switch: "Switch to Polish →",
+    message: "Ta strona jest dostępna po polsku.",
+    switch: "Przejdź →",
   },
   nav: {
     doctors: "Doctors",
