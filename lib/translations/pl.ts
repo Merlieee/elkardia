@@ -164,7 +164,7 @@ const pl = {
   // ── homepage ────────────────────────────────────────────────────────────────
   home: {
     hero: {
-      eyebrow: "Lubelskie Centrum Kardiologii",
+      eyebrow: "Elkardia | Lubelskie Centrum Kardiologii",
       title: "Lekarze specjaliści,\nnie tylko kardiolodzy",
       subtitle: "Centrum kardiologii dorosłych i dzieci — z dostępem do neurologa, stomatologa, dietetyka i wielu innych specjalistów pod jednym dachem. W Lublinie, od 2014 roku.",
       bookBtn: "Zarejestruj się online",

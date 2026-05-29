@@ -193,7 +193,7 @@ const en = {
   // ── homepage ────────────────────────────────────────────────────────────────
   home: {
     hero: {
-      eyebrow: "Lublin Cardiology Center",
+      eyebrow: "Elkardia | Lublin Cardiology Center",
       title: "Medical specialists,\nnot only cardiologists",
       subtitle: "A cardiology center for adults and children — with access to a neurologist, dentist, dietitian and many other specialists under one roof. In Lublin, since 2014.",
       bookBtn: "Register online",
