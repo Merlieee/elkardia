@@ -30,7 +30,10 @@ if (!i18n.isInitialized) {
 }
 
 export function setLang(lang: "pl" | "en") {
-  if (typeof window !== "undefined") localStorage.setItem("elkardia-lang", lang)
+  if (typeof window !== "undefined") {
+    localStorage.setItem("elkardia-lang", lang)
+    window.scrollTo({ top: 0, behavior: "instant" })
+  }
   i18n.changeLanguage(lang)
 }
 
