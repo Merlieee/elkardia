@@ -1,33 +1,22 @@
 import type { Metadata } from "next"
 import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
+import pl from "@/lib/translations/pl"
+import en from "@/lib/translations/en"
 
 export const metadata: Metadata = {
   title: "Diabetologia",
   alternates: { canonical: "/diabetologia" },
-  description: "Leczenie cukrzycy i zaburzeń metabolicznych w Lublinie. Diabetologia dla dorosłych i dzieci.",
+  description: "Leczenie cukrzycy i zaburzeń metabolicznych u dorosłych i dzieci.",
   openGraph: { images: [{ url: "/images/spec-7.webp" }] },
 }
-
-const conditions = [
-  "Cukrzyca typu 1",
-  "Cukrzyca typu 2",
-  "Cukrzyca u dzieci i młodzieży",
-  "Insulinooporność",
-  "Otyłość i zaburzenia metaboliczne",
-  "Powikłania cukrzycowe (nefropatia, retinopatia)",
-  "Hypoglikemia",
-]
 
 export default function Page() {
   return (
     <SpecialtyPage
-      title="Diabetologia"
-      label="Specjalność"
-      description="Leczenie cukrzycy i zaburzeń metabolicznych u dorosłych i dzieci."
+      content={{ pl: pl.pages.diabetology, en: en.pages.diabetology }}
       heroImage="/images/spec-7.webp"
       heroPosition="center_45%"
-      conditions={conditions}
       doctors={doctors.filter(d => d.group === "Endokrynologia i diabetologia")}
     />
   )

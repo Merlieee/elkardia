@@ -1,36 +1,23 @@
 import type { Metadata } from "next"
 import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
+import pl from "@/lib/translations/pl"
+import en from "@/lib/translations/en"
 
 export const metadata: Metadata = {
   title: "Nefrologia",
   alternates: { canonical: "/nefrologia" },
-  description: "Diagnostyka i leczenie chorób nerek i układu moczowego w Lublinie. Nefrologia dziecięca i dorosłych.",
+  description: "Diagnostyka i leczenie chorób nerek i układu moczowego.",
   openGraph: { images: [{ url: "/images/nefrologia.webp" }] },
 }
-
-const conditions = [
-  "Przewlekła choroba nerek",
-  "Ostre uszkodzenie nerek",
-  "Choroby układu moczowego u dzieci",
-  "Nadciśnienie nerkowe",
-  "Białkomocz i krwiomocz",
-  "Diagnostyka nefrourologiczna",
-  "Kamica nerkowa",
-]
 
 export default function Page() {
   return (
     <SpecialtyPage
-      title="Nefrologia"
-      label="Specjalność"
-      description="Diagnostyka i leczenie chorób nerek i układu moczowego u dzieci i dorosłych."
+      content={{ pl: pl.pages.nephrology, en: en.pages.nephrology }}
       heroImage="/images/nefrologia.webp"
-      conditions={conditions}
-      doctors={doctors.filter(d =>
-        d.tags.some(t => t.toLowerCase().includes("nefrol")) ||
-        d.group === "Kardiologia dziecięca" && d.tags.some(t => t.toLowerCase().includes("nefrol"))
-      )}
+      
+      doctors={doctors.filter(d => d.tags.some(t => t.toLowerCase().includes("nefrol")))}
     />
   )
 }

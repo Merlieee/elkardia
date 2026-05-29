@@ -1,7 +1,11 @@
+"use client"
+
 import Link from "next/link"
 import { Phone, Mail, MapPin, Clock, Star } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { ElkardiaLogo } from "@/components/logos"
+import { useTranslation } from "react-i18next"
+import { setLang } from "@/lib/i18n"
 
 function FacebookIcon() {
   return (
@@ -20,6 +24,8 @@ function InstagramIcon() {
 }
 
 export function Footer() {
+  const { t, i18n } = useTranslation()
+
   return (
     <footer className="border-t bg-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -29,7 +35,7 @@ export function Footer() {
               <ElkardiaLogo className="h-8 w-auto" />
             </Link>
             <p className="text-pretty text-sm text-muted-foreground leading-relaxed">
-              Lubelskie Centrum Kardiologii — wysoko­specjalistyczna opieka nad sercem dla dzieci i dorosłych. Działamy nieprzerwanie od 2014 roku.
+              {t("footer.tagline")}
             </p>
             <div className="flex items-center gap-2">
               <a href="https://www.facebook.com/elkardia.lubelskie.centrum.kardiologii" target="_blank" rel="noopener noreferrer"
@@ -43,35 +49,34 @@ export function Footer() {
               <a href="https://www.google.com/search?q=Elkardia+Lubelskie+Centrum+Kardiologii+Lublin#lrd=,3" target="_blank" rel="noopener noreferrer"
                 className="flex h-auto items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-500 transition-colors hover:bg-[#EE3920] hover:text-white">
                 <Star className="h-3.5 w-3.5" />
-                Oceń nas w Google
+                {t("footer.rateGoogle")}
               </a>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-balance font-semibold text-sm">Usługi</h4>
+            <h4 className="text-balance font-semibold text-sm">{t("footer.services")}</h4>
             <nav className="flex flex-col gap-2">
-              {[
-                { href: "/lekarze", label: "Lekarze specjaliści" },
-                { href: "/ablacja-serca", label: "Ablacje serca" },
-                { href: "/kardiologia-dziecieca", label: "Kardiologia dziecięca" },
-                { href: "/badania", label: "Badania diagnostyczne" },
-                { href: "/specjalnosci", label: "Specjalności" },
-                { href: "/rejestracja", label: "Rejestracja 24h" },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {(["doctors", "ablation", "pediatric", "tests", "specialties", "registration"] as const).map((key) => {
+                const hrefs: Record<string, string> = {
+                  doctors: "/lekarze",
+                  ablation: "/ablacja-serca",
+                  pediatric: "/kardiologia-dziecieca",
+                  tests: "/badania",
+                  specialties: "/specjalnosci",
+                  registration: "/rejestracja",
+                }
+                return (
+                  <Link key={key} href={hrefs[key]} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                    {t(`footer.links.${key}`)}
+                  </Link>
+                )
+              })}
             </nav>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-balance font-semibold text-sm">Kontakt</h4>
+            <h4 className="text-balance font-semibold text-sm">{t("footer.contact")}</h4>
             <div className="flex flex-col gap-3">
               <a href="tel:+48815657075" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
@@ -89,7 +94,7 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-balance font-semibold text-sm">Lokalizacja</h4>
+            <h4 className="text-balance font-semibold text-sm">{t("footer.location")}</h4>
             <div className="flex flex-col gap-3">
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
@@ -97,7 +102,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 shrink-0 text-primary" />
-                <span>Pon–Pt: 8:00–20:00</span>
+                <span>{t("footer.hours")}</span>
               </div>
             </div>
           </div>
@@ -116,11 +121,17 @@ export function Footer() {
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-pretty text-xs text-muted-foreground">
-            © 2024 Elkardia Sp. z o.o. Wszelkie prawa zastrzeżone.
+            {t("footer.copyright")}
           </p>
-          <div className="flex gap-4">
-            <Link href="https://doktorekg.pl/regulamin/" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Regulamin</Link>
-            <Link href="https://doktorekg.pl/polityka-prywatnosci/" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Polityka prywatności</Link>
+          <div className="flex items-center gap-4">
+            <Link href="https://doktorekg.pl/regulamin/" className="text-xs text-muted-foreground hover:text-foreground transition-colors">{t("footer.terms")}</Link>
+            <Link href="https://doktorekg.pl/polityka-prywatnosci/" className="text-xs text-muted-foreground hover:text-foreground transition-colors">{t("footer.privacy")}</Link>
+            <button
+              onClick={() => setLang(i18n.language === "pl" ? "en" : "pl")}
+              className="cursor-pointer text-xs text-slate-500 transition-colors hover:text-slate-900"
+            >
+              {t("footer.langButton")}
+            </button>
           </div>
         </div>
       </div>

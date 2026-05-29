@@ -1,34 +1,22 @@
 import type { Metadata } from "next"
 import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
+import pl from "@/lib/translations/pl"
+import en from "@/lib/translations/en"
 
 export const metadata: Metadata = {
   title: "Neurologia",
   alternates: { canonical: "/neurologia" },
-  description: "Diagnostyka i leczenie chorób układu nerwowego w Lublinie. Konsultacje neurologiczne, diagnostyka omdleń, udaru, padaczki i migreny.",
+  description: "Diagnostyka i leczenie chorób układu nerwowego w Lublinie.",
   openGraph: { images: [{ url: "/images/spec-8.webp" }] },
 }
-
-const conditions = [
-  "Omdlenia i zasłabnięcia",
-  "Udar mózgu i TIA",
-  "Padaczka",
-  "Migrena i bóle głowy",
-  "Zawroty głowy",
-  "Zaburzenia snu",
-  "Neuropatia obwodowa",
-  "Krwawienie śródczaszkowe",
-  "Zaburzenia pamięci i koncentracji",
-]
 
 export default function Page() {
   return (
     <SpecialtyPage
+      content={{ pl: pl.pages.neurology, en: en.pages.neurology }}
       heroImage="/images/spec-8.webp"
-      title="Neurologia"
-      label="Specjalność"
-      description="Diagnostyka i leczenie chorób centralnego i obwodowego układu nerwowego."
-conditions={conditions}
+      
       doctors={doctors.filter(d => d.group === "Neurologia")}
     />
   )

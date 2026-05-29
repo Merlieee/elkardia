@@ -1,33 +1,22 @@
 import type { Metadata } from "next"
 import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
+import pl from "@/lib/translations/pl"
+import en from "@/lib/translations/en"
 
 export const metadata: Metadata = {
   title: "Endokrynologia",
   alternates: { canonical: "/endokrynologia" },
-  description: "Diagnostyka i leczenie chorób gruczołów wydzielania wewnętrznego w Lublinie. Tarczyca, nadnercza, przysadka, osteoporoza.",
+  description: "Diagnostyka i leczenie zaburzeń hormonalnych w Lublinie.",
   openGraph: { images: [{ url: "/images/endokrynologia.webp" }] },
 }
-
-const conditions = [
-  "Choroby tarczycy (niedoczynność, nadczynność, wole)",
-  "Zaburzenia przysadki mózgowej",
-  "Choroby nadnerczy",
-  "Zaburzenia przytarczyc",
-  "Osteoporoza",
-  "Zaburzenia hormonalne ogólne",
-  "Endokrynologia dziecięca",
-  "Zaburzenia wzrostu i dojrzewania",
-]
 
 export default function Page() {
   return (
     <SpecialtyPage
-      title="Endokrynologia"
-      label="Specjalność"
-      description="Diagnostyka i leczenie zaburzeń hormonalnych i chorób gruczołów wydzielania wewnętrznego."
+      content={{ pl: pl.pages.endocrinology, en: en.pages.endocrinology }}
       heroImage="/images/endokrynologia.webp"
-      conditions={conditions}
+      
       doctors={doctors.filter(d => d.group === "Endokrynologia i diabetologia")}
     />
   )

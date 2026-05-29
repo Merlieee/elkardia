@@ -1,32 +1,22 @@
 import type { Metadata } from "next"
 import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
+import pl from "@/lib/translations/pl"
+import en from "@/lib/translations/en"
 
 export const metadata: Metadata = {
   title: "Neurochirurgia",
   alternates: { canonical: "/neurochirurgia" },
-  description: "Konsultacje neurochirurgiczne i kwalifikacja do leczenia operacyjnego chorób mózgu, rdzenia kręgowego i nerwów obwodowych.",
+  description: "Konsultacje neurochirurgiczne i kwalifikacja do leczenia operacyjnego.",
   openGraph: { images: [{ url: "/images/neurochirurgia.webp" }] },
 }
-
-const conditions = [
-  "Guzy mózgu",
-  "Guzy rdzenia kręgowego",
-  "Guzy nerwów obwodowych",
-  "Guzy oczodołu",
-  "Guzy podstawy czaszki",
-  "Kwalifikacja do operacji neurochirurgicznych",
-  "Opieka pooperacyjna",
-]
 
 export default function Page() {
   return (
     <SpecialtyPage
-      title="Neurochirurgia"
-      label="Specjalność"
-      description="Konsultacje neurochirurgiczne i kwalifikacja do leczenia operacyjnego chorób układu nerwowego."
+      content={{ pl: pl.pages.neurosurgery, en: en.pages.neurosurgery }}
       heroImage="/images/neurochirurgia.webp"
-      conditions={conditions}
+      
       doctors={doctors.filter(d => d.group === "Neurochirurgia")}
     />
   )

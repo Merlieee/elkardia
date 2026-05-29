@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
+import pl from "@/lib/translations/pl"
+import en from "@/lib/translations/en"
 
 export const metadata: Metadata = {
   title: "Kardiologia dorosłych",
@@ -9,30 +11,11 @@ export const metadata: Metadata = {
   openGraph: { images: [{ url: "/images/kardiologia-lublin.webp" }] },
 }
 
-const conditions = [
-  "Zaburzenia rytmu serca i przewodzenia",
-  "Kołatanie serca",
-  "Kardiologia ogólna",
-  "Wady serca i zastawkowe",
-  "Nadciśnienie tętnicze",
-  "Choroba wieńcowa",
-  "Zaburzenia lipidowe",
-  "Kardiomiopatia",
-  "Omdlenia i zasłabnięcia",
-  "Szmery sercowe",
-  "Stan po zawale serca",
-  "Kwalifikacja do operacji serca",
-  "Opieka przed i po ablacji",
-]
-
 export default function Page() {
   return (
     <SpecialtyPage
-      title="Kardiologia dorosłych"
-      label="Specjalność"
-      description="Ponad 15 kardiologów i elektrofizjologów — diagnostyka i leczenie chorób serca dla dorosłych."
+      content={{ pl: pl.pages.adultCardiology, en: en.pages.adultCardiology }}
       heroImage="/images/kardiologia-lublin.webp"
-      conditions={conditions}
       doctors={doctors.filter(d => d.group === "Kardiologia dorosłych")}
     />
   )

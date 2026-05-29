@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { AgentationWidget } from "@/components/agentation-widget"
+import { LangProvider } from "@/components/lang-provider"
+import { LangBanner } from "@/components/lang-banner"
 import { cn } from "@/lib/utils"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import type { Metadata } from "next"
@@ -113,12 +115,15 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <AgentationWidget />
-        </ThemeProvider>
+        <LangProvider>
+          <ThemeProvider>
+            <LangBanner />
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <AgentationWidget />
+          </ThemeProvider>
+        </LangProvider>
 
         {/* Hu-manity GDPR banner */}
         <Script

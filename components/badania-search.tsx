@@ -3,8 +3,9 @@
 import { useState } from "react"
 import { Search, CheckCircle, X } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useTranslation } from "react-i18next"
 
-const allTests = [
+const allTestsPl = [
   { label: "EKG spoczynkowe", cat: "Kardiologiczne" },
   { label: "EKG wysiłkowe", cat: "Kardiologiczne" },
   { label: "Próba wysiłkowa z saturacją", cat: "Kardiologiczne" },
@@ -51,29 +52,78 @@ const allTests = [
   { label: "Ocena ryzyka ciąży", cat: "Ocena ryzyka" },
 ]
 
-const tabs = [
-  { value: "cardiac",  label: "Kardiologiczne", cat: "Kardiologiczne" },
-  { value: "pediatric",label: "Pediatryczne",   cat: "Pediatryczne" },
-  { value: "usg",      label: "USG / Doppler",  cat: "USG / Doppler" },
-  { value: "sleep",    label: "Sen i oddech",   cat: "Sen i oddech" },
-  { value: "risk",     label: "Ocena ryzyka",   cat: "Ocena ryzyka" },
+const allTestsEn = [
+  { label: "Resting ECG", cat: "Cardiac" },
+  { label: "Exercise ECG", cat: "Cardiac" },
+  { label: "Stress test with oxygen saturation", cat: "Cardiac" },
+  { label: "Echocardiography", cat: "Cardiac" },
+  { label: "Tilt-test", cat: "Cardiac" },
+  { label: "24h standard Holter ECG", cat: "Cardiac" },
+  { label: "12-channel Holter ECG", cat: "Cardiac" },
+  { label: "1–8 day Holter ECG", cat: "Cardiac" },
+  { label: "Arrhythmia recorders (multi-month monitoring)", cat: "Cardiac" },
+  { label: "24h blood pressure Holter (ABPM)", cat: "Cardiac" },
+  { label: "Simultaneous blood pressure measurement", cat: "Cardiac" },
+  { label: "Pacemaker control", cat: "Cardiac" },
+  { label: "Cardioverter-defibrillator (ICD) control", cat: "Cardiac" },
+  { label: "Electrophysiological study", cat: "Cardiac" },
+  { label: "Heart ablation (RF, PFA)", cat: "Cardiac" },
+  { label: "Children's ECG", cat: "Paediatric" },
+  { label: "Children's echocardiography", cat: "Paediatric" },
+  { label: "Children's 24h Holter ECG", cat: "Paediatric" },
+  { label: "Children's blood pressure Holter", cat: "Paediatric" },
+  { label: "24h oxygen saturation monitoring", cat: "Paediatric" },
+  { label: "Thyroid ultrasound", cat: "Ultrasound" },
+  { label: "Breast ultrasound", cat: "Ultrasound" },
+  { label: "Abdominal ultrasound", cat: "Ultrasound" },
+  { label: "Salivary gland ultrasound", cat: "Ultrasound" },
+  { label: "Urinary tract ultrasound", cat: "Ultrasound" },
+  { label: "Prostate ultrasound", cat: "Ultrasound" },
+  { label: "Testicular ultrasound", cat: "Ultrasound" },
+  { label: "Lymph node ultrasound", cat: "Ultrasound" },
+  { label: "Pleural ultrasound", cat: "Ultrasound" },
+  { label: "Doppler ultrasound of carotid arteries", cat: "Ultrasound" },
+  { label: "Doppler ultrasound of cerebral arteries", cat: "Ultrasound" },
+  { label: "Doppler ultrasound of limb arteries", cat: "Ultrasound" },
+  { label: "Doppler ultrasound of limb veins", cat: "Ultrasound" },
+  { label: "Sleep apnoea blood pressure Holter", cat: "Sleep" },
+  { label: "Full sleep study at patient's home", cat: "Sleep" },
+  { label: "Spirometry", cat: "Sleep" },
+  { label: "ABI index (limb ischaemia)", cat: "Risk" },
+  { label: "Body composition analysis (SECA-285)", cat: "Risk" },
+  { label: "Professional BMI measurement", cat: "Risk" },
+  { label: "Stroke risk assessment", cat: "Risk" },
+  { label: "Bleeding risk assessment", cat: "Risk" },
+  { label: "EuroSCORE assessment (cardiac surgery)", cat: "Risk" },
+  { label: "Surgical risk assessment", cat: "Risk" },
+  { label: "Pregnancy risk assessment", cat: "Risk" },
 ]
 
-function TestItem({ label }: { label: string }) {
-  return (
-    <div className="flex items-center gap-3 rounded-lg border bg-card px-4 py-3 text-sm">
-      <CheckCircle className="h-4 w-4 shrink-0 text-[#EE3920]" />{label}
-    </div>
-  )
-}
-
 export function BadaniaSearch() {
+  const { t, i18n } = useTranslation()
   const [query, setQuery] = useState("")
   const q = query.trim().toLowerCase()
 
-  const filtered = q
-    ? allTests.filter(t => t.label.toLowerCase().includes(q))
-    : null
+  const isEn = i18n.language === "en"
+  const allTests = isEn ? allTestsEn : allTestsPl
+
+  const tabKeys = isEn
+    ? [
+        { value: "cardiac",  label: t("badania.tabs.cardiac"),  cat: "Cardiac" },
+        { value: "pediatric", label: t("badania.tabs.pediatric"), cat: "Paediatric" },
+        { value: "usg",      label: t("badania.tabs.usg"),      cat: "Ultrasound" },
+        { value: "sleep",    label: t("badania.tabs.sleep"),    cat: "Sleep" },
+        { value: "risk",     label: t("badania.tabs.risk"),     cat: "Risk" },
+      ]
+    : [
+        { value: "cardiac",  label: t("badania.tabs.cardiac"),  cat: "Kardiologiczne" },
+        { value: "pediatric", label: t("badania.tabs.pediatric"), cat: "Pediatryczne" },
+        { value: "usg",      label: t("badania.tabs.usg"),      cat: "USG / Doppler" },
+        { value: "sleep",    label: t("badania.tabs.sleep"),    cat: "Sen i oddech" },
+        { value: "risk",     label: t("badania.tabs.risk"),     cat: "Ocena ryzyka" },
+      ]
+
+  const filtered = q ? allTests.filter(test => test.label.toLowerCase().includes(q)) : null
 
   return (
     <div>
@@ -83,7 +133,7 @@ export function BadaniaSearch() {
           type="text"
           value={query}
           onChange={e => setQuery(e.target.value)}
-          placeholder="Wyszukaj badanie..."
+          placeholder={t("badania.search")}
           className="w-full rounded-xl border bg-white py-3 pl-10 pr-10 text-sm outline-none ring-0 transition focus:border-[#EE3920] focus:ring-1 focus:ring-[#EE3920]"
         />
         {query && (
@@ -96,28 +146,32 @@ export function BadaniaSearch() {
       {filtered ? (
         filtered.length > 0 ? (
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map(t => (
-              <div key={t.label} className="flex items-center gap-3 rounded-lg border bg-card px-4 py-3 text-sm">
+            {filtered.map(test => (
+              <div key={test.label} className="flex items-center gap-3 rounded-lg border bg-card px-4 py-3 text-sm">
                 <CheckCircle className="h-4 w-4 shrink-0 text-[#EE3920]" />
                 <div className="min-w-0">
-                  <span>{t.label}</span>
-                  <span className="ml-2 text-xs text-slate-400">{t.cat}</span>
+                  <span>{test.label}</span>
+                  <span className="ml-2 text-xs text-slate-400">{test.cat}</span>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <p className="text-pretty text-sm text-slate-500">Brak wyników dla „{query}".</p>
+          <p className="text-pretty text-sm text-slate-500">{t("badania.noResults", { query })}</p>
         )
       ) : (
         <Tabs defaultValue="cardiac">
           <TabsList className="mb-8 h-auto flex-wrap gap-1">
-            {tabs.map(t => <TabsTrigger key={t.value} value={t.value}>{t.label}</TabsTrigger>)}
+            {tabKeys.map(tab => <TabsTrigger key={tab.value} value={tab.value}>{tab.label}</TabsTrigger>)}
           </TabsList>
-          {tabs.map(t => (
-            <TabsContent key={t.value} value={t.value}>
+          {tabKeys.map(tab => (
+            <TabsContent key={tab.value} value={tab.value}>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {allTests.filter(i => i.cat === t.cat).map(i => <TestItem key={i.label} label={i.label} />)}
+                {allTests.filter(i => i.cat === tab.cat).map(i => (
+                  <div key={i.label} className="flex items-center gap-3 rounded-lg border bg-card px-4 py-3 text-sm">
+                    <CheckCircle className="h-4 w-4 shrink-0 text-[#EE3920]" />{i.label}
+                  </div>
+                ))}
               </div>
             </TabsContent>
           ))}

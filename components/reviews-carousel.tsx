@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useEffect, useId } from "react"
+import { useTranslation } from "react-i18next"
 
 const reviews = [
   {
@@ -162,6 +163,7 @@ function CardStars({ rating = 5 }: { rating?: number }) {
 }
 
 export function ReviewsCarousel() {
+  const { t } = useTranslation()
   const trackRef = useRef<HTMLDivElement>(null)
   const offsetRef = useRef(0)
   const rafRef = useRef<number>(0)
@@ -210,12 +212,12 @@ export function ReviewsCarousel() {
     <section className="overflow-hidden py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-10 flex items-end justify-between">
         <div>
-          <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">Opinie pacjentów</p>
-          <h2 className="text-balance mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Co mówią o nas pacjenci</h2>
+          <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{t("reviews.label")}</p>
+          <h2 className="text-balance mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{t("reviews.heading")}</h2>
           <div className="mt-3 flex items-center gap-2">
             <RatingStars rating={4.8} />
             <span className="text-sm font-semibold text-slate-900">4,8</span>
-            <span className="text-sm text-slate-500">· 83 opinie · Google</span>
+            <span className="text-sm text-slate-500">· 83 {t("reviews.suffix")}</span>
           </div>
         </div>
       </div>

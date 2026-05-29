@@ -1,8 +1,11 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { Doctor } from "@/lib/doctors"
+import { useTranslation } from "react-i18next"
 
 function initials(name: string) {
   const skip = /^(dr|hab\.|n\.|med\.|prof\.|lek\.|stom\.|mgr)$/i
@@ -10,36 +13,42 @@ function initials(name: string) {
   return parts.slice(0, 2).map(w => w.charAt(0).toUpperCase()).join("")
 }
 
+type BiContent = {
+  pl: { title: string; label: string; description: string; conditions?: string[] }
+  en: { title: string; label: string; description: string; conditions?: string[] }
+}
+
 type Props = {
-  title: string
-  label: string
-  description: string
+  content: BiContent
   heroImage?: string
   heroPosition?: string
-  conditions?: string[]
   doctors: Doctor[]
   extraContent?: React.ReactNode
   heroExtra?: React.ReactNode
 }
 
-export function SpecialtyPage({ title, label, description, heroImage, heroPosition = "center_30%", conditions, doctors, extraContent, heroExtra }: Props) {
+export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%", doctors, extraContent, heroExtra }: Props) {
+  const { t, i18n } = useTranslation()
+  const lang = (i18n.language === "en" ? "en" : "pl") as "pl" | "en"
+  const c = content[lang] ?? content.pl
+
   return (
     <div>
 
       {/* ── HERO ── */}
       <section className="relative h-[520px] overflow-hidden">
-        {heroImage && <Image src={heroImage} alt={title} fill className="object-cover" style={{ objectPosition: heroPosition.replace(/_/g, " ") }} priority />}
+        {heroImage && <Image src={heroImage} alt={c.title} fill className="object-cover" style={{ objectPosition: heroPosition.replace(/_/g, " ") }} priority />}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-transparent" />
         <div className="relative flex h-full items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
-            <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{label}</p>
-            <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{title}</h1>
-            <p className="text-pretty mt-3 max-w-lg text-white/70">{description}</p>
+            <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{c.label}</p>
+            <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{c.title}</h1>
+            <p className="text-pretty mt-3 max-w-lg text-white/70">{c.description}</p>
             {heroExtra}
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="/rejestracja">
                 <Button className="group h-12 gap-2 bg-white px-7 text-base font-semibold text-slate-900 hover:bg-slate-100">
-                  Umów wizytę <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  {t("common.bookAppointment")} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Button>
               </a>
               <a href="tel:+48815657075">
@@ -53,25 +62,25 @@ export function SpecialtyPage({ title, label, description, heroImage, heroPositi
       </section>
 
       {/* ── CONTENT ── */}
-      {conditions && conditions.length > 0 && (
+      {c.conditions && c.conditions.length > 0 && (
         <section className="py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid gap-14 lg:grid-cols-2">
 
               <div>
-                <h2 className="text-balance mb-6 text-2xl font-bold text-slate-900">Leczone schorzenia</h2>
+                <h2 className="text-balance mb-6 text-2xl font-bold text-slate-900">{t("specialty.conditions")}</h2>
                 <div className="flex flex-col gap-3">
-                  {conditions.map((c) => (
-                    <div key={c} className="flex items-start gap-3">
+                  {c.conditions.map((cond) => (
+                    <div key={cond} className="flex items-start gap-3">
                       <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#EE3920]" />
-                      <span className="text-sm text-slate-700">{c}</span>
+                      <span className="text-sm text-slate-700">{cond}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h2 className="text-balance mb-6 text-2xl font-bold text-slate-900">Specjaliści</h2>
+                <h2 className="text-balance mb-6 text-2xl font-bold text-slate-900">{t("specialty.specialists")}</h2>
                 <div className="flex flex-col gap-3">
                   {doctors.map((d) => (
                     <Link key={d.slug} href={`/lekarze/${d.slug}`}
@@ -105,12 +114,12 @@ export function SpecialtyPage({ title, label, description, heroImage, heroPositi
       {/* ── CTA ── */}
       <section className="bg-[#0C71C3] py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h2 className="text-balance text-3xl font-bold text-white">Umów wizytę</h2>
-          <p className="text-pretty mx-auto mt-4 max-w-md text-white/70">Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.</p>
+          <h2 className="text-balance text-3xl font-bold text-white">{t("specialty.ctaTitle")}</h2>
+          <p className="text-pretty mx-auto mt-4 max-w-md text-white/70">{t("specialty.ctaSubtitle")}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a href="/rejestracja">
               <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#0C71C3] hover:bg-slate-100">
-                Rejestracja online 24h <ArrowRight className="h-4 w-4" />
+                {t("specialty.ctaButton")} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
             <a href="tel:+48815657075">
