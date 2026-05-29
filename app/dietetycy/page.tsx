@@ -16,7 +16,6 @@ export default function Page() {
     <SpecialtyPage
       content={{ pl: pl.pages.dietetics, en: en.pages.dietetics }}
       heroImage="/images/dietetyka-kliniczna.webp"
-      heroPosition="center_110%"
       doctors={doctors.filter(d => d.group === "Dietetyka")}
     />
   )

@@ -1,6 +1,6 @@
 const en = {
   banner: {
-    message: "This website is also available in Polish.",
+    message: "Ta strona dostępna jest również w języku polskim.",
     switch: "Switch to Polish →",
   },
   nav: {
@@ -51,7 +51,7 @@ const en = {
     },
   },
   footer: {
-    tagline: "Lublin Cardiology Centre — highly specialised cardiac care for children and adults. Operating continuously since 2014.",
+    tagline: "Lublin Cardiology Center — highly specialized cardiac care for children and adults. Operating continuously since 2014.",
     services: "Services",
     contact: "Contact",
     location: "Location",
@@ -79,6 +79,7 @@ const en = {
     regHours: "Online registration 24h or by phone Mon–Fri 8:00–20:00.",
     specialty: "Specialty",
     treatedConditions: "Treated conditions",
+    specialist: "Specialist",
     specialists: "Specialists",
     register: "Register",
     allDoctors: "All doctors",
@@ -106,7 +107,7 @@ const en = {
       endocrinology: { name: "Endocrinology", desc: "Hormonal disorders and endocrine gland diseases." },
       diabetology: { name: "Diabetology", desc: "Treatment of diabetes and metabolic disorders." },
       nephrology: { name: "Nephrology", desc: "Kidney diseases and renal replacement therapy." },
-      dietetics: { name: "Clinical Dietetics", desc: "Body composition analysis and personalised nutrition plan." },
+      dietetics: { name: "Clinical Dietetics", desc: "Body composition analysis and personalized nutrition plan." },
       balneology: { name: "Balneology", desc: "Spa treatment and cardiac rehabilitation." },
       dentistry: { name: "Dentistry & Prosthodontics", desc: "Full dentistry with cardiac monitoring — the only such place in Lublin." },
     },
@@ -115,20 +116,21 @@ const en = {
     label: "Patient reviews",
     heading: "What our patients say",
     suffix: "reviews · Google",
+    translatedFrom: "Translated from Polish",
   },
   badania: {
     search: "Search for a test...",
     noResults: 'No results for "{{query}}".',
     tabs: {
       cardiac: "Cardiac",
-      pediatric: "Paediatric",
+      pediatric: "Pediatric",
       usg: "Ultrasound / Doppler",
       sleep: "Sleep & Breathing",
       risk: "Risk Assessment",
     },
   },
   lekarze: {
-    search: "Search for a doctor...",
+    search: "Search for a specialist...",
     allGroups: "All specialties",
   },
   doctorGroups: {
@@ -142,6 +144,34 @@ const en = {
     "Endokrynologia i diabetologia": "Endocrinology & Diabetology",
     "Dietetyka": "Dietetics",
     "Stomatologia": "Dentistry",
+  },
+  doctorTags: {
+    "Ablacje": "Ablations",
+    "Balneologia": "Balneology",
+    "Chirurg naczyniowy": "Vascular Surgeon",
+    "Choroby wewnętrzne": "Internal Medicine",
+    "Diabetolog": "Diabetologist",
+    "Dietetyk kliniczny": "Clinical Dietitian",
+    "Dietetyk": "Dietitian",
+    "Echo serca": "Cardiac Ultrasound",
+    "Elektrofizjolog": "Electrophysiologist",
+    "Endokrynolog dorosłych": "Adult Endocrinologist",
+    "Endokrynolog dziecięcy": "Pediatric Endocrinologist",
+    "Hipertensjolog": "Hypertension Specialist",
+    "ICD/CRT-D": "ICD/CRT-D",
+    "Kardiochirurg": "Cardiac Surgeon",
+    "Kardiolog dziecięcy": "Pediatric Cardiologist",
+    "Kardiolog": "Cardiologist",
+    "Kontrola ICD i CRT-D": "ICD & CRT-D Check",
+    "Nefrolog dziecięcy": "Pediatric Nephrologist",
+    "Neurochirurg": "Neurosurgeon",
+    "Neurolog": "Neurologist",
+    "Pediatra": "Pediatrician",
+    "Próba wysiłkowa": "Exercise Test",
+    "Protetyk": "Prosthodontist",
+    "Pulmonolog": "Pulmonologist",
+    "Stomatolog": "Dentist",
+    "TILT TEST": "Tilt Test",
   },
   doctor: {
     back: "All doctors",
@@ -163,13 +193,14 @@ const en = {
   // ── homepage ────────────────────────────────────────────────────────────────
   home: {
     hero: {
-      eyebrow: "Lublin Cardiology Centre",
+      eyebrow: "Lublin Cardiology Center",
       title: "Medical specialists,\nnot only cardiologists",
-      subtitle: "A cardiology centre for adults and children — with access to a neurologist, dentist, dietitian and many other specialists under one roof. In Lublin, since 2014.",
+      subtitle: "A cardiology center for adults and children — with access to a neurologist, dentist, dietitian and many other specialists under one roof. In Lublin, since 2014.",
       bookBtn: "Register online",
       phoneBtn: "(81) 565 70 75",
     },
     stats: {
+      sinceValue: "since 2014",
       since: "Continuously helping patients",
       specialties: "Medical specialties",
       onlineReg: "Online registration",
@@ -201,8 +232,8 @@ const en = {
     },
     pediatric: {
       eyebrow: "Pediatric Cardiology",
-      heading: "Cardiac care for children — from newborns to age 18",
-      body: "We diagnose and treat heart diseases in children of all ages. Echocardiography is performed using a Philips Affiniti 50 with dedicated paediatric probes — providing precise imaging even for the youngest patients. A parent can accompany the child during every examination.",
+      heading: "Cardiac care for children — from newborns to age 18",
+      body: "We diagnose and treat heart diseases in children of all ages. Echocardiography is performed using a Philips Affiniti 50 with dedicated pediatric probes — providing precise imaging even for the youngest patients. A parent can accompany the child during every examination.",
       conditions: [
         "Congenital heart defects",
         "Cardiac arrhythmias",
@@ -211,7 +242,7 @@ const en = {
         "Cardiomyopathy in children",
         "Care after treatment of heart defects",
       ],
-      moreBtn: "More about paediatric cardiology",
+      moreBtn: "More about pediatric cardiology",
     },
     diagnostics: {
       eyebrow: "Diagnostics",
@@ -258,8 +289,8 @@ const en = {
     },
     drekgSection: {
       heading: "Cardiology online across Poland",
-      body: "Order a Holter ECG by courier, perform the test at home and get an analysis from a cardiologist online. Arrhythmia recorders, sleep apnoea diagnostics — without leaving home.",
-      features: ["Holter ECG with delivery", "Blood pressure Holter RR", "Arrhythmia recorders", "Sleep apnoea diagnostics", "Teleconsultation"],
+      body: "Order a Holter ECG by courier, perform the test at home and get an analysis from a cardiologist online. Arrhythmia recorders, sleep apnea diagnostics — without leaving home.",
+      features: ["Holter ECG", "Blood pressure Holter RR", "Arrhythmia recorders", "Sleep apnea diagnostics", "Teleconsultation"],
       visitBtn: "Visit doktorekg.pl",
       clinicsLabel: "For clinics and doctors",
       clinicsHeading: "Rent a Holter for your clinic",
@@ -273,7 +304,7 @@ const en = {
     },
     discounts: {
       eyebrow: "Discounts",
-      heading: "We honour discount cards",
+      heading: "We honor discount cards",
       body: "As a family- and senior-friendly clinic, we accept the Large Family Card and the Senior Card.",
     },
     insurance: {
@@ -308,22 +339,22 @@ const en = {
       cards: [
         { title: "Over 1,000 ablations per year", desc: "One of the highest volumes of electrophysiological procedures in Poland. More procedures mean more experience and better outcomes." },
         { title: "Latest PFA technology", desc: "Our electrophysiologists perform Volt PFA 2nd generation ablation — safer and more effective than older PFA systems. Among the few in the region." },
-        { title: "Organisers of international conferences", desc: "Our doctors organise ablation workshops for electrophysiologists from across Europe and the USA — training other specialists in their own techniques." },
-        { title: "Comprehensive care", desc: "We look after the patient from the first consultation and qualification through to post-ablation check-ups. The procedure is performed by the same doctors — no handover to an unknown centre." },
-        { title: "Treatment of the most complex cases", desc: "Electrical storm, complex ventricular arrhythmias, cases after failed ablations at other centres — this is our speciality." },
+        { title: "Organizers of international conferences", desc: "Our doctors organize ablation workshops for electrophysiologists from across Europe and the USA — training other specialists in their own techniques." },
+        { title: "Comprehensive care", desc: "We look after the patient from the first consultation and qualification through to post-ablation check-ups. The procedure is performed by the same doctors — no handover to an unknown center." },
+        { title: "Treatment of the most complex cases", desc: "Electrical storm, complex ventricular arrhythmias, cases after failed ablations at other centers — this is our specialty." },
       ],
     },
     methods: {
       heading: "Ablation methods",
-      disclaimer: "Note: We do not perform cryoablation — a method abandoned over 10 years ago due to lower precision.",
+      disclaimer: "We do not perform cryoablation — a method abandoned over 10 years ago due to lower precision.",
       cards: [
-        { img: "/images/ablacja-pfa.webp", title: "Volt PFA Ablation", subtitle: "Pulsed Field Ablation", desc: "Non-thermal electroporation — 2nd generation system. Better efficacy and safety than earlier PFA systems. Performed under general anaesthesia. The most advanced method for treating atrial fibrillation.", tag: "Atrial fibrillation" },
+        { img: "/images/ablacja-pfa.webp", title: "Volt PFA Ablation", subtitle: "Pulsed Field Ablation", desc: "Non-thermal electroporation — 2nd generation system. Better efficacy and safety than earlier PFA systems. Performed under general anesthesia. The most advanced method for treating atrial fibrillation.", tag: "Atrial fibrillation" },
         { img: "/images/ablacja-rf.webp", title: "RF Ablation", subtitle: "Radiofrequency", desc: "Point ablation with RF current based on a dense 3D electroanatomical map. Thermal energy precisely destroys the arrhythmia focus. Effective for all types of cardiac arrhythmia.", tag: "All arrhythmia types" },
       ],
     },
     gallery: {
       heading: "Treated arrhythmias",
-      body: "Electrophysiological visualisations from real procedures performed by our electrophysiologists",
+      body: "Electrophysiological visualizations from real procedures performed by our electrophysiologists",
       items: [
         { img: "/images/ablacja-AFL.webp", label: "Atrial flutter", short: "AFL" },
         { img: "/images/ablacja-AT.webp", label: "Atrial tachycardia", short: "AT" },
@@ -378,7 +409,7 @@ const en = {
       cards: [
         { title: "Results the same day", desc: "Echo, ECG or Holter — you receive a doctor's report on the day of the test, without weeks of waiting." },
         { title: "Tilt-test — the only one in Lublin", desc: "We are the only clinic in Lublin performing a tilt-test, essential for diagnosing syncope and fainting." },
-        { title: "Holter delivered to your home", desc: "ECG Holter, blood pressure Holter and sleep apnoea testing delivered by courier anywhere in Poland." },
+        { title: "Holter delivered to your home", desc: "ECG Holter, blood pressure Holter and sleep apnea testing delivered by courier anywhere in Poland." },
         { title: "Echo on Philips Affiniti 50", desc: "Next-generation echocardiography — precise imaging for adults, children and newborns." },
         { title: "Full range of ultrasound and Doppler", desc: "From thyroid and abdomen to carotid arteries and limb veins — diagnostics for all organs and vessels." },
         { title: "Child-friendly diagnostics", desc: "ECG, echo, Holter and saturation monitoring for the youngest patients — in a calm environment adapted for children." },
@@ -386,8 +417,8 @@ const en = {
     },
     homeTesting: {
       heading: "Tests at the patient's home",
-      body: "Can't travel? ECG Holter, blood pressure Holter and sleep apnoea testing delivered by courier anywhere in Poland. We treat snoring and sleep apnoea in your bedroom.",
-      features: ["Holter ECG with delivery", "Blood pressure Holter RR", "Arrhythmia recorders", "Sleep apnoea diagnostics", "Teleconsultation"],
+      body: "Can't come to us? ECG Holter, blood pressure Holter and sleep apnea testing delivered by courier anywhere in Poland. We treat snoring and sleep apnea in your bedroom.",
+      features: ["Holter ECG", "Blood pressure Holter RR", "Arrhythmia recorders", "Sleep apnea diagnostics", "Teleconsultation"],
       visitBtn: "Visit doktorekg.pl",
     },
     cta: {
@@ -409,7 +440,7 @@ const en = {
       problem: "Problem with online registration? Call:",
     },
     phone: {
-      title: "Phone",
+      title: "Call us",
       hours: "Mon–Fri: 8:00–20:00",
     },
     email: {
@@ -418,9 +449,9 @@ const en = {
     },
     location: {
       heading: "Location",
-      name: "Elkardia Sp. z o.o.",
+      name: "Elkardia | Lublin Cardiology Center",
       address: "ul. R. W. Pileckiego 23/20, 20-091 Lublin",
-      parking: "Private car park for patients",
+      parking: "Private parking for patients",
     },
     hours: {
       heading: "Opening hours",
@@ -444,7 +475,7 @@ const en = {
     hero: {
       eyebrow: "Our team",
       title: "Specialist doctors",
-      body: "Over 30 specialists from many fields — centred around cardiology.",
+      body: "Over 30 specialists from many fields — centered around cardiology.",
     },
     cta: {
       heading: "Book an appointment",
@@ -456,7 +487,7 @@ const en = {
     hero: {
       eyebrow: "Specialties",
       title: "Comprehensive care in one place",
-      body: "Over 30 specialists from many fields of medicine — centred around cardiology, under one roof in Lublin.",
+      body: "Over 30 specialists from many fields of medicine — centered around cardiology, under one roof in Lublin.",
     },
     cta: {
       heading: "Book an appointment",
@@ -516,19 +547,19 @@ const en = {
       title: "Pulmonology",
       label: "Specialty",
       description: "Diagnosis and treatment of lung and respiratory system diseases.",
-      conditions: ["COPD", "Bronchial asthma", "Pulmonary fibrosis", "Bronchiectasis", "Cystic fibrosis", "Lung cancer", "Sarcoidosis", "Sleep apnoea"],
+      conditions: ["COPD", "Bronchial asthma", "Pulmonary fibrosis", "Bronchiectasis", "Cystic fibrosis", "Lung cancer", "Sarcoidosis", "Sleep apnea"],
     },
     neurology: {
       title: "Neurology",
       label: "Specialty",
       description: "Diagnosis and treatment of central and peripheral nervous system diseases.",
-      conditions: ["Syncope and fainting", "Stroke and TIA", "Epilepsy", "Migraine and headaches", "Vertigo", "Sleep disorders", "Peripheral neuropathy", "Intracranial haemorrhage", "Memory and concentration disorders"],
+      conditions: ["Syncope and fainting", "Stroke and TIA", "Epilepsy", "Migraine and headaches", "Vertigo", "Sleep disorders", "Peripheral neuropathy", "Intracranial hemorrhage", "Memory and concentration disorders"],
     },
     neurosurgery: {
       title: "Neurosurgery",
       label: "Specialty",
       description: "Neurosurgical consultations and qualification for surgical treatment of nervous system diseases.",
-      conditions: ["Brain tumours", "Spinal cord tumours", "Peripheral nerve tumours", "Orbital tumours", "Skull base tumours", "Qualification for neurosurgical procedures", "Postoperative care"],
+      conditions: ["Brain tumors", "Spinal cord tumors", "Peripheral nerve tumors", "Orbital tumors", "Skull base tumors", "Qualification for neurosurgical procedures", "Postoperative care"],
     },
     vascularSurgery: {
       title: "Vascular Surgery",
@@ -540,19 +571,19 @@ const en = {
       title: "Endocrinology",
       label: "Specialty",
       description: "Diagnosis and treatment of hormonal disorders and endocrine gland diseases.",
-      conditions: ["Thyroid diseases (hypothyroidism, hyperthyroidism, goitre)", "Pituitary gland disorders", "Adrenal gland diseases", "Parathyroid disorders", "Osteoporosis", "General hormonal disorders", "Paediatric endocrinology", "Growth and puberty disorders"],
+      conditions: ["Thyroid diseases (hypothyroidism, hyperthyroidism, goiter)", "Pituitary gland disorders", "Adrenal gland diseases", "Parathyroid disorders", "Osteoporosis", "General hormonal disorders", "Pediatric endocrinology", "Growth and puberty disorders"],
     },
     diabetology: {
       title: "Diabetology",
       label: "Specialty",
       description: "Treatment of diabetes and metabolic disorders in adults and children.",
-      conditions: ["Type 1 diabetes", "Type 2 diabetes", "Diabetes in children and adolescents", "Insulin resistance", "Obesity and metabolic disorders", "Diabetic complications (nephropathy, retinopathy)", "Hypoglycaemia"],
+      conditions: ["Type 1 diabetes", "Type 2 diabetes", "Diabetes in children and adolescents", "Insulin resistance", "Obesity and metabolic disorders", "Diabetic complications (nephropathy, retinopathy)", "Hypoglycemia"],
     },
     nephrology: {
       title: "Nephrology",
       label: "Specialty",
       description: "Diagnosis and treatment of kidney and urinary tract diseases in children and adults.",
-      conditions: ["Chronic kidney disease", "Acute kidney injury", "Urinary tract diseases in children", "Renal hypertension", "Proteinuria and haematuria", "Nephro-urological diagnostics", "Kidney stones"],
+      conditions: ["Chronic kidney disease", "Acute kidney injury", "Urinary tract diseases in children", "Renal hypertension", "Proteinuria and hematuria", "Nephro-urological diagnostics", "Kidney stones"],
     },
     dietetics: {
       title: "Clinical Dietetics",
@@ -564,13 +595,13 @@ const en = {
       title: "Balneology",
       label: "Specialty",
       description: "Spa treatment and cardiac rehabilitation — physical medicine and qualification for sanatorium treatment.",
-      conditions: ["Qualification for spa treatment", "Cardiac rehabilitation", "Sleep apnoea", "Chronic cardiovascular diseases", "Physical medicine and balneology", "Care after heart attack and cardiac surgery"],
+      conditions: ["Qualification for spa treatment", "Cardiac rehabilitation", "Sleep apnea", "Chronic cardiovascular diseases", "Physical medicine and balneology", "Care after heart attack and cardiac surgery"],
     },
     dentistry: {
       title: "Dentistry",
       label: "Specialty",
       description: "Comprehensive dentistry for adults and children with cardiac monitoring — the only such place in Lublin.",
-      conditions: ["Paediatric dentistry", "Adolescent dentistry", "Adult dentistry", "Flexible prosthodontics", "Crowns and bridges", "Conservative dentistry and endodontics", "Dental surgery", "On-site dental X-ray", "Full ECG monitoring during procedures", "Treatment of patients with pacemakers and ICDs"],
+      conditions: ["Pediatric dentistry", "Adolescent dentistry", "Adult dentistry", "Flexible prosthodontics", "Crowns and bridges", "Conservative dentistry and endodontics", "Dental surgery", "On-site dental X-ray", "Full ECG monitoring during procedures", "Treatment of patients with pacemakers and ICDs"],
       cardiacUsp: {
         heading: "Cardiac monitoring at no extra cost",
         body: "The only such place in Lublin. Every dental procedure is performed under full cardiac monitoring at no additional cost — ideal for patients with heart disease, after a heart attack, with a pacemaker or cardioverter-defibrillator.",
@@ -584,12 +615,12 @@ const en = {
       echo: {
         eyebrow: "Echocardiographic examination",
         heading: "Child echocardiography — what does the test involve?",
-        intro1: "Echocardiography (cardiac ultrasound) is the primary diagnostic test in paediatric cardiology. Using ultrasound waves, the doctor assesses the structure and function of the heart in real time — in children of all ages, from newborns to teenagers. At Elkardia we perform diagnostics using the latest Philips Affiniti 50 — one of the most accurate echocardiographic systems available, providing detailed imaging even for the youngest patients. Results are discussed immediately after the test, with no waiting required.",
-        intro2: "We have a complete set of echocardiographic probes — two dedicated paediatric probes and a probe for older and larger children. This allows us to precisely examine every child: from a newborn or premature infant to an eighteen-year-old.",
+        intro1: "Echocardiography (cardiac ultrasound) is the primary diagnostic test in pediatric cardiology. Using ultrasound waves, the doctor assesses the structure and function of the heart in real time — in children of all ages, from newborns to teenagers. At Elkardia we perform diagnostics using the latest Philips Affiniti 50 — one of the most accurate echocardiographic systems available, providing detailed imaging even for the youngest patients. Results are discussed immediately after the test, with no waiting required.",
+        intro2: "We have a complete set of echocardiographic probes — two dedicated pediatric probes and a probe for older and larger children. This allows us to precisely examine every child: from a newborn or premature infant to an eighteen-year-old.",
         intro3: "The test can detect congenital and acquired heart diseases, monitor the development of the circulatory system and assess treatment outcomes. It is completely safe, painless and does not require X-ray radiation.",
         whatWeAssess: "What do we assess during the echocardiographic examination?",
         card1: { title: "Cardiac structure assessment", intro: "The test allows detailed analysis of heart structure, even in newborns and infants. It is essential for diagnosing:", items: ["congenital heart defects", "septal defects", "vascular stenoses", "valve abnormalities", "myocardial diseases"] },
-        card2: { title: "Advanced Doppler studies", intro: "Assessment of blood flow through the heart and vessels allows the doctor to detect:", items: ["abnormal blood flow", "vascular stenoses", "valve insufficiency", "cardiac shunts", "haemodynamic disorders"] },
+        card2: { title: "Advanced Doppler studies", intro: "Assessment of blood flow through the heart and vessels allows the doctor to detect:", items: ["abnormal blood flow", "vascular stenoses", "valve insufficiency", "cardiac shunts", "hemodynamic disorders"] },
         card3: { title: "Comfort and safety", intro: "Echocardiography is a completely safe method for the child — the test is:", items: ["completely painless", "non-invasive", "safe for children of all ages", "free from ionising radiation", "possible to repeat multiple times"] },
         whenHeading: "When should a child have an echocardiogram?",
         when1: { title: "Worrying symptoms", intro: "A doctor may recommend the test in cases of:", items: ["heart murmurs", "heart palpitations", "syncope", "shortness of breath", "chest pain", "fatigue during exercise", "skin or lip cyanosis", "abnormal ECG result"] },

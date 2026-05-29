@@ -7,87 +7,108 @@ const reviews = [
   {
     name: "jql57",
     text: "Doskonałe i miejsce i usługa. Pięć gwiazdek to nawet mało — czyściutki, zadbany lokal; konkretna, miła obsługa w rejestracji; profesjonalna wizyta u Lekarza neurochirurga, której przebieg i rzeczowość może być wzorcem dla wielu innych. Lepiej wybrać nie mogłem.",
+    textEn: "Excellent place and service. Five stars is not even enough — clean, well-maintained premises; professional, friendly reception staff; a professional visit to a neurosurgeon whose thoroughness could serve as a model for many others. I couldn't have chosen better.",
   },
   {
     name: "Ewa Sokołowska-Wójcik",
     text: "Moja trzyletnia córka jest pacjentką dr Połeckiej. Pani dr jest świetnym specjalistą, konkretnie i rzeczowo wyjaśnia wszystkie zagadnienia. Poświęca pacjentowi tyle czasu, ile wymaga sytuacja. Ma super podejście do dzieci i rodziców. Profesjonalny i miły personel przychodni. Szczerze polecam.",
+    textEn: "My three-year-old daughter is a patient of Dr. Połecka. She is an excellent specialist who explains everything clearly and concisely. She dedicates as much time to each patient as the situation requires. She has a wonderful approach with both children and parents. Professional and friendly clinic staff. I sincerely recommend.",
   },
   {
     name: "Katarzyna Kur",
     text: "Z całego serca polecam Lubelskie Centrum Kardiologii. Pani Doktor Agata Rybak to bardzo kompetentna kobieta z odpowiednim podejściem do małych pacjentów. Panie w rejestracji to przemiłe kobiety służące uśmiechem i pomocą. Bardzo dziękujemy za wspaniałą wizytę i pomoc. ❤️",
+    textEn: "I wholeheartedly recommend Lublin Cardiology Center. Dr. Agata Rybak is a highly competent doctor with just the right approach to young patients. The ladies at reception are wonderfully kind, always ready with a smile and helping hand. Many thanks for the wonderful visit and assistance. ❤️",
   },
   {
     name: "Leah KB",
     text: "Kardiolog Dr Dominik Wyszyński — bardzo dobry lekarz i bardzo polecam. Przeznaczył prawie godzinę na przeprowadzenie dogłębnego wywiadu z pacjentem i wyjaśnieniu choroby i potencjalnych metod leczenia. Szczegółowo opisał działanie poszczególnych leków.",
+    textEn: "Cardiologist Dr. Dominik Wyszyński — a very good doctor and I highly recommend him. He dedicated almost an hour to conducting an in-depth interview and explaining the condition and potential treatment options. He described the effects of each medication in detail.",
   },
   {
     name: "alexpddm",
     text: "Towarzyszyłam mamie podczas wizyty w Elkardii. Ujęło mnie całościowe i profesjonalne podejście do pacjenta. Wizyta nie zakończyła się, dopóki doktor nie miał pewności czy ma już wystarczającą wiedzę o stanie zdrowia pacjentki. Polecam przychodnię.",
+    textEn: "I accompanied my mother during her visit to Elkardia. I was impressed by the holistic and professional approach to the patient. The visit did not end until the doctor was confident he had sufficient knowledge about her health condition. I recommend the clinic.",
   },
   {
     name: "KATARZYNA FILIKS",
     text: "Do Pani dr Elżbiety Wójcik chodzę od wielu lat. To świetny specjalista i bardzo przyjemna osoba. Nigdy nie odmawia pomocy. Personel również bardzo przyjemny. Za każdym razem jak dzwonię czy zmieniam termin to czuję się odpowiednio zaopiekowana. Serdecznie polecam.",
+    textEn: "I have been seeing Dr. Elżbieta Wójcik for many years. She is an excellent specialist and a very pleasant person who never refuses to help. The staff is also very friendly. Every time I call or reschedule I feel properly looked after. I sincerely recommend.",
   },
   {
     name: "Marcin Augustyniak",
     text: "Polecam z całego serca. Każdy kto tam pracuje jest mega miły i przy tym profesjonalny. Dr Maciej Wójcik i dr Błaszkiewicz to doktorzy z prawdziwego zdarzenia, których polecę każdemu z czystym sumieniem.",
+    textEn: "I recommend wholeheartedly. Everyone who works there is extremely kind and at the same time professional. Dr. Maciej Wójcik and Dr. Błaszkiewicz are doctors in the truest sense of the word — I can recommend them to anyone with a clear conscience.",
   },
   {
     name: "Rafał Chabros",
     text: "Profesjonalna firma. Szybki kontakt i krótkie terminy wizyt, miła Pani w rejestracji służy pomocą. Nowoczesny sprzęt i dużo miejsc parkingowych. Placówka jest nastawiona na rozwój oraz nieustanne podnoszenie jakości świadczonych usług.",
+    textEn: "A professional organization. Fast response and short appointment wait times, with a helpful and friendly receptionist. Modern equipment and plenty of parking. The facility is focused on growth and continuously improving the quality of its services.",
   },
   {
     name: "Joanna Mirowska-Wieczorek",
     text: "Pan Doktor Dubejko jest nie tylko wspaniałym lekarzem, ale także wspaniałym, ciepłym Człowiekiem. Pomocny i kompetentny. Dziękuję Panie Doktorze za Pana serce dla serca. Wdzięczna Joanna",
+    textEn: "Dr. Dubejko is not only a wonderful doctor, but also a wonderful, warm human being. Helpful and competent. Thank you, Doctor, for your heart for the heart. Grateful, Joanna.",
   },
   {
     name: "Agnieszka",
     text: "Dr B.Połecka — bardzo sympatyczna Pani doktor. Lekarz z powołaniem. Wszystko dokładnie tłumaczy, ma czas dla pacjenta. Pełen profesjonalizm. Szczerze polecam!",
+    textEn: "Dr. B. Połecka — a very friendly doctor. A doctor by true vocation. She explains everything thoroughly and has time for her patients. Complete professionalism. I sincerely recommend!",
   },
   {
     name: "Andrzej Sujka",
     text: "Fachowa, rzetelna, trafiona diagnoza na pierwszej z wizyt. Fachowcy w swoim zawodzie, oddani pacjentowi. W szczególności na uznanie zasługuje dr Wójcik. Diagnostyka na najwyższym poziomie niespotykana w województwie lubelskim. POLECAM",
+    textEn: "Expert, reliable, accurate diagnosis on the very first visit. True professionals in their field, dedicated to their patients. Dr. Wójcik deserves particular recognition. Diagnostics at the highest level — unmatched in the Lublin region. I RECOMMEND.",
   },
   {
     name: "Katarzyna Poliszuk",
     text: "Serdecznie polecam. Bardzo miła i kompetentna obsługa w przychodni. Lekarze profesjonalnie podchodzą do pacjenta. Dodatkowy plus — można wykonać badania diagnostyczne. Polecam!!",
+    textEn: "I sincerely recommend. Very friendly and competent staff at the clinic. Doctors approach every patient professionally. An added bonus — diagnostic tests can be performed on site. Highly recommend!!",
   },
   {
     name: "Edit",
     text: "Bardzo miłe Panie w rejestracji, kardiolog u którego się leczę bardzo rzeczowy i wnikliwy, wizyta zawsze z konkretnym wywiadem, dzięki czemu leki dobrane tak jak trzeba. Polecam serdecznie i dziękuję.",
+    textEn: "Very friendly ladies at reception. The cardiologist I see is thorough and insightful — every visit includes a detailed patient interview, which means medication is properly tailored. I sincerely recommend and thank you.",
   },
   {
     name: "Agata Ewa",
     text: "Lekarze tłumaczą wszystko co robią podczas badań i starają się żeby pacjent czuł się komfortowo. Badania wykonywane są dokładnie, powoli, poświęcają dużo uwagi.",
+    textEn: "Doctors explain everything they do during examinations and make every effort to ensure the patient feels comfortable. Tests are performed carefully and unhurriedly, with a great deal of attention given to each patient.",
   },
   {
     name: "Marzena Jędrzejewska",
     text: "Absolutny top, jeśli chodzi o jakość usług kardiologicznych w Lublinie. Profesjonalizm, empatyczne podejście do pacjenta, kultura — na najwyższym poziomie.",
+    textEn: "Absolute top when it comes to the quality of cardiology services in Lublin. Professionalism, an empathetic approach to the patient, culture — all at the highest level.",
   },
   {
     name: "Marcelina Pietrzak",
     text: "Bardzo polecam gabinety. Byliśmy z dzieckiem na kontroli u dr Połeckiej. Szczegółowe badania + echo + EKG. Oprócz tego obsługiwała nas bardzo miła Pani na recepcji.",
+    textEn: "I highly recommend the clinic. We brought our child to see Dr. Połecka for a check-up. Thorough examinations including echocardiography and ECG. We were also served by a very friendly receptionist.",
   },
   {
     name: "Paweł Jurkowski",
     text: "Profesjonalny zespół i podejście do pacjenta. Czułem się zaopiekowany i wysłuchany. Polecam.",
+    textEn: "Professional team and approach to the patient. I felt looked after and heard. I recommend.",
   },
   {
     name: "Anna Tajl",
     text: "Ocena pozytywna. Opis EKG dokładny. Lekarz dr Błaszkiewicz konkretny, nakierowany na empatię do pacjenta. Polecam.",
+    textEn: "Positive assessment. ECG interpretation accurate. Dr. Błaszkiewicz is precise and genuinely empathetic toward the patient. I recommend.",
   },
   {
     name: "Iwona Miszczak",
     text: "Wspaniała doktor Renata Jawniak, szkoda, że leczy tylko dzieci. Dziękuję za wieloletnią opiekę nad córką.",
+    textEn: "Wonderful Dr. Renata Jawniak — it's a shame she only treats children. Thank you for years of care for my daughter.",
   },
   {
     name: "Anna M.",
     text: "Profesjonalne podejście do pacjenta, wielu specjalistów, miła i rzeczowa obsługa. Polecam.",
+    textEn: "Professional patient care, many specialists, friendly and efficient service. I recommend.",
   },
   {
     name: "jacek gapinski",
     stars: 3,
     text: "Sprawna obsługa, rzeczowe wyjaśnienie. Polecam.",
+    textEn: "Efficient service, clear explanation. I recommend.",
   },
 ]
 
@@ -163,7 +184,8 @@ function CardStars({ rating = 5 }: { rating?: number }) {
 }
 
 export function ReviewsCarousel() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const isEn = i18n.language === "en"
   const trackRef = useRef<HTMLDivElement>(null)
   const offsetRef = useRef(0)
   const rafRef = useRef<number>(0)
@@ -247,7 +269,12 @@ export function ReviewsCarousel() {
                   <CardStars rating={r.stars} />
                 </div>
               </div>
-              <p className="text-pretty text-sm leading-relaxed text-slate-600 line-clamp-5">{r.text}</p>
+              <p className="text-pretty text-sm leading-relaxed text-slate-600 line-clamp-5">
+                {isEn ? r.textEn : r.text}
+              </p>
+              {isEn && (
+                <p className="text-xs text-slate-400 italic">{t("reviews.translatedFrom")}</p>
+              )}
             </div>
           ))}
         </div>

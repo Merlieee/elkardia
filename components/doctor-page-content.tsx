@@ -38,7 +38,7 @@ export function DoctorPageContent({ doctor }: { doctor: Doctor }) {
               <div className="mt-3 flex flex-wrap gap-2">
                 {doctor.tags.map(tag => (
                   <span key={tag} className="rounded-md bg-white px-3 py-1 text-sm text-slate-600 ring-1 ring-slate-200">
-                    {tag}
+                    {t(`doctorTags.${tag}`, { defaultValue: tag })}
                   </span>
                 ))}
               </div>

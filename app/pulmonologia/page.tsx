@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   title: "Pulmonologia",
   alternates: { canonical: "/pulmonologia" },
   description: "Diagnostyka i leczenie chorób płuc i układu oddechowego w Lublinie.",
-  openGraph: { images: [{ url: "/images/spec-6.webp" }] },
+  openGraph: { images: [{ url: "/images/spec-9.webp" }] },
 }
 
 export default function Page() {
   return (
     <SpecialtyPage
       content={{ pl: pl.pages.pulmonology, en: en.pages.pulmonology }}
-      heroImage="/images/spec-6.webp"
+      heroImage="/images/spec-9.webp"
       
       doctors={doctors.filter(d => d.group === "Pulmonologia")}
     />

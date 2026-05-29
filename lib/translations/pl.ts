@@ -79,7 +79,8 @@ const pl = {
     regHours: "Rejestracja online 24h lub telefonicznie pon–pt 8:00–20:00.",
     specialty: "Specjalność",
     treatedConditions: "Leczone schorzenia",
-    specialists: "Specjaliści",
+    specialist: "Specjalista",
+    specialists: "Specjalistów",
     register: "Zarejestruj się",
     allDoctors: "Wszyscy lekarze",
     learnMore: "Dowiedz się więcej",
@@ -170,6 +171,7 @@ const pl = {
       phoneBtn: "(81) 565 70 75",
     },
     stats: {
+      sinceValue: "od 2014",
       since: "Nieprzerwanie pomagamy pacjentom",
       specialties: "Specjalności medycznych",
       onlineReg: "Rejestracja online",
@@ -259,7 +261,7 @@ const pl = {
     drekgSection: {
       heading: "Kardiologia online w całej Polsce",
       body: "Zamów Holter EKG kurierem, wykonaj badanie w domu i uzyskaj analizę od kardiologa online. Rejestratory arytmii, diagnostyka bezdechu sennego — bez wychodzenia z domu.",
-      features: ["Holter EKG z dostawą", "Holter ciśnieniowy RR", "Rejestratory arytmii", "Diagnostyka bezdechu", "Telekonsultacja"],
+      features: ["Holter EKG", "Holter ciśnieniowy RR", "Rejestratory arytmii", "Diagnostyka bezdechu", "Telekonsultacja"],
       visitBtn: "Odwiedź doktorekg.pl",
       clinicsLabel: "Dla klinik i lekarzy",
       clinicsHeading: "Wynajmij Holter dla swojej placówki",
@@ -315,7 +317,7 @@ const pl = {
     },
     methods: {
       heading: "Metody ablacji",
-      disclaimer: "Uwaga: Nie wykonujemy krioablacji — metoda porzucona ponad 10 lat temu ze względu na niższą precyzję.",
+      disclaimer: "Nie wykonujemy krioablacji — metoda porzucona ponad 10 lat temu ze względu na niższą precyzję.",
       cards: [
         { img: "/images/ablacja-pfa.webp", title: "Ablacja Volt PFA", subtitle: "Pulsed Field Ablation", desc: "Nietermiczna elektroporacja — system II generacji. Lepsza efektywność i bezpieczeństwo niż wcześniejsze systemy PFA. Wykonywana w znieczuleniu ogólnym. Najnowocześniejsza metoda leczenia migotania przedsionków.", tag: "Migotanie przedsionków" },
         { img: "/images/ablacja-rf.webp", title: "Ablacja RF", subtitle: "Radiofrekwencyjna", desc: "Punktowa ablacja prądem RF oparta na gęstej mapie elektroanatomicznej 3D. Energia cieplna precyzyjnie niszczy ognisko arytmii. Skuteczna dla wszystkich typów arytmii serca.", tag: "Wszystkie typy arytmii" },
@@ -387,7 +389,7 @@ const pl = {
     homeTesting: {
       heading: "Badania w domu pacjenta",
       body: "Nie możesz dojechać? Holter EKG, holter ciśnieniowy i badanie bezdechu sennego dostarczamy kuriersko na terenie całej Polski. Leczymy chrapanie i bezdech w Twojej sypialni.",
-      features: ["Holter EKG z dostawą", "Holter ciśnieniowy RR", "Rejestratory arytmii", "Diagnostyka bezdechu", "Telekonsultacja"],
+      features: ["Holter EKG", "Holter ciśnieniowy RR", "Rejestratory arytmii", "Diagnostyka bezdechu", "Telekonsultacja"],
       visitBtn: "Odwiedź doktorekg.pl",
     },
     cta: {
@@ -409,7 +411,7 @@ const pl = {
       problem: "Problem z rejestracją online? Zadzwoń:",
     },
     phone: {
-      title: "Telefon",
+      title: "Zadzwoń do nas",
       hours: "Pon–Pt: 8:00–20:00",
     },
     email: {
@@ -418,7 +420,7 @@ const pl = {
     },
     location: {
       heading: "Lokalizacja",
-      name: "Elkardia Sp. z o.o.",
+      name: "Elkardia | Lubelskie Centrum Kardiologii",
       address: "ul. R. W. Pileckiego 23/20, 20-091 Lublin",
       parking: "Prywatny parking dla pacjentów",
     },

@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="-mx-6 grid grid-cols-2 md:mx-0 md:grid-cols-4">
             {([
-              { value: "od 2014", label: h.stats.since },
+              { value: h.stats.sinceValue, label: h.stats.since },
               { value: "20+", label: h.stats.specialties },
               { value: "24h", label: h.stats.onlineReg },
               { value: "80–90%", label: h.stats.ablationSuccess },

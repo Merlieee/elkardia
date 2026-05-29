@@ -90,7 +90,7 @@ export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%",
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="text-pretty font-semibold text-slate-900 text-sm leading-tight">{d.name}</p>
-                        <p className="text-pretty mt-0.5 text-xs text-slate-500">{d.tags.slice(0, 2).join(" · ")}</p>
+                        <p className="text-pretty mt-0.5 text-xs text-slate-500">{d.tags.slice(0, 2).map(tag => t(`doctorTags.${tag}`, { defaultValue: tag })).join(" · ")}</p>
                       </div>
                       <ArrowRight className="h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#EE3920]" />
                     </Link>

@@ -21,6 +21,7 @@ function toId(group: string) {
 }
 
 function DoctorCard({ d }: { d: typeof doctors[0] }) {
+  const { t } = useTranslation()
   return (
     <div className="h-24">
       <Link href={`/lekarze/${d.slug}`}
@@ -36,7 +37,7 @@ function DoctorCard({ d }: { d: typeof doctors[0] }) {
           <div className="mt-2 flex flex-wrap gap-1">
             {d.tags.slice(0, 2).map((tag) => (
               <span key={tag} className="rounded-md bg-white px-2 py-0.5 text-xs text-slate-500 ring-1 ring-slate-200">
-                {tag}
+                {t(`doctorTags.${tag}`, { defaultValue: tag })}
               </span>
             ))}
           </div>
@@ -94,7 +95,7 @@ export function LekarzeSearch() {
                 <h2 className="text-balance text-xl font-bold text-slate-900">{groupLabel}</h2>
                 <div className="h-px flex-1 bg-slate-100" />
                 <span className="text-xs text-slate-400">
-                  {groupDoctors.length} {groupDoctors.length === 1 ? "dr." : "drs."}
+                  {groupDoctors.length} {groupDoctors.length === 1 ? t("common.specialist") : t("common.specialists")}
                 </span>
               </div>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
