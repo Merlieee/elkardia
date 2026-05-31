@@ -54,17 +54,16 @@ export default function HomePage() {
       {/* ── STATS ─────────────────────────────────────────────────────── */}
       <section>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="-mx-6 grid grid-cols-2 md:mx-0 md:grid-cols-4">
+          <div className="-mx-6 grid grid-cols-3 md:mx-0 md:grid-cols-3">
             {([
               { value: h.stats.sinceValue, label: h.stats.since },
               { value: "20+", label: h.stats.specialties },
               { value: "24h", label: h.stats.onlineReg },
-              { value: "80–90%", label: h.stats.ablationSuccess },
             ] as const).map((s, i) => (
               <div key={s.label}
-                className={`flex flex-col items-center border-slate-200 px-2 py-8 text-center md:py-10 ${i % 2 === 0 ? "border-r md:border-r-0" : ""} ${i < 2 ? "border-b md:border-b-0" : ""} ${i > 0 ? "md:border-l" : ""}`}>
-                <span className="text-2xl font-bold text-slate-900 sm:text-4xl">{s.value}</span>
-                <span className="mt-2 text-xs leading-tight text-slate-500">{s.label}</span>
+                className={`flex flex-col items-center border-slate-200 px-2 py-8 text-center md:py-10 ${i > 0 ? "border-l" : ""}`}>
+                <span className="text-3xl font-bold text-slate-900 sm:text-4xl">{s.value}</span>
+                <span className="mt-2 text-sm leading-tight text-slate-500">{s.label}</span>
               </div>
             ))}
           </div>

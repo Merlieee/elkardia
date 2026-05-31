@@ -5,7 +5,9 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { CheckCircle, XCircle, Phone, ArrowRight } from "lucide-react"
-import { ArrhythmiaGallery } from "@/components/arrhythmia-gallery"
+import { ArrhythmiaList } from "@/components/arrhythmia-list"
+import { FaqAccordion } from "@/components/faq-accordion"
+import { KonsultacjaForm } from "@/components/konsultacja-form"
 import { useTranslation } from "react-i18next"
 import pl from "@/lib/translations/pl"
 import en from "@/lib/translations/en"
@@ -47,14 +49,6 @@ export default function AblacjaPage() {
                   </Button>
                 </a>
               </div>
-            </div>
-            <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 sm:gap-8">
-              {a.hero.stats.map((s) => (
-                <div key={s.l}>
-                  <div className="text-lg font-bold text-white sm:text-2xl">{s.v}</div>
-                  <div className="mt-0.5 text-xs text-white/80 sm:text-sm">{s.l}</div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -107,7 +101,7 @@ export default function AblacjaPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-balance text-3xl font-bold mb-3">{a.gallery.heading}</h2>
           <p className="text-pretty text-muted-foreground mb-8">{a.gallery.body}</p>
-          <ArrhythmiaGallery items={a.gallery.items} />
+          <ArrhythmiaList items={a.gallery.items} />
         </div>
       </section>
 
@@ -158,25 +152,39 @@ export default function AblacjaPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="bg-[#0C71C3] py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">{a.cta.heading}</h2>
-          <p className="text-pretty mx-auto mt-4 max-w-md leading-relaxed text-white/70">{a.cta.body}</p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a href="/rejestracja">
-              <Button size="lg" className="h-12 gap-2 bg-white px-6 text-base font-semibold text-[#0C71C3] hover:bg-slate-100">
-                {lang === "en" ? en.common.onlineReg24h : pl.common.onlineReg24h} <ArrowRight className="h-4 w-4" />
-              </Button>
-            </a>
-            <a href="tel:+48815657075">
-              <Button size="lg" variant="ghost" className="h-12 gap-2 border border-white/30 px-6 text-base text-white hover:bg-white/10 hover:text-white">
-                <Phone className="h-4 w-4" /> (81) 565 70 75
-              </Button>
-            </a>
+      {/* ── FAQ ── */}
+      <section className="bg-muted/30 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-balance text-3xl font-bold mb-8">{a.faqHeading}</h2>
+          <FaqAccordion items={a.faq} />
+          <p className="text-pretty mt-6 text-sm text-slate-500">
+            {a.faqContact}{" "}
+            <a href="/rejestracja" className="font-medium text-[#EE3920] hover:underline">{a.faqContactLink}</a>
+          </p>
+        </div>
+      </section>
+
+      {/* ── QUICK CONSULTATION FORM ── */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+            {/* Left: info */}
+            <div>
+              <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">
+                {a.konsultacja.eyebrow}
+              </p>
+              <h2 className="text-balance mt-3 text-3xl font-bold leading-tight">
+                {a.konsultacja.heading}
+              </h2>
+            </div>
+            {/* Right: form */}
+            <div>
+              <KonsultacjaForm t={a.konsultacja} />
+            </div>
           </div>
         </div>
       </section>
+
     </div>
   )
 }
