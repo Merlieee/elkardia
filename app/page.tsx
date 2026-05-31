@@ -261,9 +261,9 @@ export default function HomePage() {
             <p className="text-pretty mx-auto mt-3 max-w-xl leading-relaxed text-slate-600">{h.discounts.body}</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
               <div className="h-28 overflow-hidden rounded-xl sm:h-32">
-                <Image src="/images/karta-duzej-rodziny 1.png" alt="Tu honorujemy Kartę Dużej Rodziny" width={394} height={368} className="h-full w-auto scale-[1.06]" />
+                <Image src="/images/karta-duzej-rodziny.png" alt="Tu honorujemy Kartę Dużej Rodziny" width={394} height={368} className="h-full w-auto scale-[1.06]" />
               </div>
-              <Image src="/images/karta-seniora 1.png" alt="Tu honorujemy Kartę Seniora" width={2482} height={1750} className="h-28 w-auto rounded-xl sm:h-32" />
+              <Image src="/images/karta-seniora.png" alt="Tu honorujemy Kartę Seniora" width={2482} height={1750} className="h-28 w-auto rounded-xl sm:h-32" />
             </div>
           </div>
         </div>
