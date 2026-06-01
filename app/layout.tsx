@@ -4,7 +4,6 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { AgentationWidget } from "@/components/agentation-widget"
 import { LangProvider } from "@/components/lang-provider"
 import { LangBanner } from "@/components/lang-banner"
 import { cn } from "@/lib/utils"
@@ -121,7 +120,6 @@ export default function RootLayout({
             <Navbar />
             <main>{children}</main>
             <Footer />
-            <AgentationWidget />
           </ThemeProvider>
         </LangProvider>
 
