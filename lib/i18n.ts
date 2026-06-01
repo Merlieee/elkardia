@@ -11,8 +11,19 @@ function isPolishBrowser() {
   return langs.some((l) => l.toLowerCase().startsWith("pl"))
 }
 
+function getLangParam(): "pl" | "en" | null {
+  if (typeof window === "undefined") return null
+  const param = new URLSearchParams(window.location.search).get("lang")
+  return param === "pl" || param === "en" ? param : null
+}
+
 function getDefaultLang() {
   if (typeof window === "undefined") return "pl"
+  const fromUrl = getLangParam()
+  if (fromUrl) {
+    localStorage.setItem("elkardia-lang", fromUrl)
+    return fromUrl
+  }
   const saved = localStorage.getItem("elkardia-lang")
   return saved ?? (isPolishBrowser() ? "pl" : "en")
 }
