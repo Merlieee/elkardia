@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/kardiologia-doroslych`, lastModified, priority: 0.85, changeFrequency: "monthly" },
     { url: `${base}/kardiologia-dziecieca`, lastModified, priority: 0.85, changeFrequency: "monthly" },
     { url: `${base}/badania`,               lastModified, priority: 0.85, changeFrequency: "monthly" },
+    { url: `${base}/echo-serca-lublin`,     lastModified, priority: 0.8,  changeFrequency: "monthly" },
     { url: `${base}/hipertensjologia`,      lastModified, priority: 0.8,  changeFrequency: "monthly" },
     { url: `${base}/kardiochirurgia`,       lastModified, priority: 0.8,  changeFrequency: "monthly" },
     { url: `${base}/pulmonologia`,          lastModified, priority: 0.8,  changeFrequency: "monthly" },

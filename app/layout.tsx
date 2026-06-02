@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { LangProvider } from "@/components/lang-provider"
 import { LangBanner } from "@/components/lang-banner"
+import { AgentationDev } from "@/components/agentation-dev"
 import { cn } from "@/lib/utils"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import type { Metadata } from "next"
@@ -122,6 +123,9 @@ export default function RootLayout({
             <Footer />
           </ThemeProvider>
         </LangProvider>
+
+        {/* Visual feedback toolbar for AI agents — dev only */}
+        <AgentationDev />
 
         {/* Hu-manity GDPR banner */}
         <Script
