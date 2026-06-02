@@ -105,7 +105,7 @@ export function ChatWidget() {
                   <div className={`rounded-xl px-3 py-2 text-sm leading-relaxed ${msg.role === "user" ? "bg-[#EE3920] text-white rounded-tr-sm" : "bg-slate-100 text-slate-800 rounded-tl-sm"}`}>
                     {msg.content}
                   </div>
-                  <span className="mt-1 text-[10px] text-slate-400">{msg.time}</span>
+                  <span className="mt-1 text-[11px] text-slate-400">{msg.time}</span>
                 </div>
               </div>
             ))}
@@ -145,7 +145,7 @@ export function ChatWidget() {
                 <Send className="h-3.5 w-3.5" />
               </button>
             </div>
-            <p className="text-pretty mt-2 text-center text-[10px] text-slate-400">Pilne sprawy: (81) 565 70 75</p>
+            <p className="text-pretty mt-2 text-center text-xs text-slate-400">Pilne sprawy: (81) 565 70 75</p>
           </div>
         </div>
       )}
