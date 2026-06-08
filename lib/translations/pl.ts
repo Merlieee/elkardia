@@ -114,6 +114,8 @@ const pl = {
       diseases: "Jakie choroby można wykryć?",
       diseasesList: ["wady wrodzone i nabyte serca", "ubytki w przegrodach serca", "zwężenia i niedomykalności zastawek", "kardiomiopatie", "następstwa przebytego zawału serca", "nadciśnienie płucne", "choroby osierdzia", "zaburzenia funkcji mięśnia sercowego"],
       specialists: "Lekarze wykonujący badanie",
+      specialistsShowMore: "Pokaż wszystkich lekarzy",
+      specialistsShowLess: "Zwiń",
       faqHeading: "Najczęściej zadawane pytania",
       faqContact: "Nie odpowiedzieliśmy na Twoje pytanie?",
       faqContactLink: "Skontaktuj się z nami.",

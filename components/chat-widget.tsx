@@ -72,7 +72,7 @@ export function ChatWidget() {
       <button
         onClick={() => setOpen(true)}
         aria-label="Otwórz czat z asystentem"
-        className={`fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#EE3920] text-white shadow-lg transition-all hover:bg-[#d4321c] hover:scale-105 ${open ? "hidden" : "flex"}`}
+        className={`cursor-pointer fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#EE3920] text-white shadow-lg transition-all hover:bg-[#d4321c] hover:scale-105 ${open ? "hidden" : "flex"}`}
       >
         <MessageCircle className="h-6 w-6" />
       </button>
@@ -89,7 +89,7 @@ export function ChatWidget() {
               <p className="text-pretty text-sm font-semibold leading-none">Asystent Elkardia</p>
               <p className="text-pretty mt-0.5 text-xs text-white/70">Odpowiadamy na pytania</p>
             </div>
-            <button onClick={() => setOpen(false)} className="rounded-md p-1 hover:bg-white/20 transition-colors">
+            <button onClick={() => setOpen(false)} className="cursor-pointer rounded-md p-1 hover:bg-white/20 transition-colors">
               <X className="h-4 w-4" />
             </button>
           </div>
@@ -140,7 +140,7 @@ export function ChatWidget() {
               <button
                 onClick={send}
                 disabled={!input.trim()}
-                className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EE3920] text-white disabled:opacity-40 hover:bg-[#d4321c] transition-colors"
+                className="cursor-pointer flex h-7 w-7 items-center justify-center rounded-lg bg-[#EE3920] text-white disabled:opacity-40 hover:bg-[#d4321c] transition-colors"
               >
                 <Send className="h-3.5 w-3.5" />
               </button>

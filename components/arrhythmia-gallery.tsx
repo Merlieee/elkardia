@@ -75,14 +75,14 @@ export function ArrhythmiaGallery({ items }: { items: Item[] }) {
         >
           <button
             onClick={close}
-            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+            className="cursor-pointer absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
 
           <button
             onClick={(e) => { e.stopPropagation(); prev() }}
-            className="absolute left-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+            className="cursor-pointer absolute left-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -107,7 +107,7 @@ export function ArrhythmiaGallery({ items }: { items: Item[] }) {
 
           <button
             onClick={(e) => { e.stopPropagation(); next() }}
-            className="absolute right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+            className="cursor-pointer absolute right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

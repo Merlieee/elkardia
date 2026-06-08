@@ -89,7 +89,7 @@ export function AblacjaSubpage({ data }: { data: AblacjaSubpageData }) {
                 onClick={() => setZoomed(false)}
               >
                 <button
-                  className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
+                  className="cursor-pointer absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
                   onClick={() => setZoomed(false)}
                 >
                   <X className="h-5 w-5" />

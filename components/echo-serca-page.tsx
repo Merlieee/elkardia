@@ -1,9 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Activity, ArrowRight, CheckCircle, Eye, Phone, ShieldCheck } from "lucide-react"
+import { Activity, ArrowRight, CheckCircle, ChevronDown, Eye, Phone, ShieldCheck } from "lucide-react"
 import { FaqAccordion } from "@/components/faq-accordion"
 import { getDoctorBySlug } from "@/lib/doctors"
 import { useTranslation } from "react-i18next"
@@ -23,9 +24,25 @@ export function EchoSercaPage() {
   const e = page.echo
   const c = lang === "en" ? en.common : pl.common
 
+  const [showAllDoctors, setShowAllDoctors] = useState(false)
+
   const doctors = page.doctors.slugs
     .map((slug) => getDoctorBySlug(slug))
     .filter((d): d is NonNullable<typeof d> => Boolean(d))
+
+  const renderDoctor = (d: (typeof doctors)[number]) => (
+    <Link key={d.slug} href={`/lekarze/${d.slug}`}
+      className="group flex items-center gap-4 rounded-xl bg-slate-50 p-4 transition-colors hover:bg-slate-100">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EE3920]/10 text-sm font-bold text-[#EE3920] transition-colors group-hover:bg-[#EE3920] group-hover:text-white">
+        {initials(d.name)}
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="text-pretty font-semibold text-slate-900 text-sm leading-tight">{d.name}</p>
+        <p className="text-pretty mt-0.5 text-xs text-slate-500">{d.tags.slice(0, 2).map(tag => t(`doctorTags.${tag}`, { defaultValue: tag })).join(" · ")}</p>
+      </div>
+      <ArrowRight className="h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#EE3920]" />
+    </Link>
+  )
 
   return (
     <div>
@@ -151,12 +168,12 @@ export function EchoSercaPage() {
             </div>
 
             {/* ── Diseases ── */}
-            <div className="rounded-2xl bg-slate-50 p-8">
-              <h3 className="text-balance mb-5 text-xl font-bold text-slate-900">{e.diseases}</h3>
-              <div className="space-y-2">
+            <div>
+              <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">{e.diseases}</h3>
+              <div className="grid gap-x-8 sm:grid-cols-2">
                 {e.diseasesList.map((item: string) => (
-                  <div key={item} className="flex items-start gap-2.5">
-                    <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#EE3920]" />
+                  <div key={item} className="flex items-start gap-2.5 border-b border-slate-100 py-3">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#EE3920]" />
                     <span className="text-sm text-slate-700">{item}</span>
                   </div>
                 ))}
@@ -167,20 +184,29 @@ export function EchoSercaPage() {
             <div>
               <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">{e.specialists}</h3>
               <div className="flex flex-col gap-3">
-                {doctors.map((d) => (
-                  <Link key={d.slug} href={`/lekarze/${d.slug}`}
-                    className="group flex items-center gap-4 rounded-xl bg-slate-50 p-4 transition-colors hover:bg-slate-100">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EE3920]/10 text-sm font-bold text-[#EE3920] transition-colors group-hover:bg-[#EE3920] group-hover:text-white">
-                      {initials(d.name)}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-pretty font-semibold text-slate-900 text-sm leading-tight">{d.name}</p>
-                      <p className="text-pretty mt-0.5 text-xs text-slate-500">{d.tags.slice(0, 2).map(tag => t(`doctorTags.${tag}`, { defaultValue: tag })).join(" · ")}</p>
-                    </div>
-                    <ArrowRight className="h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-[#EE3920]" />
-                  </Link>
-                ))}
+                {doctors.slice(0, 4).map(renderDoctor)}
               </div>
+              {doctors.length > 4 && (
+                <>
+                  <div
+                    className={`grid transition-[grid-template-rows,opacity] duration-500 ease-in-out ${showAllDoctors ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="flex flex-col gap-3 pt-3">
+                        {doctors.slice(4).map(renderDoctor)}
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowAllDoctors((v) => !v)}
+                    className="group mt-4 flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-slate-200 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-[#EE3920]/40 hover:text-[#EE3920]"
+                  >
+                    {showAllDoctors ? e.specialistsShowLess : e.specialistsShowMore}
+                    <ChevronDown className={`h-4 w-4 transition-transform ${showAllDoctors ? "rotate-180" : ""}`} />
+                  </button>
+                </>
+              )}
             </div>
 
             {/* ── FAQ ── */}

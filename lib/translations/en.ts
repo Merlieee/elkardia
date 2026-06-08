@@ -114,6 +114,8 @@ const en = {
       diseases: "What diseases can be detected?",
       diseasesList: ["congenital and acquired heart defects", "septal defects of the heart", "valve narrowing and regurgitation", "cardiomyopathies", "consequences of a past heart attack", "pulmonary hypertension", "pericardial diseases", "impaired myocardial function"],
       specialists: "Doctors who perform this test",
+      specialistsShowMore: "Show all doctors",
+      specialistsShowLess: "Show less",
       faqHeading: "Frequently asked questions",
       faqContact: "Didn't we answer your question?",
       faqContactLink: "Get in touch with us.",

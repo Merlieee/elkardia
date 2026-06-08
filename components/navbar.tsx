@@ -38,7 +38,7 @@ function MobileAccordion({ link, onClose, t }: { link: NavLink & { items: Dropdo
       <button
         onClick={() => setExpanded((v) => !v)}
         aria-expanded={expanded}
-        className="flex w-full items-center justify-between rounded-md px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+        className="cursor-pointer flex w-full items-center justify-between rounded-md px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
       >
         {t(link.labelKey)}
         <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} />
@@ -130,7 +130,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <a href="tel:+48815657075" className="hidden md:block">
-            <button className="flex items-center gap-2 rounded-lg bg-[#EE3920] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#d4321c]">
+            <button className="cursor-pointer flex items-center gap-2 rounded-lg bg-[#EE3920] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#d4321c]">
               <Phone className="h-3.5 w-3.5" />
               (81) 565 70 75
             </button>
@@ -138,7 +138,7 @@ export function Navbar() {
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-700 md:hidden">
+              <button className="cursor-pointer flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-700 md:hidden">
                 <Menu className="h-4 w-4" />
               </button>
             </SheetTrigger>

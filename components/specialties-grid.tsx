@@ -75,7 +75,7 @@ export function SpecialtiesGrid({ showAll = false }: { showAll?: boolean }) {
       <div className="mt-6 text-center">
         <button
           onClick={() => setExpanded((v) => !v)}
-          className="group inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:border-[#EE3920] hover:text-[#EE3920]"
+          className="cursor-pointer group inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:border-[#EE3920] hover:text-[#EE3920]"
         >
           {expanded ? t("grid.collapse") : (
             <>
