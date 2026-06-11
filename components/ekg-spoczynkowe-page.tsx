@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Activity, ArrowRight, CheckCircle, ChevronDown, Eye, Phone, ShieldCheck } from "lucide-react"
+import { Activity, AlertTriangle, ArrowRight, CheckCircle, ChevronDown, ClipboardCheck, Gauge, Phone } from "lucide-react"
 import { FaqAccordion } from "@/components/faq-accordion"
 import { getDoctorBySlug } from "@/lib/doctors"
 import { useTranslation } from "react-i18next"
@@ -17,11 +17,11 @@ function initials(name: string) {
   return parts.slice(0, 2).map((w) => w.charAt(0).toUpperCase()).join("")
 }
 
-export function EchoSercaPage() {
+export function EkgSpoczynkowePage() {
   const { t, i18n } = useTranslation()
   const lang = i18n.language === "en" ? "en" : "pl"
-  const page = lang === "en" ? en.echoSercaPage : pl.echoSercaPage
-  const e = page.echo
+  const page = lang === "en" ? en.ekgSpoczynkowePage : pl.ekgSpoczynkowePage
+  const e = page.ekg
   const c = lang === "en" ? en.common : pl.common
 
   const [showAllDoctors, setShowAllDoctors] = useState(false)
@@ -55,7 +55,7 @@ export function EchoSercaPage() {
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <div className="max-w-xl">
               <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">{page.hero.eyebrow}</p>
-              <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{page.hero.title}</h1>
+              <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl lg:whitespace-nowrap">{page.hero.title}</h1>
               <p className="text-pretty mt-4 text-base text-white/80 leading-relaxed">{page.hero.body}</p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a href="/rejestracja">
@@ -80,27 +80,22 @@ export function EchoSercaPage() {
           <div className="space-y-16">
 
             {/* ── Intro ── */}
-            <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:items-start">
-              <div className="max-w-2xl">
-                <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{e.eyebrow}</p>
-                <h2 className="text-balance mb-5 text-3xl font-bold text-slate-900">{e.heading}</h2>
-                <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600">{e.intro1}</p>
-                <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600">{e.intro2}</p>
-                <p className="text-pretty text-base leading-relaxed text-slate-600">{e.intro3}</p>
-              </div>
-              <div className="relative self-stretch min-h-[280px]">
-                <Image src="/images/philips-affiniti-50.webp" alt="Aparat echokardiograficzny Philips Affiniti 50" fill className="object-contain object-top" style={{ right: "2rem" }} />
-              </div>
+            <div>
+              <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{e.eyebrow}</p>
+              <h2 className="text-balance mb-5 text-3xl font-bold text-slate-900">{e.heading}</h2>
+              <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600">{e.intro1}</p>
+              <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600">{e.intro2}</p>
+              <p className="text-pretty text-base leading-relaxed text-slate-600">{e.intro3}</p>
             </div>
 
-            {/* ── 3 feature cards ── */}
+            {/* ── 3 highlight cards ── */}
             <div>
               <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">{e.whatWeAssess}</h3>
               <div className="grid gap-4 sm:grid-cols-3">
                 {([
-                  { icon: Eye, card: e.card1 },
-                  { icon: Activity, card: e.card2 },
-                  { icon: ShieldCheck, card: e.card3 },
+                  { icon: Activity, card: e.card1 },
+                  { icon: ClipboardCheck, card: e.card2 },
+                  { icon: Gauge, card: e.card3 },
                 ] as const).map(({ icon: Icon, card }) => (
                   <div key={card.title} className="rounded-xl bg-slate-50 p-6">
                     <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#EE3920]/10">
@@ -121,7 +116,7 @@ export function EchoSercaPage() {
               </div>
             </div>
 
-            {/* ── When to do echo ── */}
+            {/* ── When to do the test ── */}
             <div>
               <h3 className="text-balance mb-8 text-xl font-bold text-slate-900">{e.whenHeading}</h3>
               <div className="grid gap-8 lg:grid-cols-3">
@@ -167,13 +162,26 @@ export function EchoSercaPage() {
               </div>
             </div>
 
-            {/* ── Diseases ── */}
+            {/* ── What it assesses ── */}
             <div>
               <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">{e.diseases}</h3>
               <div className="grid gap-x-8 sm:grid-cols-2">
                 {e.diseasesList.map((item: string) => (
                   <div key={item} className="flex items-start gap-2.5 border-b border-slate-100 py-3">
                     <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#EE3920]" />
+                    <span className="text-sm text-slate-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Difficulties ── */}
+            <div>
+              <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">{e.contra}</h3>
+              <div className="grid gap-x-8 sm:grid-cols-2">
+                {e.contraList.map((item: string) => (
+                  <div key={item} className="flex items-start gap-2.5 border-b border-slate-100 py-3">
+                    <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                     <span className="text-sm text-slate-700">{item}</span>
                   </div>
                 ))}
@@ -214,7 +222,7 @@ export function EchoSercaPage() {
             {/* ── FAQ ── */}
             <div>
               <h3 className="text-balance mb-6 text-xl font-bold text-slate-900">{e.faqHeading}</h3>
-              <FaqAccordion items={e.faq} />
+              <FaqAccordion items={e.faq.map((f) => ({ q: f.q, a: f.a }))} />
               <p className="text-pretty mt-6 text-sm text-slate-500">
                 {e.faqContact}{" "}
                 <a href="/rejestracja" className="font-medium text-[#EE3920] hover:underline">{e.faqContactLink}</a>
