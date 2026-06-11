@@ -48,15 +48,15 @@ export function ProbaWysilkowaPage() {
     <div>
       {/* ── HERO ── */}
       <section className="relative h-[520px] overflow-hidden">
-        <Image src="/images/proba-wysilkowa-hero.webp" alt={page.hero.title} fill className="object-cover object-[50%_30%]" priority />
+        <Image src="/images/spec-1.webp" alt={page.hero.title} fill className="object-cover object-[50%_30%]" priority />
         <div className="absolute inset-0 bg-slate-950/70" />
         <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-slate-950/85 to-transparent" />
         <div className="relative flex h-full items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <div className="max-w-xl">
               <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">{page.hero.eyebrow}</p>
-              <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{page.hero.title}</h1>
-              <p className="text-pretty mt-4 text-base text-white leading-relaxed">{page.hero.body}</p>
+              <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl lg:whitespace-nowrap">{page.hero.title}</h1>
+              <p className="text-pretty mt-4 text-base text-white/80 leading-relaxed">{page.hero.body}</p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a href="/rejestracja">
                   <Button className="group h-12 gap-2 bg-white px-7 text-base font-semibold text-slate-900 hover:bg-slate-100">

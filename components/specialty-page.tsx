@@ -43,7 +43,7 @@ export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%",
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{c.label}</p>
             <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{c.title}</h1>
-            <p className="text-pretty mt-3 max-w-lg text-white/70">{c.description}</p>
+            <p className="text-pretty mt-3 max-w-lg text-white/80">{c.description}</p>
             {heroExtra}
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="/rejestracja">

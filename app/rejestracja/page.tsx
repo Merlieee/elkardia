@@ -25,7 +25,7 @@ export default function RejestracjaPage() {
             <div className="max-w-xl">
               <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">{r.hero.eyebrow}</p>
               <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{r.hero.title}</h1>
-              <p className="text-pretty mt-4 text-base text-white/70 leading-relaxed">{r.hero.body}</p>
+              <p className="text-pretty mt-4 text-base text-white/80 leading-relaxed">{r.hero.body}</p>
             </div>
           </div>
         </div>

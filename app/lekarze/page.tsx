@@ -26,7 +26,7 @@ export default function LekarzeePage() {
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{p.hero.eyebrow}</p>
             <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{p.hero.title}</h1>
-            <p className="text-pretty mt-3 max-w-xl text-white/70">{p.hero.body}</p>
+            <p className="text-pretty mt-3 max-w-xl text-white/80">{p.hero.body}</p>
           </div>
         </div>
       </section>

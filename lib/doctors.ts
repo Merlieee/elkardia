@@ -367,7 +367,7 @@ export const doctors: Doctor[] = [
   },
   {
     slug: "dominik-wyszynski",
-    name: "dr n. med. Dominik Wyszyński",
+    name: "lek. med. Dominik Wyszyński",
     group: "Kardiologia dorosłych",
     tags: ["Kardiolog", "Echo serca", "Próba wysiłkowa", "ICD/CRT-D"],
     bio: "Specjalista kardiolog z doświadczeniem w echokardiografii, próbie wysiłkowej i kontroli urządzeń elektrycznych serca.",
@@ -592,7 +592,7 @@ export const doctors: Doctor[] = [
 
   {
     slug: "paulina-gryn",
-    name: "lek. Paulina Gryń",
+    name: "lek. med. Paulina Gryń",
     group: "Endokrynologia i diabetologia",
     tags: ["Endokrynolog dorosłych"],
     bio: "Endokrynolog dla dorosłych specjalizujący się w diagnostyce i leczeniu schorzeń gruczołów wydzielania wewnętrznego. Specjalizuje się w endokrynologii w SPSK4 w Lublinie.",
@@ -609,7 +609,7 @@ export const doctors: Doctor[] = [
   },
   {
     slug: "joanna-mroczek",
-    name: "lek. Joanna Mroczek",
+    name: "lek. med. Joanna Mroczek",
     group: "Endokrynologia i diabetologia",
     tags: ["Endokrynolog dziecięcy", "Diabetolog"],
     bio: "Endokrynolog i diabetolog dla dzieci i młodzieży. Pracuje w Klinice Endokrynologii i Diabetologii Dziecięcej Szpitala Dziecięcego w Lublinie od 2014 roku.",

@@ -28,7 +28,7 @@ export default function BadaniaPage() {
             <div className="max-w-xl">
               <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">{b.hero.eyebrow}</p>
               <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{b.hero.title}</h1>
-              <p className="text-pretty mt-4 text-base text-white leading-relaxed">{b.hero.body}</p>
+              <p className="text-pretty mt-4 text-base text-white/80 leading-relaxed">{b.hero.body}</p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a href="/rejestracja">
                   <Button className="group h-12 gap-2 bg-white px-7 text-base font-semibold text-slate-900 hover:bg-slate-100">
