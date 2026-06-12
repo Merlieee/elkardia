@@ -23,7 +23,7 @@ export default function BadaniaPage() {
         <Image src="/images/kardiologia-3.webp" alt={b.hero.title} fill className="object-cover object-[50%_100%]" priority />
         <div className="absolute inset-0 bg-slate-950/70" />
         <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-slate-950/85 to-transparent" />
-        <div className="relative flex flex-1 items-end pb-16">
+        <div className="relative flex flex-1 items-end py-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <div className="max-w-xl">
               <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">{b.hero.eyebrow}</p>
