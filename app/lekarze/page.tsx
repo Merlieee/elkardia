@@ -18,11 +18,11 @@ export default function LekarzeePage() {
     <div className="bg-white">
 
       {/* ── HERO ── */}
-      <section className="relative h-[520px] overflow-hidden">
+      <section className="relative flex min-h-[520px] flex-col overflow-hidden">
         <Image src="/images/kardiologia-lublin.webp" alt={p.hero.title} fill className="object-cover object-[50%_10%]" />
         <div className="absolute inset-0 bg-slate-950/65" />
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-slate-950/70 to-transparent" />
-        <div className="relative flex h-full items-end pb-12">
+        <div className="relative flex flex-1 items-end pb-12">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{p.hero.eyebrow}</p>
             <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{p.hero.title}</h1>
@@ -33,14 +33,14 @@ export default function LekarzeePage() {
 
       {/* ── DOCTORS ── */}
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <LekarzeSearch />
         </div>
       </section>
 
       {/* ── CTA ── */}
       <section className="bg-[#0C71C3] py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">{p.cta.heading}</h2>
           <p className="text-pretty mx-auto mt-4 max-w-md leading-relaxed text-white/70">{p.cta.body}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

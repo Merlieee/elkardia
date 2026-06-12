@@ -47,11 +47,11 @@ export function EchoSercaPage() {
   return (
     <div>
       {/* ── HERO ── */}
-      <section className="relative h-[520px] overflow-hidden">
+      <section className="relative flex min-h-[520px] flex-col overflow-hidden">
         <Image src="/images/spec-1.webp" alt={page.hero.title} fill className="object-cover object-[50%_30%]" priority />
         <div className="absolute inset-0 bg-slate-950/70" />
         <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-slate-950/85 to-transparent" />
-        <div className="relative flex h-full items-end pb-16">
+        <div className="relative flex flex-1 items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <div className="max-w-xl">
               <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">{page.hero.eyebrow}</p>
@@ -76,7 +76,7 @@ export function EchoSercaPage() {
 
       {/* ── CONTENT ── */}
       <section className="bg-white py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
 
             {/* ── Intro ── */}
@@ -227,7 +227,7 @@ export function EchoSercaPage() {
 
       {/* ── CTA ── */}
       <section className="bg-[#0C71C3] py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">{page.cta.heading}</h2>
           <p className="text-pretty mx-auto mt-4 max-w-md leading-relaxed text-white/70">{page.cta.body}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

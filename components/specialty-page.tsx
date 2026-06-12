@@ -36,10 +36,10 @@ export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%",
     <div>
 
       {/* ── HERO ── */}
-      <section className="relative h-[520px] overflow-hidden">
+      <section className="relative flex min-h-[520px] flex-col overflow-hidden">
         {heroImage && <Image src={heroImage} alt={c.title} fill className="object-cover" style={{ objectPosition: heroPosition.replace(/_/g, " ") }} priority />}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-transparent" />
-        <div className="relative flex h-full items-end pb-16">
+        <div className="relative flex flex-1 items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{c.label}</p>
             <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl">{c.title}</h1>
@@ -64,7 +64,7 @@ export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%",
       {/* ── CONTENT ── */}
       {c.conditions && c.conditions.length > 0 && (
         <section className="py-16">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-14 lg:grid-cols-2">
 
               <div>
@@ -105,7 +105,7 @@ export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%",
 
       {extraContent && (
         <section className="py-16 bg-white">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {extraContent}
           </div>
         </section>
@@ -113,7 +113,7 @@ export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%",
 
       {/* ── CTA ── */}
       <section className="bg-[#0C71C3] py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-balance text-3xl font-bold text-white">{t("specialty.ctaTitle")}</h2>
           <p className="text-pretty mx-auto mt-4 max-w-md text-white/70">{t("specialty.ctaSubtitle")}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

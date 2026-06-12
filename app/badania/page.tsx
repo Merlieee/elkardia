@@ -19,11 +19,11 @@ export default function BadaniaPage() {
     <div>
 
       {/* ── HERO ── */}
-      <section className="relative h-[520px] overflow-hidden">
+      <section className="relative flex min-h-[520px] flex-col overflow-hidden">
         <Image src="/images/kardiologia-3.webp" alt={b.hero.title} fill className="object-cover object-[50%_100%]" priority />
         <div className="absolute inset-0 bg-slate-950/70" />
         <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-slate-950/85 to-transparent" />
-        <div className="relative flex h-full items-end pb-16">
+        <div className="relative flex flex-1 items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <div className="max-w-xl">
               <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">{b.hero.eyebrow}</p>
@@ -74,7 +74,7 @@ export default function BadaniaPage() {
 
       {/* ── HOME TESTING ── */}
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-8 text-center">
             <DoktorEkgLogo className="h-12 w-auto" />
             <div className="max-w-2xl">
@@ -97,7 +97,7 @@ export default function BadaniaPage() {
 
       {/* ── CTA ── */}
       <section className="bg-[#0C71C3] py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">{b.cta.heading}</h2>
           <p className="text-pretty mx-auto mt-4 max-w-md leading-relaxed text-white/70">{b.cta.body}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

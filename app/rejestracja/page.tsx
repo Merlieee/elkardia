@@ -16,11 +16,11 @@ export default function RejestracjaPage() {
     <div>
 
       {/* ── HERO ── */}
-      <section className="relative h-[520px] overflow-hidden">
+      <section className="relative flex min-h-[520px] flex-col overflow-hidden">
         <Image src="/images/rejestracja.webp" alt="Rejestracja" fill className="object-cover object-[50%_40%]" priority />
         <div className="absolute inset-0 bg-slate-950/65" />
         <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-slate-950/85 to-transparent" />
-        <div className="relative flex h-full items-end pb-16">
+        <div className="relative flex flex-1 items-end pb-16">
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <div className="max-w-xl">
               <p className="text-pretty mb-2 text-sm font-semibold uppercase tracking-widest text-[#EE3920]">{r.hero.eyebrow}</p>
@@ -53,7 +53,7 @@ export default function RejestracjaPage() {
 
       {/* ── CONTACT CARDS ── */}
       <section className="border-t border-slate-100 py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-4 sm:grid-cols-2">
             <a href="tel:+48815657075" className="group flex flex-col gap-4 rounded-2xl bg-slate-50 p-7 transition-colors hover:bg-slate-100">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EE3920]/10 text-[#EE3920] transition-colors group-hover:bg-[#EE3920] group-hover:text-white">

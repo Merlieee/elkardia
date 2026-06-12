@@ -26,7 +26,7 @@ export function AblacjaSubpage({ data }: { data: AblacjaSubpageData }) {
     <div>
 
       {/* ── HERO ── */}
-      <section className="relative h-[480px] overflow-hidden">
+      <section className="relative flex min-h-[480px] flex-col overflow-hidden">
         <Image
           src="/images/23-kopia.webp"
           alt={data.title}
@@ -36,7 +36,7 @@ export function AblacjaSubpage({ data }: { data: AblacjaSubpageData }) {
         />
         <div className="absolute inset-0 bg-slate-950/70" />
         <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-slate-950/90 to-transparent" />
-        <div className="relative flex h-full flex-col justify-between py-8">
+        <div className="relative flex flex-1 flex-col justify-between py-8">
           {/* breadcrumb */}
           <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
             <Link
