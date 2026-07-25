@@ -13,9 +13,11 @@ function initials(name: string) {
   return parts.slice(0, 2).map(w => w.charAt(0).toUpperCase()).join("")
 }
 
+type SpecialtyContent = { title: string; label: string; description: string; conditions?: string[]; specialistsHeading?: string }
+
 type BiContent = {
-  pl: { title: string; label: string; description: string; conditions?: string[] }
-  en: { title: string; label: string; description: string; conditions?: string[] }
+  pl: SpecialtyContent
+  en: SpecialtyContent
 }
 
 type Props = {
@@ -25,9 +27,10 @@ type Props = {
   doctors: Doctor[]
   extraContent?: React.ReactNode
   heroExtra?: React.ReactNode
+  belowSpecialists?: React.ReactNode
 }
 
-export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%", doctors, extraContent, heroExtra }: Props) {
+export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%", doctors, extraContent, heroExtra, belowSpecialists }: Props) {
   const { t, i18n } = useTranslation()
   const lang = (i18n.language === "en" ? "en" : "pl") as "pl" | "en"
   const c = content[lang] ?? content.pl
@@ -67,9 +70,11 @@ export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%",
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-14 lg:grid-cols-2">
 
-              <div>
+              <div className="flex flex-col">
                 <h2 className="text-balance mb-6 text-2xl font-bold text-slate-900">{t("specialty.conditions")}</h2>
-                <div className="flex flex-col gap-3">
+                {/* flex-1 + justify-between lets the bullets absorb any surplus column
+                    height, so this list stays bottom-flush with `belowSpecialists`. */}
+                <div className={`flex flex-col gap-3${belowSpecialists ? " flex-1 justify-between" : ""}`}>
                   {c.conditions.map((cond) => (
                     <div key={cond} className="flex items-start gap-3">
                       <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#EE3920]" />
@@ -79,8 +84,8 @@ export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%",
                 </div>
               </div>
 
-              <div>
-                <h2 className="text-balance mb-6 text-2xl font-bold text-slate-900">{t("specialty.specialists")}</h2>
+              <div className="flex flex-col">
+                <h2 className="text-balance mb-6 text-2xl font-bold text-slate-900">{c.specialistsHeading ?? t("specialty.specialists")}</h2>
                 <div className="flex flex-col gap-3">
                   {doctors.map((d) => (
                     <Link key={d.slug} href={`/lekarze/${d.slug}`}
@@ -96,6 +101,7 @@ export function SpecialtyPage({ content, heroImage, heroPosition = "center_30%",
                     </Link>
                   ))}
                 </div>
+                {belowSpecialists}
               </div>
 
             </div>

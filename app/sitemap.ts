@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next"
 import { doctors } from "@/lib/doctors"
+import { badaniaSubpages } from "@/lib/badania-subpages"
 
 const base = "https://elkardia.pl"
 
 // Bump this when page content meaningfully changes — avoids reporting every
 // page as "modified now" on each build, which erodes Google's trust in lastmod.
-const lastModified = new Date("2026-05-26")
+const lastModified = new Date("2026-07-15")
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
@@ -16,8 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/kardiologia-doroslych`, lastModified, priority: 0.85, changeFrequency: "monthly" },
     { url: `${base}/kardiologia-dziecieca`, lastModified, priority: 0.85, changeFrequency: "monthly" },
     { url: `${base}/badania`,               lastModified, priority: 0.85, changeFrequency: "monthly" },
+    { url: `${base}/badania/badania-laboratoryjne`, lastModified, priority: 0.8, changeFrequency: "monthly" },
     { url: `${base}/echo-serca-lublin`,     lastModified, priority: 0.8,  changeFrequency: "monthly" },
     { url: `${base}/ekg-spoczynkowe-lublin`, lastModified, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${base}/proba-wysilkowa-lublin`, lastModified, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${base}/tilt-test-test-pochyleniowy-lublin`, lastModified, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${base}/chrapanie-i-bezdech-senny`, lastModified, priority: 0.8, changeFrequency: "monthly" },
     { url: `${base}/hipertensjologia`,      lastModified, priority: 0.8,  changeFrequency: "monthly" },
     { url: `${base}/kardiochirurgia`,       lastModified, priority: 0.8,  changeFrequency: "monthly" },
     { url: `${base}/pulmonologia`,          lastModified, priority: 0.8,  changeFrequency: "monthly" },
@@ -40,5 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }))
 
-  return [...staticPages, ...doctorPages]
+  const badaniaPages: MetadataRoute.Sitemap = badaniaSubpages.map(p => ({
+    url: `${base}/badania/${p.slug}`,
+    lastModified,
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  }))
+
+  return [...staticPages, ...doctorPages, ...badaniaPages]
 }

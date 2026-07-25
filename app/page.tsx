@@ -7,6 +7,7 @@ import { SpecialtiesGrid } from "@/components/specialties-grid"
 import { ReviewsCarousel } from "@/components/reviews-carousel"
 import { Button } from "@/components/ui/button"
 import { DoktorEkgLogo } from "@/components/logos"
+import { RichText } from "@/components/rich-text"
 import { useTranslation } from "react-i18next"
 import pl from "@/lib/translations/pl"
 import en from "@/lib/translations/en"
@@ -138,7 +139,7 @@ export default function HomePage() {
             <div>
               <p className="text-pretty text-sm font-semibold uppercase tracking-widest text-[#EE3920]">{h.pediatric.eyebrow}</p>
               <h2 className="text-balance mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{h.pediatric.heading}</h2>
-              <p className="text-pretty mt-4 leading-relaxed text-slate-600">{h.pediatric.body}</p>
+              <p className="text-pretty mt-4 leading-relaxed text-slate-600"><RichText text={h.pediatric.body} /></p>
               <div className="mt-8 grid grid-cols-2 gap-y-3 gap-x-4">
                 {h.pediatric.conditions.map((item) => (
                   <div key={item} className="flex items-start gap-2 text-sm text-slate-700">
@@ -299,9 +300,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <div className="mb-10 flex flex-wrap items-center justify-center gap-2">
             <Image src="/images/orly-medycyny.png" alt="Orły Medycyny" width={220} height={66} className="h-10 w-auto opacity-90 brightness-0 invert" />
-            {[2022, 2023, 2024].flatMap((year) => [
+            {[
+              { year: 2024, gold: false },
+              { year: 2025, gold: true },
+              { year: 2026, gold: false },
+            ].flatMap(({ year, gold }) => [
               <Image key={`laureat-${year}`} src={`/images/orly-laureat-${year}.png`} alt={`${year} Laureat Konkursu Orły Medycyny`} width={83} height={60} className="h-12 w-auto opacity-90 brightness-0 invert" />,
-              <Image key={`gold-${year}`} src={`/images/orly-gold-${year}.png`} alt={`${year} Gold Orły Medycyny`} width={83} height={60} className="h-12 w-auto opacity-90 brightness-0 invert" />,
+              ...(gold ? [<Image key={`gold-${year}`} src={`/images/orly-gold-${year}.png`} alt={`${year} Gold Orły Medycyny`} width={83} height={60} className="h-12 w-auto opacity-90 brightness-0 invert" />] : []),
             ])}
           </div>
           <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">{h.cta.heading}</h2>

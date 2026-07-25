@@ -2,8 +2,9 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Phone } from "lucide-react"
+import { ArrowRight, CheckCircle, Phone } from "lucide-react"
 import { BadaniaSearch } from "@/components/badania-search"
+import { labHighlights } from "@/lib/badania-lab"
 import { DoktorEkgLogo } from "@/components/logos"
 import { useTranslation } from "react-i18next"
 import pl from "@/lib/translations/pl"
@@ -47,7 +48,7 @@ export default function BadaniaPage() {
       </section>
 
       {/* ── FULL LIST ── */}
-      <section className="bg-muted/30 py-20">
+      <section className="bg-muted/30 pb-12 pt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-balance text-3xl font-bold mb-3">{b.fullList.heading}</h2>
           <p className="text-pretty text-muted-foreground mb-8">{b.fullList.body}</p>
@@ -55,8 +56,39 @@ export default function BadaniaPage() {
         </div>
       </section>
 
+      {/* ── LABORATORY ── */}
+      <section className="bg-muted/30 pb-12 pt-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl border bg-card p-8 sm:p-10">
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+              <div>
+                <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{b.lab.eyebrow}</p>
+                <h2 className="text-balance mt-3 text-3xl font-bold">{b.lab.heading}</h2>
+                <p className="text-pretty mt-3 leading-relaxed text-muted-foreground">{b.lab.body}</p>
+                <div className="mt-8">
+                  <a href="/badania/badania-laboratoryjne">
+                    <Button className="group h-12 gap-2 bg-[#EE3920] px-7 text-base font-semibold text-white hover:bg-[#EE3920]/90">
+                      {b.lab.cta}
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {labHighlights.map((test) => (
+                  <li key={test.pl} className="flex items-center gap-3 py-2 text-sm">
+                    <CheckCircle className="h-4 w-4 shrink-0 text-[#EE3920]" />
+                    <span className="min-w-0">{lang === "en" ? test.en : test.pl}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── WHY US ── */}
-      <section className="bg-muted/30 pb-20 pt-12">
+      <section className="bg-muted/30 pb-12 pt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{b.whyUs.eyebrow}</p>
           <h2 className="text-balance mt-3 text-3xl font-bold">{b.whyUs.heading}</h2>
@@ -67,6 +99,31 @@ export default function BadaniaPage() {
                 <h3 className="text-balance font-bold text-base mb-2">{card.title}</h3>
                 <p className="text-pretty text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── LEARN MORE ── */}
+      <section className="bg-muted/30 pb-20 pt-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-pretty text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{b.learnMore.eyebrow}</p>
+          <h2 className="text-balance mt-3 text-3xl font-bold">{b.learnMore.heading}</h2>
+          <p className="text-pretty mt-3 max-w-2xl text-muted-foreground leading-relaxed">{b.learnMore.body}</p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {b.learnMore.cards.map((card) => (
+              <a
+                key={card.href}
+                href={card.href}
+                className="group flex flex-col rounded-2xl border bg-card p-6 transition-colors hover:border-[#EE3920]/40"
+              >
+                <h3 className="text-balance font-bold text-base mb-2 transition-colors group-hover:text-[#EE3920]">{card.title}</h3>
+                <p className="text-pretty text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+                <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-[#EE3920]">
+                  {b.learnMore.readMore}
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </a>
             ))}
           </div>
         </div>

@@ -6,6 +6,7 @@ import { Activity, ArrowRight, CheckCircle, Eye, ShieldCheck } from "lucide-reac
 import { doctors } from "@/lib/doctors"
 import { SpecialtyPage } from "@/components/specialty-page"
 import { FaqAccordion } from "@/components/faq-accordion"
+import { RichText } from "@/components/rich-text"
 import { useTranslation } from "react-i18next"
 import pl from "@/lib/translations/pl"
 import en from "@/lib/translations/en"
@@ -29,8 +30,8 @@ export default function Page() {
         <div className="max-w-2xl">
           <p className="text-pretty mb-2 text-xs font-semibold uppercase tracking-widest text-[#EE3920]">{e.eyebrow}</p>
           <h2 className="text-balance mb-5 text-3xl font-bold text-slate-900">{e.heading}</h2>
-          <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600">{e.intro1}</p>
-          <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600">{e.intro2}</p>
+          <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600"><RichText text={e.intro1} /></p>
+          <p className="text-pretty mb-4 text-base leading-relaxed text-slate-600"><RichText text={e.intro2} /></p>
           <p className="text-pretty text-base leading-relaxed text-slate-600">{e.intro3}</p>
         </div>
         <div className="relative self-stretch min-h-[280px]">
@@ -99,7 +100,7 @@ export default function Page() {
             <div key={step.num} className="rounded-xl bg-slate-50 p-6">
               <div className="mb-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#EE3920]/10 text-xs font-bold text-[#EE3920]">{step.num}</div>
               <h4 className="text-balance mb-3 font-semibold text-slate-900">{step.title}</h4>
-              <p className="text-pretty text-sm leading-relaxed text-slate-600">{step.body}</p>
+              <p className="text-pretty text-sm leading-relaxed text-slate-600"><RichText text={step.body} /></p>
               {"items" in step && step.items && (
                 <div className="mt-3 space-y-1.5 text-sm text-slate-600">
                   {(step.items as string[]).map((item: string) => (
